@@ -59,6 +59,7 @@ tag: 博客
 4、[7 Reasons NOT to Use a Static Site Generator](https://www.sitepoint.com/7-reasons-not-use-static-site-generator/)
 
 5、[简书-做一个网站真的有那么难吗？](http://www.jianshu.com/p/0ca5ad11bfe8)
+
 6、[搭建个人博客，你需要知道这些](https://zhuanlan.zhihu.com/p/25744686)
 
 7、[晴月浩雪站-静态博客简介](http://vrman.qiniudn.com/2014/07/23/%E6%8A%98%E8%85%BE/hexo/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/)
@@ -173,7 +174,7 @@ background-image: linear-gradient(140deg,rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0
 
 于是发现问题出在cover_color这个变量上，到_config.yml文件中将cover_color变量的值由clear改为空（什么都不写），图像模糊的问题得到解决。
 
-## 整理这么多网址好累，你们有谁要是没两天倒闭了，一定要赔我钱！（支付宝微信下方都有，赔钱的时候自觉一点）
+### 整理这么多网址好累，你们有谁要是没两天倒闭了，一定要赔我钱！（支付宝微信下方都有，赔钱的时候自觉一点）
 
 <br>
 转载请注明原地址，魏鑫燏的博客：[http://slowlythinking.github.io](http://slowlythinking.github.io) 谢谢！
