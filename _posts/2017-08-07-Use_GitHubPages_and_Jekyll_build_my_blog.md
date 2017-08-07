@@ -114,6 +114,8 @@ tag: 博客
 
 ### **扩展4-编写博客**
 
+1. [Markdown 语法快速入门手册 W3Cschool](https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html)
+
 1. [Markdown 语法说明 (简体中文版)](http://www.appinn.com/markdown/)
 
 2. [在 Vim 里为 Markdown 文档展示导航窗格](http://mazhuang.org/2016/08/03/add-outline-for-markdown-in-vim/)
