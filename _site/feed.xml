@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>魏鑫燏</title>
+    <description>欢迎来到我的个人站~</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 08 Aug 2017 20:11:30 +0800</pubDate>
+    <lastBuildDate>Tue, 08 Aug 2017 20:11:30 +0800</lastBuildDate>
+    <generator>Jekyll v3.5.1</generator>
+    
+      <item>
+        <title>招聘和应聘</title>
+        <description>&lt;p&gt;&lt;em&gt;如今已研三，秋招已经开始，颤抖着把简历发出去之后给爷爷打了个电话，询问了一下现在家里地还富不富裕，养猪还能不能致富的问题。&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;需求&quot;&gt;需求&lt;/h3&gt;
+
+&lt;p&gt;慌张无用，家里的猪也害怕我回去致富（可能要死[doge]）。一直没有仔细思考过招聘和应聘的事情。&lt;/p&gt;
+
+&lt;p&gt;在开始纷繁的面经之前我想试想一下招聘者的需求，陈皓的&lt;a href=&quot;http://coolshell.cn/?s=%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E6%8B%9B%E8%81%98%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84&quot;&gt;我是怎么招聘程序员的&lt;/a&gt;和刘未鹏的&lt;a href=&quot;http://mindhacks.cn/2011/11/04/how-to-interview-a-person-for-two-years/&quot;&gt;怎样花两年时间去面试一个人&lt;/a&gt;给我触动较大。陈皓把面试官考察的内容总结为递进的操作-&amp;gt;知识-&amp;gt;经验-&amp;gt;能力，刘未鹏把公司应该考察的项目明确为书单+项目，这两篇文章为我在混沌中给出了一点光亮。&lt;/p&gt;
+
+&lt;p&gt;需求是&lt;strong&gt;他们&lt;/strong&gt;想要的人的特质，我所获得的最大的感悟在于这里的&lt;strong&gt;他们&lt;/strong&gt;不只是公司，&lt;strong&gt;他们&lt;/strong&gt;是社会，有时甚至是&lt;strong&gt;自己&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;我&quot;&gt;我&lt;/h3&gt;
+
+&lt;p&gt;我以前做过一些项目：一个农产品电商平台（WAMP + Android App），一个视频加密共享平台（LAMP + Android App），一个三值光学计算机的傅里叶变换仿真程序（Linux + Cplusplus），一个线特征SLAM（Linux + ROS + Cplusplus + OpenCV + G2O + Pangolin + CMake）。在这些项目中我锻炼了一点能力，但是没有知识，没有经验，甚至没有太多操作的记忆。网络让人过于舒适，我可以在网上找到一大堆电商平台的模板，视频共享的后台也有不少的傻瓜式软件，除了还在开发的SLAM，其他的我都是凑出来的。这样的东西应该不是刘未鹏所说的项目，至于知识、经验和能力，如果所有经历中缺少了&lt;strong&gt;思考和总结&lt;/strong&gt;，它们又从何说起？&lt;/p&gt;
+
+&lt;p&gt;我思考过想要什么样的自己，但没有找到清晰可靠的改变途径，今天是第一次借着思考公司想要什么样的人的机会找到了一个可以执行的方案，这个改变的基础在于我发现他们想要的全都是我自己想要的。&lt;/p&gt;
+
+&lt;p&gt;阅读书单，github上从算法题开始，期间用记博客的形式思考和总结所得。这就是我打算采用的方法。&lt;/p&gt;
+
+&lt;p&gt;嗯，那迫在眉睫的面试呢？我都找到了这么好的方法提升自己了还担心什么面试，我肯定能在一百二十岁以前成功（梗：本站“&lt;a href=&quot;http://slowlythinking.github.io/about/&quot;&gt;关于&lt;/a&gt;”），他们都不要我我就回家养猪致富~ （猪：T0T）&lt;/p&gt;
+
+&lt;h3 id=&quot;计划&quot;&gt;计划&lt;/h3&gt;
+
+&lt;p&gt;开玩笑啦，重要的事情要准备，眼下的事情也不能不管啊。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;充实技术博客，方便把自己“卖了”，&lt;a href=&quot;http://blog.csdn.net/oiio/article/details/6913156&quot;&gt;为什么写技术博客对新人如此重要？&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;以各大公司面试题为引，复习并整理网络、OS、数据库和算法相关知识；&lt;/li&gt;
+    &lt;li&gt;静下来捋捋自己的项目，对关键点的相关知识进行进一步引申学习；&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;保持思考，不要下线&lt;/strong&gt;。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;资源&quot;&gt;资源&lt;/h3&gt;
+
+&lt;p&gt;面试经历&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ganecheng.tech/blog/54142709.html&quot;&gt;腾讯、百度、珍爱网、中国电信、三之乐面试经历&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/haore147/p/3904494.html&quot;&gt;华南理工大学-计算机科学与工程学院-腾讯-百度-华为-网易&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/chen825919148/article/details/8244734&quot;&gt;已工作人士面试c/c++岗位相关经验&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/longaiqian9/article/details/38821991&quot;&gt;2015年华为校招c/c++&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;面试题&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/wdzxl198/article/details/9102759/&quot;&gt;常见面试题30道&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/hero_myself/article/details/50962448&quot;&gt;面试题96道&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/Y1Focus/p/6707121.html&quot;&gt;C++面试集锦( 面试被问到的问题 )&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/LUO77/p/5771237.html&quot;&gt;常见C++面试题及基本知识点总结（一）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/06d2f28d0747&quot;&gt;简书C++ one hundred 面试题&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;结语&quot;&gt;结语&lt;/h3&gt;
+
+&lt;p&gt;感谢思考和经历之后把所得分享给其他人的两位大牛，希望成为你们~ &lt;br /&gt;
+&lt;a href=&quot;http://mindhacks.cn/&quot;&gt;刘未鹏-思维改变生活&lt;/a&gt;          &lt;br /&gt;
+&lt;a href=&quot;http://coolshell.cn/&quot;&gt;陈皓-酷壳&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;em&gt;转载请注明原地址，魏鑫燏的博客：&lt;a href=&quot;http://slowlythinking.github.io&quot;&gt;http://slowlythinking.github.io&lt;/a&gt; 谢谢！&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Aug 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/08/Recruitment_and_interview/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/08/Recruitment_and_interview/</guid>
+        
+        <category>应聘</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>如何处理负面情绪</title>
+        <description>&lt;p&gt;翻看Instagram，看网易云音乐里的歌词。内心不宁。&lt;/p&gt;
+
+&lt;p&gt;只是抽烟也不能改变情绪，只靠时间又显得太过消极。试想孤独的原因，是过去习惯的残余让我想起已经丢失的虚假期望，继而产生某种失落？还是他人的否定让内心感到焦躁？&lt;/p&gt;
+
+&lt;h3 id=&quot;负面情绪来自何处&quot;&gt;负面情绪来自何处？&lt;/h3&gt;
+
+&lt;p&gt;人为什么会觉得难受？为什么难受的感觉这么多种又难以形容？我现在所感受到的，更接近一种失落，期望的温暖被证明是虚假，进而丢弃，丢弃之后又开始想念。于此同时，我感到喉咙的疼痛，同时想到在上海没有一个可以与之坦诚相待的朋友。&lt;/p&gt;
+
+&lt;p&gt;看起来不好的情绪会吸引同种的回忆，开始时失落，进而加上孤单，在加上从未缺席的因期望与现实的差别而导致的对自己的痛恨。&lt;/p&gt;
+
+&lt;p&gt;理智会保证自己不会做错误的事情，但是在这些情绪一波波的拍打之下，我很难继续做对的事情。&lt;/p&gt;
+
+&lt;p&gt;我一直相信负面的情绪对现状毫无帮助，在这些情绪来临时我借助这种认识来获得力量。但是这些时不时的刺痛让我开始有些不耐烦，它们让连贯的理性思想产生断层，一不小心就会荒废大量时间。我要问问负面情感的来处，在它们开始滋生时就毁灭其根基。&lt;/p&gt;
+
+&lt;p&gt;情绪是进化的产物，恐惧、高兴、悲伤都有其生存的用处，但自人有了理性，开始思考，这些机械的生存辅助工具的实际意义已不是很大。进化是延后于环境的，今天，对于我，负面的情感就像开始发炎的阑尾，与生俱来却没有任何用处。&lt;/p&gt;
+
+&lt;h3 id=&quot;人为何会为情绪掌控&quot;&gt;人为何会为情绪掌控？&lt;/h3&gt;
+
+&lt;p&gt;为什么会开始想念已结束的爱？是因为需要那个人，还是因为需要这样一种类似的仪式？我所真正想要的，是什么？&lt;/p&gt;
+
+&lt;p&gt;是幸福和希望。&lt;/p&gt;
+
+&lt;p&gt;人免不了用错误的方法来追求正确的事情，作为动力的渴望常常会让我随便选择一条道路。随着渴望而来的情绪天然地排斥理性，缺少了理性，我就失去了最后的最大的力量，这样的自己无法掌控任何事情。&lt;/p&gt;
+
+&lt;p&gt;人生来残疾。&lt;/p&gt;
+
+&lt;h3 id=&quot;力量&quot;&gt;力量&lt;/h3&gt;
+
+&lt;p&gt;众人皆是孤岛，所能完全理解一个人的只会是这个人自己。这就是最坚实的站立之地。外物永恒变化，人不能依靠，但坚韧的人真的没有依靠着什么吗？他们依靠着自己，基于真实的——也就是理性的思维行事，这样前进就能碾碎恐惧、失落、愤怒乃至一切的障碍。&lt;/p&gt;
+
+&lt;h3 id=&quot;后记&quot;&gt;后记&lt;/h3&gt;
+
+&lt;p&gt;我生活在真实的世界，真实世界里需要实质的付出才会有回报；人的永恒孤独是一个无法改变的现实，而现实中无法改变的事情不在少数，人力有穷；现实的事物和道理并不随个人意志而转移，当两者冲突时，我就需要改变；我可以幻想美好的生活，但永不能也无法忘记自己最想要的东西——这些东西按照现实世界的规则存在于真实的世界里。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;保持思考，不要下线&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;em&gt;转载请注明原地址，魏鑫燏的博客：&lt;a href=&quot;http://slowlythinking.github.io&quot;&gt;http://slowlythinking.github.io&lt;/a&gt; 谢谢！&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Aug 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/08/How_to_Control_Emotion/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/08/How_to_Control_Emotion/</guid>
+        
+        <category>生活</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>GitHub Pages+Jekyll搭建个人博客</title>
+        <description>&lt;h3 id=&quot;大家好我想死你们啦&quot;&gt;&lt;strong&gt;大家好，我想死你们啦~&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;　　博客初步搭建完成，关于Github pages+Jekyll搭建博客的方法已有很多大牛写过相关文章，按照“惯例”，现将搭建过程中使用到的资料整理如下，作为第一篇博客（三年之后回来看，此站总共一篇博客[doge]）：
+　　&lt;/p&gt;
+&lt;h3 id=&quot;简易教程&quot;&gt;&lt;strong&gt;简易教程&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.cnfeat.com/blog/2014/05/10/how-to-build-a-blog/&quot;&gt;如何搭建一个独立博客——简明 GitHub Pages与 jekyll 教程&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.ganecheng.tech/blog/52203759.html&quot;&gt;利用GitHub搭建个人网站&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://liusongx.com/cn/%E6%8A%80%E6%9C%AF/github-and-jekyll/&quot;&gt;黄金搭档：Jekyll 与 Github 搭建网站&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://chenjun.com/blog/2014/07/jekyll-github.html&quot;&gt;重生@Jekyll+GitHub Pages&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://baixin.io/2016/10/jekyll_tutorials1/&quot;&gt;Jekyll搭建个人博客&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://playingfingers.com/2016/03/26/build-a-blog/#github-pages-1&quot;&gt;Github Pages + Jekyll 独立博客一小时快速搭建&amp;amp;上线指南&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://damoqiongqiu.github.io/%E6%96%87%E7%A7%91%E7%94%9F%E9%83%BD%E8%83%BD%E8%AF%BB%E6%87%82%E7%9A%84jekyll%E4%B8%AD%E6%96%87%E6%95%99%E7%A8%8B/2017/07/02/%E5%88%A9%E7%94%A8github%E5%92%8Cjekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BABlog-1.html&quot;&gt;利用Jekyll和Github搭建免费的个人Blog&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.alonemonkey.com/2016/05/20/blog-by-jekyll-hexo/&quot;&gt;使用jekyll和hexo搭建免费博客&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.aimspike.com/2016/12/21/jekyll-githubpages/&quot;&gt;Jekyll + Github Pages&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://xhs.me/blog/archives/&quot;&gt;hexo-模板1&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;扩展1-相关网站生成工具&quot;&gt;&lt;strong&gt;扩展1-相关网站生成工具&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://jekyll.com.cn/&quot;&gt;Jekyll官方网站&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/c4f145fdd637&quot;&gt;博客搭建可行性方案( jekyll , hexo , Wordpress )&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://kaimingwan.com/post/gong-ju/farbox-jekyll-octopress-ghost-hexodeng-zhu-liu-bo-ke-sheng-cheng-qi-te-dian-gai-xuan-ze-na-ge&quot;&gt;FarBox、Jekyll、Octopress、ghost、Hexo等主流博客生成器特点，该选择哪个？&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://theknowledgeaccelerator.com/2015/09/29/hello-world/&quot;&gt;Hello World! Why I Chose Hexo vs Jekyll/Octopress vs WordPress&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://topspeedsnail.com/static-website-generators_or_tools/&quot;&gt;11个最流行的静态(博客)网站生成工具&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/21981094&quot;&gt;知乎-FarBox、Jekyll、Octopress、ghost、marboo、Hexo、Medium、Logdown、prose.io，这些博客程序有什么特点？&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/&quot;&gt;GitHubHelp-Using Jekyll as a static site generator with GitHub Pages&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;扩展2-网站基础知识&quot;&gt;&lt;strong&gt;扩展2-网站基础知识&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.openxy.com/books/web_backend_basic/&quot;&gt;web_backend_basic课程&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://fallenwood.github.io/2016/04/29/web-from-tcp-socket/&quot;&gt;动态博客和静态博客-从Tcp-socket谈起(dev)&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://blog.jobbole.com/103451/&quot;&gt;伯乐在线翻译-静态网站生成器将是下一个大事件&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.sitepoint.com/7-reasons-not-use-static-site-generator/&quot;&gt;7 Reasons NOT to Use a Static Site Generator&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/0ca5ad11bfe8&quot;&gt;简书-做一个网站真的有那么难吗？&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/25744686&quot;&gt;搭建个人博客，你需要知道这些&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://vrman.qiniudn.com/2014/07/23/%E6%8A%98%E8%85%BE/hexo/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B/&quot;&gt;晴月浩雪站-静态博客简介&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.shennongmin.org/?p=1130&quot;&gt;静态页面与动态页面的区别&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.qianxingzhem.com/post-202.html&quot;&gt;动态网站与静态网站的区别详解&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://edinteractive.co.uk/static-vs-dynamic-websites-difference/&quot;&gt;Static Vs Dynamic websites – what’s the difference?&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://rocketmedia.com/blog/static-vs-dynamic-websites&quot;&gt;Static vs. Dynamic Websites: What are They and Which is Better?&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://thebestofyouth.com/&quot;&gt;github pages建站相关&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;扩展3-好的博客在github站点中寻找得到&quot;&gt;&lt;strong&gt;扩展3-好的博客(在&lt;a href=&quot;https://github.com/jekyll/jekyll/wiki/sites&quot;&gt;github站点&lt;/a&gt;中寻找得到)&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://liaokeyu.com/&quot;&gt;廖柯宇的博客-漂亮&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://comtu.github.io/&quot;&gt;经典模板-hexo-theme-next&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://wiki.xiaolei.tech/#!index.md#Xiaolei's_Wiki&quot;&gt;Xiaolei’s Wiki - 个人知识管理案例&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://robotkang.cc/#blog&quot;&gt;亢志军个人博客-酷炫的主题&lt;/a&gt; &lt;a href=&quot;https://github.com/MengZheK/kangblog.github.io/&quot;&gt;github&lt;/a&gt;  -&amp;gt;  来源于&lt;a href=&quot;https://github.com/leopardpan/leopardpan.github.io&quot;&gt;leopard模板&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://daodaoliang.com/&quot;&gt;刀刀亮的博客&lt;/a&gt; &lt;a href=&quot;https://github.com/daodaoliang/daodaoliang.github.com&quot;&gt;github&lt;/a&gt;  -&amp;gt;  来源于&lt;a href=&quot;https://github.com/pexcn/Jekyll-Light&quot;&gt;jekyll light theme&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://louisly.com/&quot;&gt;Louis的iOS开发小站&lt;/a&gt;  -&amp;gt;  与以上两个模板类似&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://yanjunyi.com/&quot;&gt;严俊羿-Web工程师，自由职业者-个人主页-极简-界面美观 不愧是吃这碗饭的&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://chenjun.com/&quot;&gt;陈俊的网：浮生志&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://blog.evercoding.net/&quot;&gt;天外天-内容精彩&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://ztpala.com/&quot;&gt;如是我聞-索引合理&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.pchou.info/index.html&quot;&gt;P_Chou Tech Space-建站教程-内容美观&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://dbkaiser.github.io/&quot;&gt;楷图-极简外观&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://blog.ixxoo.me/&quot;&gt;likebeta’s Blog-美观&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://mazhuang.org/&quot;&gt;外观马马虎虎-打码改变人生&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://iccm.cc/&quot;&gt;CCM Blog-有些干货&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://liusongx.com/&quot;&gt;刘松个人博客-汉英双版-干货&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://blog.joway.io/&quot;&gt;Joway’s Blog - 美观&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://facaiy.github.io/&quot;&gt;饮冰-干货&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;扩展4-编写博客&quot;&gt;&lt;strong&gt;扩展4-编写博客&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html&quot;&gt;Markdown 语法快速入门手册 W3Cschool&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.appinn.com/markdown/&quot;&gt;Markdown 语法说明 (简体中文版)&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://mazhuang.org/2016/08/03/add-outline-for-markdown-in-vim/&quot;&gt;在 Vim 里为 Markdown 文档展示导航窗格&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/dcffb6f60fe2&quot;&gt;Markdown编辑器之比较&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://stackedit.io/editor#&quot;&gt;StackEdit编辑器&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.zybuluo.com/mdeditor#840579&quot;&gt;作业部落编辑器&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;扩展5-jekyll安装报错&quot;&gt;&lt;strong&gt;扩展5-Jekyll安装报错&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Configuration file: D:/GitWorkSpace/slowlythinking.github.io/_config.yml
+Deprecation: The ‘gems’ configuration option has been renamed to ‘plugins
+‘. Please update your config file accordingly.
+Dependency Error: Yikes! It looks like you don’t have jekyll-sitemap or 
+one of its dependencies installed. In order to use Jekyll as currently 
+configured, you‘ll need to install this gem. The full error message from 
+Ruby is: ‘cannot load such file – jekyll-sitemap’ If you run into trouble,
+you can find helpful resources at https://jekyllrb.com/help/!
+jekyll 3.5.1 | Error: jekyll-sitemap
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://lumberport69.rssing.com/chan-68716448/all_p94.html&quot;&gt;法1-去除jekyll-sitemap&lt;/a&gt; -&amp;gt; 导致“关于我”选项无法打开&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/cssmagic/blog/issues/22&quot;&gt;GitHub 第一坑：换行符自动转换&lt;/a&gt;   -&amp;gt;   解决以上问题&lt;/p&gt;
+
+&lt;p&gt;尝试去除背景图片模糊的问题 -&amp;gt; 将images文件夹中的背景图片换了多张仍无法解决，后搜索含有background-cover的文件，发现了main.css中定义了背景图片的显示状态，其中有以下代码：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.panel-cover–overlay {
+display: block;
+position: absolute;
+z-index: 0;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-color: rgba(68, 68, 68, 0.6);
+background-image: -webkit-linear-gradient(-410deg, rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9));
+background-image: linear-gradient(140deg,rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9)); }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;就在这里定义了背景图片的渐变（最后三行），导致图片模糊，但是去除这三行之后首页文字位置又不对了，再次查找，发现在_includes文件夹下的side-panel.html文件中有以下语句：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    if site.cover_color
+    &amp;lt;div class=&quot;panel-cover--overlay cover-&quot;&amp;gt;&amp;lt;/div&amp;gt;
+    else
+    &amp;lt;div class=&quot;panel-cover--overlay cover-disabled&quot;&amp;gt;&amp;lt;/div&amp;gt;
+    endif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;于是发现问题出在cover_color这个变量上，到_config.yml文件中将cover_color变量的值由clear改为空（什么都不写），图像模糊的问题得到解决。
+&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;整理这么多网址好累你们有谁要是没两天倒闭了一定要赔我钱-我先倒闭就算了逃&quot;&gt;整理这么多网址好累，你们有谁要是没两天倒闭了，一定要赔我钱！ 我先倒闭就算了（逃&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;em&gt;转载请注明原地址，魏鑫燏的博客：&lt;a href=&quot;http://slowlythinking.github.io&quot;&gt;http://slowlythinking.github.io&lt;/a&gt; 谢谢！&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 07 Aug 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/08/Use_GitHubPages_and_Jekyll_build_my_blog/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/08/Use_GitHubPages_and_Jekyll_build_my_blog/</guid>
+        
+        <category>博客</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

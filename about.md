@@ -5,7 +5,7 @@ title: 关于我
 
 在读研究生，目前正在SLAM的大坑里嚎啕大哭
 <p>
-略懂C++，略懂Java，听说过算法，攒过Android App，精通三值光学计算机（反正你们不懂\^-^/）
+略懂C++，略懂Java，略懂LAMP，略懂算法，攒过Android App，精通三值光学计算机（反正你们不懂\^-^/）
 <p>
 对CS的一切充满兴趣，相信自己一百二十岁以前一定会成功，喜欢vim，linux，chrome，opencv，讨厌mac和iphone这种软件不开源的产品（绝对不是因为买不起[doge]）
 <p>
@@ -20,7 +20,9 @@ title: 关于我
 <br>
 <br>
 <br>
-另外，你想扯淡不？想不？试试联系我啊~
+另外，你想扯淡不？想不？试试联系我啊~  
+<p>
+下方有DISQUS提供的评论服务，但可能需要科学上网才会显示，下方有我的微博、github和邮箱信息，Welcome~
 <p>
 {% include comments.html %}
 
