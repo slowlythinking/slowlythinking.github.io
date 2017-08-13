@@ -6,11 +6,11 @@ description: "HEXO配置，HEXO+Github，搭建自己的博客"
 tag: 博客 
 ---   
 
-### **大家好，我想死你们啦~**
+### 大家好，我想死你们啦~
 
 　　博客初步搭建完成，关于Github pages+Jekyll搭建博客的方法已有很多大牛写过相关文章，按照“惯例”，现将搭建过程中使用到的资料整理如下，作为第一篇博客（三年之后回来看，此站总共一篇博客[doge]）：
 　　
-### **简易教程**
+### 简易教程
 
 1. [如何搭建一个独立博客——简明 GitHub Pages与 jekyll 教程](http://www.cnfeat.com/blog/2014/05/10/how-to-build-a-blog/)
 
@@ -32,7 +32,7 @@ tag: 博客
 
 8. [hexo-模板1](http://xhs.me/blog/archives/)
 
-### **扩展1-相关网站生成工具**
+### 扩展1-相关网站生成工具
 
 1. [Jekyll官方网站](http://jekyll.com.cn/)
 
@@ -48,7 +48,7 @@ tag: 博客
 
 9. [GitHubHelp-Using Jekyll as a static site generator with GitHub Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
 
-### **扩展2-网站基础知识**
+### 扩展2-网站基础知识
 
 1. [web_backend_basic课程](http://www.openxy.com/books/web_backend_basic/)
 
@@ -74,7 +74,7 @@ tag: 博客
 
 12. [github pages建站相关](http://thebestofyouth.com/)
 
-### **扩展3-好的博客(在[github站点](https://github.com/jekyll/jekyll/wiki/sites)中寻找得到)**
+### 扩展3-好的博客(在[github站点](https://github.com/jekyll/jekyll/wiki/sites)中寻找得到)
 
 1. [廖柯宇的博客-漂亮](http://liaokeyu.com/)
 
@@ -112,7 +112,7 @@ tag: 博客
 
 18. [饮冰-干货](http://facaiy.github.io/)
 
-### **扩展4-编写博客**
+### 扩展4-编写博客
 
 1. [Markdown 语法快速入门手册 W3Cschool](https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html)
 
@@ -126,7 +126,7 @@ tag: 博客
 
 5. [作业部落编辑器](https://www.zybuluo.com/mdeditor#840579)
 
-### **扩展5-Jekyll安装报错**
+### 扩展5-Jekyll安装报错
 
 ```
 Configuration file: D:/GitWorkSpace/slowlythinking.github.io/_config.yml
