@@ -8,6 +8,8 @@ tag: SLAM
 
 ### 前言
 
+本文的写作目的有二，一是为了将自己已有的SLAM相关知识总结成体系；二是为了给已有相关基础的朋友一个知识总结的参考案例。建议阅读对象是对SLAM基础知识有一定了解的朋友。
+
 从2015年12月7日开始第一篇工作报告开始，接触vSLAM(视觉SLAM）已有一年半的时间，截止目前为止总共写了347篇学习日志。从阅读《基于序列图像的三维重建算法研究》（彭科举-博士论文）开始，学习路径大致可以归纳如下：
 
 1. 安装了LSD-SLAM、PTAM；
@@ -27,10 +29,14 @@ tag: SLAM
 
 ### 资源
 
-
 - [SLAMCN](http://www.slamcn.org/index.php)：国内一群SLAM爱好者和研究者共同维护的SLAMwiki页面，一些主流的slam方法和相关学习资料都可以在这里找到，包括一些国内大牛的博客、经典SLAM文献及翻译等，主要内容是与VSLAM相关的。适合入门了解大致方向；
 - [OpenSLAM](http://openslam.org/)：提供多种SLAM方法的开源代码及介绍，主流的SLAM算法在这一般都有源码；
 - [MultipleViewGeometry-Prof. D. Cremers](https://www.youtube.com/playlist?list=PLTBdjV_4f-EJn6udZ34tht9EVIW7lbeo4)：慕尼黑工业大学教授Daniel Cremers的多视几何课程（YouTube源，其他源可在SLAMCN中找到，也可发邮件我传给你）；
+
+### 历史
+
+SLAM
+
 
 ### 基本概念
 
