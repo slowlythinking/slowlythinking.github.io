@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<meta name='viewport' content='width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0'>
+<!-- three.js library -->
+<script src='vendor/three.js/build/three.js'></script>
+<script src='vendor/three.js/examples/js/libs/stats.min.js'></script>
+<!-- jsartookit -->
+<script src='../vendor/jsartoolkit5/build/artoolkit.min.js'></script>
+<script src='../vendor/jsartoolkit5/js/artoolkit.api.js'></script>
+<!-- include threex.artoolkit -->
+<script src='../src/threex/threex-artoolkitsource.js'></script>
+<script src='../src/threex/threex-artoolkitcontext.js'></script>
+<script src='../src/threex/threex-artoolkitprofile.js'></script>
+<script src='../src/threex/threex-arbasecontrols.js'></script>
+<script src='../src/threex/threex-armarkercontrols.js'></script>
+<script src='../src/threex/threex-arsmoothedcontrols.js'></script>
+
+<script src='vendor/three.js/build/three.js'></script>
+<script src="../build/three.js"></script>
+<script src='js/loaders/ColladaLoader.js'></script>
+<script src="js/loaders/OBJLoader.js"></script>
+<script src='js/Detector.js'></script>
+<script src="js/libs/stats.min.js"></script>
+<script src='vendor/three.js/examples/js/libs/stats.min.js'></script>
+
+
+<script async src="vendor/jsartoolkit5/build/artoolkit.min.js"></script>
+<script async src="vendor/jsartoolkit5/js/artoolkit.three.js"></script>
+
+<script>THREEx.ArToolkitContext.baseURL = '../'</script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: absolute; top: 10px; width:100%; text-align: center;z-index:1';>
+	<a href='https://github.com/jeromeetienne/AR.js/' target='_blank'>AR.js</a> - developement playground
+	<br/>
+	Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+</div>
+<div class="select">
+	<label for="videoSource">Select Camera: </label><select id="videoSource"></select>
+</div>
+
+<script>
+    //////////////////////////////////////////////////////////////////////////////////
+    //		Init
+    //////////////////////////////////////////////////////////////////////////////////
+
+    var videoSelect = document.querySelector("select#videoSource");
+    var selectors = [videoSelect];
+
+    function gotDevices(deviceInfos) {
+        // Handles being called several times to update labels. Preserve values.
+        var values = selectors.map(function(select) {
+            return select.value;
+        });
+        selectors.forEach(function(select) {
+            while (select.firstChild) {
+                select.removeChild(select.firstChild);
+            }
+        });
+
+        for (var i = 0; i !== deviceInfos.length; ++i) {
+            var deviceInfo = deviceInfos[i];
+            var option = document.createElement("option");
+            option.value = deviceInfo.deviceId;
+
+            if (deviceInfo.kind === "videoinput") {
+                option.text = deviceInfo.label || "camera " + (videoSelect.length + 1);
+                videoSelect.appendChild(option);
+            } else {
+                console.log("Some other kind of source/device: ", deviceInfo);
+            }
+
+            selectors.forEach(function(select, selectorIndex) {
+                if (
+                    Array.prototype.slice.call(select.childNodes).some(function(n) {
+                        return n.value === values[selectorIndex];
+                    })
+                ) {
+                    select.value = values[selectorIndex];
+                }
+            });
+        }
+    }
+
+    navigator.mediaDevices
+        .enumerateDevices()
+        .then(gotDevices)
+        .catch(handleError);
+
+    function gotStream(stream) {
+        arToolkitSource.domElement.srcObject = stream; // make stream available to console
+        // video.srcObject = stream;
+        // Refresh button list in case labels have become available
+        return navigator.mediaDevices.enumerateDevices();
+    }
+
+    function start() {
+        if (window.stream) {
+            window.stream.getTracks().forEach(function(track) {
+                track.stop();
+            });
+        }
+        var videoSource = videoSelect.value;
+        var constraints = {
+            video: {
+                deviceId: videoSource ? { exact: videoSource } : undefined
+            }
+        };
+        navigator.mediaDevices
+            .getUserMedia(constraints)
+            .then(gotStream)
+            .then(gotDevices)
+            .catch(handleError);
+    }
+
+    videoSelect.onchange = start;
+
+    function handleError(error) {
+        console.log("navigator.getUserMedia error: ", error);
+    }
+
+    start();
+
+
+    // init renderer
+    var renderer	= new THREE.WebGLRenderer({
+        // antialias	: true,
+        alpha: true
+    });
+    renderer.setClearColor(new THREE.Color('lightgrey'), 0)
+    // renderer.setPixelRatio( 2 );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.domElement.style.position = 'absolute'
+    renderer.domElement.style.top = '0px'
+    renderer.domElement.style.left = '0px'
+    document.body.appendChild( renderer.domElement );
+
+    // array of functions for the rendering loop
+    var onRenderFcts= [];
+
+    // init scene and camera
+    var scene	= new THREE.Scene();
+
+    var ambient = new THREE.AmbientLight( 0x666666 );
+    scene.add( ambient );
+
+    var directionalLight = new THREE.DirectionalLight( 0x887766 );
+    directionalLight.position.set( -1, 1, 1 ).normalize();
+    scene.add( directionalLight );
+
+    //////////////////////////////////////////////////////////////////////////////////
+    //		Initialize a basic camera
+    //////////////////////////////////////////////////////////////////////////////////
+
+    // Create a camera
+    var camera = new THREE.Camera();
+    scene.add(camera);
+
+    ////////////////////////////////////////////////////////////////////////////////
+    //          handle arToolkitSource
+    ////////////////////////////////////////////////////////////////////////////////
+
+    var arToolkitSource = new THREEx.ArToolkitSource({
+        // to read from the webcam
+        sourceType : 'webcam',
+
+        // // to read from an image
+        // sourceType : 'image',
+        // sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/images/img.jpg',
+        // sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/images/armchair.jpg',
+
+        // to read from a video
+        // sourceType : 'video',
+        // sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/videos/headtracking.mp4',
+    })
+
+    arToolkitSource.init(function onReady(){
+        onResize()
+    })
+
+    // handle resize
+    window.addEventListener('resize', function(){
+        onResize()
+    })
+    function onResize(){
+        arToolkitSource.onResizeElement()
+        arToolkitSource.copyElementSizeTo(renderer.domElement)
+        if( arToolkitContext.arController !== null ){
+            arToolkitSource.copyElementSizeTo(arToolkitContext.arController.canvas)
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////
+    //          initialize arToolkitContext
+    ////////////////////////////////////////////////////////////////////////////////
+
+
+    // create atToolkitContext
+    var arToolkitContext = new THREEx.ArToolkitContext({
+        cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../data/data/camera_para.dat',
+        // debug: true,
+        // detectionMode: 'mono_and_matrix',
+        detectionMode: 'mono',
+        // detectionMode: 'color_and_matrix',
+        // matrixCodeType: '3x3',
+
+        canvasWidth: 80*3,
+        canvasHeight: 60*3,
+
+        maxDetectionRate: 30,
+    })
+    // initialize it
+    arToolkitContext.init(function onCompleted(){
+        // copy projection matrix to camera
+        camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
+    })
+
+    // update artoolkit on every frame
+    onRenderFcts.push(function(){
+        if( arToolkitSource.ready === false )	return
+
+        arToolkitContext.update( arToolkitSource.domElement )
+    })
+
+
+    ////////////////////////////////////////////////////////////////////////////////
+    //          Create a ArMarkerControls
+    ////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+    arController.loadNFTMarker('../../../../data/dataNFT/pinball', function(markerId) {
+        var markerRoot = arController.createThreeNFTMarker(markerId);
+        markerRoot.add(sphere);
+        //arScene.scene.add(markerRoot);
+    });
+    scene.add(markerRoot)
+
+    /*arController.loadMarker('../../../../../data/data/patt.kanji', function(markerId) {
+        var markerRoot = arController.createThreeMarker(markerId);
+        markerRoot.add(torus);
+        arScene.scene.add(markerRoot);
+    });*/
+    var markerRoot = new THREE.Group
+    scene.add(markerRoot)
+
+    var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
+        // type: 'barcode',
+        // barcodeValue: 5,
+
+        type : 'pattern',
+        patternUrl : THREEx.ArToolkitContext.baseURL + 'examples/marker-training/examples/pattern-files/pattern-hiro.patt',
+    })
+
+
+    // build a smoothedControls
+    var smoothedRoot = new THREE.Group()
+    scene.add(smoothedRoot)
+    var smoothedControls = new THREEx.ArSmoothedControls(smoothedRoot, {
+        lerpPosition: 0.4,
+        lerpQuaternion: 0.3,
+        lerpScale: 1,
+        // minVisibleDelay: 1,
+        // minUnvisibleDelay: 1,
+    })
+    onRenderFcts.push(function(delta){
+        smoothedControls.update(markerRoot)
+    })
+
+    // smoothedControls.addEventListener('becameVisible', function(){
+    // 	console.log('becameVisible event notified')
+    // })
+    // smoothedControls.addEventListener('becameUnVisible', function(){
+    // 	console.log('becameUnVisible event notified')
+    // })
+
+    //////////////////////////////////////////////////////////////////////////////////
+    //		add an object in the scene
+    //////////////////////////////////////////////////////////////////////////////////
+
+    // var arWorldRoot = markerRoot
+    var arWorldRoot = arController.createThreeNFTMarker(markerId);
+    //var arWorldRoot = smoothedRoot
+
+    var mesh = new THREE.AxisHelper()
+    // markerRoot.add(mesh)
+    arWorldRoot.add(mesh)
+
+    var loader = new THREE.ColladaLoader();
+    /*var manager = new THREE.LoadingManager();
+    manager.onProgress = function ( item, loaded, total ) {
+        console.log( item, loaded, total );
+    };
+    var loader = new THREE.OBJLoader( manager );*/
+
+    loader.options.convertUpAxis = true;
+	loader.load( './models/collada/elf/elf.dae', function ( collada ) {
+    //loader.load( 'models/obj/male02/male02.obj', function ( object ) {
+	dae = collada.scene;
+	dae.traverse( function ( child ) {
+       if ( child instanceof THREE.SkinnedMesh ) {
+            var animation = new THREE.Animation( child, child.geometry.animation );
+		    animation.play();
+		 }
+             });
+             dae.scale.x = dae.scale.y = dae.scale.z = 0.2;
+             dae.rotation.set(0,Math.PI/2,Math.PI/2);
+             arWorldRoot.add(dae);
+             onRenderFcts.push(function(delta){
+                 mesh.rotation.x += delta*Math.PI;
+                 dae.updateMatrix();
+			 })
+});
+
+
+    /*// add a torus knot
+    var geometry	= new THREE.CubeGeometry(1,1,1);
+    var material	= new THREE.MeshNormalMaterial({
+        transparent : true,
+        opacity: 0.5,
+        side: THREE.DoubleSide
+    })
+    var mesh	= new THREE.Mesh( geometry, material );
+    mesh.position.y	= geometry.parameters.height/2
+    // markerRoot.add( mesh );
+    arWorldRoot.add(mesh)
+
+    var geometry	= new THREE.TorusKnotGeometry(0.3,0.1,64,16);
+    var material	= new THREE.MeshNormalMaterial();
+    var mesh	= new THREE.Mesh( geometry, material );
+    mesh.position.y	= 0.5
+    // markerRoot.add( mesh );
+    arWorldRoot.add( mesh );
+
+    onRenderFcts.push(function(delta){
+        mesh.rotation.x += delta * Math.PI
+    })*/
+
+    /*// var arWorldRoot = markerRoot
+	var dae;
+    var arWorldRoot = smoothedRoot
+    //加载Collada模型
+    var loadingManager = new THREE.LoadingManager( function() {
+        scene.add( dae );
+    } );
+    // collada
+    var loader = new THREE.ColladaLoader( loadingManager );
+    //load(url,function)  url为模型路径，function(model)为模型加载完成后调用的函数，参数为加载完的模型model
+    loader.load( './models/collada/elf/elf.dae', function ( collada ) {
+        dae = collada.scene;
+        dae.scale.x = dae.scale.y = dae.scale.z = 0.0001; //调节模型显示大小
+        arWorldRoot.add(dae);						   //将模型添加到group里
+        onRenderFcts.push(function(){				   //添加旋转动画
+            dae.rotation.z += 0.05
+        })
+    });*/
+
+    //////////////////////////////////////////////////////////////////////////////////
+    //		render the whole thing on the page
+    //////////////////////////////////////////////////////////////////////////////////
+    var stats = new Stats();
+    document.body.appendChild( stats.dom );
+    // render the scene
+    onRenderFcts.push(function(){
+        renderer.render( scene, camera );
+        stats.update();
+    })
+
+    // run the rendering loop
+    var lastTimeMsec= null
+    requestAnimationFrame(function animate(nowMsec){
+        // keep looping
+        requestAnimationFrame( animate );
+        // measure time
+        lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+        var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+        lastTimeMsec	= nowMsec
+        // call each update function
+        onRenderFcts.forEach(function(onRenderFct){
+            onRenderFct(deltaMsec/1000, nowMsec/1000)
+        })
+    })
+</script></body>
