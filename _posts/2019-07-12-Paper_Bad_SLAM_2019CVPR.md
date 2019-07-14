@@ -42,15 +42,16 @@ surfel与图像中像素点的匹配过程仅使用了surfel的中心点和平�
 
 surfel的优化存在病态（ill-conditioned）问题，当视觉描述子和几何信息变化不明显时（比如一面白墙），即输入数据的约束能力不足时，surfel会优化到错误的数值，解决方案是限制优化方向（仅沿平面法向量方向优化），优化的目标函数为：
 
-http://chart.googleapis.com/chart?cht=tx&chl=\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a})
-
 $$
 C(K,S)= \sum_{k\in K}{\sum_{s\in S_k}(\rho_{Tukey}(\sigma_D^{-1}r_{geom}(s,k))+\omega_{photo}\rho_{Huber}(\sigma_p^{-1}r_{photo}(s,k)))}
 $$
+
 目标函数中包含两部分：$r_{geom}$ 和$r_{photo}$。分别表示几何误差和光度误差。其中限制优化方向的部分在于几何误差优化部分：
+
 $$
 r_{geom}(s,k)=(Tn_s)^T(\pi^{-1}(\hat{\pi}(TP_s))-TPs)
 $$
+
 其中的$n_s$为Surfel的平面法向量，即误差是沿着法向量方向计算的。即将Surfel的中心点投影到当前帧，再使用当前帧中深度信息反投影回去，计算这个三维点与原三维点的距离，而且这个误差距离是沿着Surfel法向量方向的那部分距离。
 
 剩下的光度误差计算较为简单，在Surfel边缘选两个点$s_1$和$s_2$，保证$s_1P_s$和$s_2P_s$相互垂直，然后计算这两个点投影到平面之后到$P_S$投影点之间的两个灰度梯度值，这个值将作为光度信息，它与Surfel视觉描述子的距离即为光度误差。
@@ -60,7 +61,7 @@ $$
 优化过程的实时性问题的解决：
 当使用一些二阶方法——如高斯牛顿法——来优化以上surfel和帧位姿时，即使采用了舒尔补提升优化速度，优化过程仍然过慢，作者给出了优化策略的算法伪代码：
 
-<div align=center><img src="/images/posts/BadSLAM/AlgorithmofOpt.png" width="500"></div>
+<img src="/images/posts/BadSLAM/AlgorithmofOpt.png" width="500">
 
 这个优化策略中对降低计算时间起作用的有以下几个点：
 1. surfel的法向量没有参与优化，只是对全部对应的观测值生成法向量做了一个平均；
@@ -74,7 +75,7 @@ $$
 
 ### Experiments
 
-<div align=center><img src="/images/posts/BadSLAM/Results1.png" width="600"></div>
+<img src="/images/posts/BadSLAM/Results1.png" width="600">
 
 其中clean表示同步并使用全局快门的数据，async表示全局快门+异步数据，rs表示卷帘快门数据。这里说明了直接法对深度数据和RGB数据是否同步更为敏感。
 
