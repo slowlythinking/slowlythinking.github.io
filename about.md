@@ -11,7 +11,7 @@ title: 关于我
 
 <h3> <strong>Publication</strong> </h3>
 
-<ol><li>
+<ul><li>
 <strong>Wei Xinyu</strong>, Huang Jun, Ma Xiaoyuan, Real-Time Monocular Visual SLAM by Combining Points and Lines, IEEE International Conference on Multimedia and Expo (ICME), 2019 (CCF: B)
 </li>
 <br>
@@ -29,7 +29,7 @@ Peng Junjie, Fu Youyi, Zhang Xiaofeng, Kong Shuai, <strong>Wei Xinyu</strong>. I
 <br>
 <li>
 Kong Shuai, Peng Junjie, Fu Youyi, <strong>Wei Xinyu</strong>. Carry-free full-symbol one-step modified signed-digit addition. Applied Optics, Vol. 56, Issue 35, pp. 9620-9628(2017). SCI, JCR 3区.
-</li></ol>
+</li></ul>
 
 
 <br>
