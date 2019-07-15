@@ -38,7 +38,7 @@ Ps：CVPR2019目标检测相关论文共43篇
 
 #### 算法框架
 
-![](/images/PseudoLiDAR/Pipeline.png)
+![](/images/posts/PseudoLiDAR/Pipeline.png)
 
 主要步骤：
 
@@ -51,7 +51,7 @@ Ps：CVPR2019目标检测相关论文共43篇
 AVOD:
 输入RGB图像以及激光点云数据，利用FPN(Feature Pyramid Networks)网络得到二者全分辨率的feature map，然后通过crop&resize提取两个feature map对应的feature crop并融合，最后挑选出3D proposal以实现3D物体检测。整个过程是two-stage detection，可以理解为MV3D的加强版，网络结构：
 
-![](/images/PseudoLiDAR/AVOD.png)
+![](/images/posts/PseudoLiDAR/AVOD.png)
 
 #### 理论分析
 
@@ -62,11 +62,11 @@ AVOD:
 
 而这两个假设仅当图像中全部点在同一三维平面上才有意义，物体边缘的近邻点可能存在深度上的断层，这些信息不利于神经网络的学习。
 
-![](/images/PseudoLiDAR/Analysis.png)
+![](/images/posts/PseudoLiDAR/Analysis.png)
 
 ### Experiments
 
-![](/images/PseudoLiDAR/Experiment1.png)
+![](/images/posts/PseudoLiDAR/Experiment1.png)
 
 ### Conclusion
 
