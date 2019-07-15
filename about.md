@@ -3,13 +3,13 @@ layout: page
 title: 关于我
 ---
 
-<h3> Information </h3>
+<h3> <strong>Information</strong> </h3>
 <p>
 魏鑫燏，中国科学院上海高等研究院，研究实习员（2018~今）
 <p>
 <p>
 
-<h3> Publication </h3>
+<h3> <strong>Publication</strong> </h3>
 <ol>
 <li>
 <strong>Wei Xinyu</strong>, Huang Jun, Ma Xiaoyuan, Real-Time Monocular Visual SLAM by Combining Points and Lines, IEEE International Conference on Multimedia and Expo (ICME), 2019 (CCF: B)
@@ -30,7 +30,6 @@ Peng Junjie, Fu Youyi, Zhang Xiaofeng, Kong Shuai, <strong>Wei Xinyu</strong>. I
 <li>
 Kong Shuai, Peng Junjie, Fu Youyi, <strong>Wei Xinyu</strong>. Carry-free full-symbol one-step modified signed-digit addition. Applied Optics, Vol. 56, Issue 35, pp. 9620-9628(2017). SCI, JCR 3区.
 </li>
-<p>
 </ol>
 
 <br>
@@ -43,7 +42,7 @@ Kong Shuai, Peng Junjie, Fu Youyi, <strong>Wei Xinyu</strong>. Carry-free full-s
 
 <p>
 聊聊天？
-
+<p>
 下方有DISQUS提供的评论服务，但可能需要科学上网才会显示，下方有我的微博、github和邮箱信息，Welcome~
 <p>
 {% include comments.html %}
