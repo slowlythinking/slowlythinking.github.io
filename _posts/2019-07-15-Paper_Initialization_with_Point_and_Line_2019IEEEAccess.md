@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "论文阅读-《Monocular Visual Odometry Initialization with Points and Line Segments》(2019IEEEAccess, National University of Defense Technology, China)"
-date: 2019-07-14
+date: 2019-07-15
 description: "Initialization-with-PL"
-tag: PaperReading,SLAM,Line Feature
+tag: PaperReading, SLAM, Line Feature
 ---
 
 由于在Github中使用MarkDown时对公式不支持，同时自己不想将全部公式转为图片[懒]，所以博客中公式无法展示，为方便阅读，提供[本篇博客的PDF版本](/pdf/2019-07-15-Paper_Initialization_with_Points_and_Line_Segments_2019IEEEAccess.md.pdf)
@@ -67,7 +67,7 @@ $$
 
 在实际操作中，靠近极线的线段重建时，错误的线段匹配也可能计算出很小的投影误差。三维直线的重建退化问题比点严重，因为只有一类点无法重建：和极点重合的，但是对于线来说却有多种不能重建的情况（在对极平面以内的都不能重建），即one-parameter family of points和three-parameter family of lines不能重建。
 
-![](/images/InitialWithPL/LineReconstruction.png)
+![](/images/posts/InitialWithPL/LineReconstruction.png)
 
 #### 线特征重建退化问题的解决方案
 
@@ -124,7 +124,7 @@ $$
 $$
 2. 对极约束：其中蓝色线段为当前帧内二维线段所在直线，虚线为参考帧中对应线段端点的极线。
     * $$s_e=\frac{AB}{CD}$$
-    * ![](/images/InitialWithPL/EpipolarConstraint.png)
+    * ![](/images/posts/InitialWithPL/EpipolarConstraint.png)
 3. 描述子距离：使用LBD描述子，计算两条线段描述子之间的汉明距离。
 $$
 \begin{equation}
@@ -187,11 +187,11 @@ $$
 
 位姿精度（其中平移向量只算角度误差，因为尺度未知）
 
-![](/images/InitialWithPL/ExperimentPose.png)
+![](/images/posts/InitialWithPL/ExperimentPose.png)
 
 建图精度（其中$N_p$为5次运行生成的三维点数目，$r_g$为好的三维特征的比例）
 
-![](/images/InitialWithPL/ExperimentMap.png)
+![](/images/posts/InitialWithPL/ExperimentMap.png)
 
 ### Conclusion
 
