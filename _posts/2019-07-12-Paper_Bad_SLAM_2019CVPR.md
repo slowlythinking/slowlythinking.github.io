@@ -3,7 +3,7 @@ layout: post
 title: "论文阅读-《BAD SLAM: Bundle  Adjusted Direct RGB-D SLAM》(2019CVPR, ETH)"
 date: 2019-07-12
 description: "BAD-SLAM"
-tag: PaperReading, SLAM
+tag: PaperReading; SLAM
 ---
 
 由于在Github中使用MarkDown时对公式不支持，同时自己不想将全部公式转为图片[懒]，所以博客中公式无法展示，为方便阅读，提供[本篇博客的PDF版本](/pdf/2019-07-10-Paper_Bad_SLAM_2019CVPR.md.pdf)
