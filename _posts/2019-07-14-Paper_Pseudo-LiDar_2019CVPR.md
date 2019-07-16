@@ -6,6 +6,8 @@ description: "Pseudo-LiDAR"
 tag: PaperReading
 ---
 
+由于在Github中使用MarkDown时对公式不支持，同时自己不想将全部公式转为图片[懒]，所以博客中公式无法展示，为方便阅读，提供[本篇博客的PDF版本](/pdf/2019-07-14-Paper_Pseudo-LiDar_2019CVPR.md.pdf)
+
 ### Open Source
 
 [Code](https://github.com/mileyan/pseudo_lidar)

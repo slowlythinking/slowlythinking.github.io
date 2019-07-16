@@ -3,8 +3,10 @@ layout: post
 title: "论文阅读-《BAD SLAM: Bundle  Adjusted Direct RGB-D SLAM》(2019CVPR, ETH)"
 date: 2019-07-12
 description: "BAD-SLAM"
-tag: PaperReading
+tag: PaperReading,SLAM
 ---
+
+由于在Github中使用MarkDown时对公式不支持，同时自己不想将全部公式转为图片[懒]，所以博客中公式无法展示，为方便阅读，提供[本篇博客的PDF版本](/pdf/2019-07-10-Paper_Bad_SLAM_2019CVPR.md.pdf)
 
 ### Open Source
 
@@ -64,6 +66,7 @@ $$
 <img src="/images/posts/BadSLAM/AlgorithmofOpt.png" width="500">
 
 这个优化策略中对降低计算时间起作用的有以下几个点：
+
 1. surfel的法向量没有参与优化，只是对全部对应的观测值生成法向量做了一个平均；
 2. 三维中心点和视觉描述子优化过程中限定了优化方向（仅沿法向量方向），提高了收敛速度；
 3. 优化过程中相同surfel会做融合，这会减少计算量。
