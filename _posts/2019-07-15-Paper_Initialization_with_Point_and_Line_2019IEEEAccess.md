@@ -16,6 +16,8 @@ tag: [PaperReading, SLAM, Line Feature]
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
+**Author of This Article Analysis：魏鑫燏；Time：2019-07-15**
+
 ### Open Source
 
 None.

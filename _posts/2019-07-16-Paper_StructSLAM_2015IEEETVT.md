@@ -3,7 +3,7 @@ layout: post
 title: "论文阅读-《StructSLAM : Visual SLAM with Building Structure Lines》(2015IEEE Transactions on Vehicular Technology, Shanghai Jiao Tong University)"
 date: 2019-07-16
 description: "StructSLAM"
-tag: [SLAM, Line Feature]
+tag: [PaperReading, SLAM, Line Feature]
 ---
 
 <script type="text/x-mathjax-config">
@@ -82,7 +82,14 @@ $$
 * 相机状态表示：$x_c$
 * 特征点：$x_p=[m_1^T,m_2^T,...]^T$(论文中说$m\in\mathbb{R}^{6\times1}$，不明白多的三个维度是什么)
 * Structure Line：$x_l=[l_1^T,l_2^T,...]^T$
-* 协方差矩阵：$\begin{bmatrix} \Sigma_{cc} & \Sigma_{cp} & \Sigma_{cl} \\  \Sigma_{pc} & \Sigma_{pp} & \Sigma_{pl} \\  \Sigma_{lc} & \Sigma_{lp} & \Sigma_{ll}  \end{bmatrix}$
+* 协方差矩阵：
+$$
+\begin{bmatrix}
+\Sigma_{cc} & \Sigma_{cp} & \Sigma_{cl} \\
+\Sigma_{pc} & \Sigma_{pp} & \Sigma_{pl} \\
+\Sigma_{lc} & \Sigma_{lp} & \Sigma_{ll}
+\end{bmatrix}
+$$
 
 ##### 曼哈顿场景主方向分析
 

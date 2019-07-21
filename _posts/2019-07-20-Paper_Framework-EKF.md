@@ -71,6 +71,7 @@ Density Functions》（P. A. Bromiley, University of Manchester, [pdf](http://ww
 $$
 f_1(x) = \frac{1}{\sqrt{2 \pi} \sigma_1} \exp({- \frac{ ( x - \mu_1)^2}{2\sigma_1^2} })
 $$
+
 $$
 f_2(x) = \frac{1}{\sqrt{2 \pi} \sigma_2} \exp({- \frac{ ( x - \mu_2)^2}{2\sigma_2^2} })
 $$

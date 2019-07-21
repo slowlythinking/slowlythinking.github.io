@@ -16,6 +16,8 @@ tag: BlogWriting
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
+**Author of This Article Analysis：魏鑫燏；Time：2019-07-22**
+
 ### 参考
 
 * GitHub官方文档[GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
