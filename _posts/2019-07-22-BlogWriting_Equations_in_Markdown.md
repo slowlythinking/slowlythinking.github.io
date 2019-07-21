@@ -3,7 +3,7 @@ layout: post
 title: "GitHub中Markdown内的公式渲染"
 date: 2019-07-22
 description: "Equations-in-Markdown"
-tag: BlogWriting
+tag: 博客
 ---
 
 <script type="text/x-mathjax-config">
@@ -16,7 +16,7 @@ tag: BlogWriting
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-**Author of This Article Analysis：魏鑫燏；Time：2019-07-22**
+**Author：魏鑫燏；Time：2019-07-22**
 
 ### 参考
 
