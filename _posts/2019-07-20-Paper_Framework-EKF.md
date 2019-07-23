@@ -69,10 +69,12 @@ Density Functions》（P. A. Bromiley, University of Manchester, [pdf](http://ww
 有两个高斯分布，其概率密度函数分别为：
 
 $$
-f_1(x) = \frac{1}{\sqrt{2 \pi} \sigma_1} \exp({- \frac{ ( x - \mu_1)^2}{2\sigma_1^2} })
-$$
-$$
-f_2(x) = \frac{1}{\sqrt{2 \pi} \sigma_2} \exp({- \frac{ ( x - \mu_2)^2}{2\sigma_2^2} })
+\begin{equation}
+\begin{aligned}
+f_1(x) &= \frac{1}{\sqrt{2 \pi} \sigma_1} \exp({- \frac{ ( x - \mu_1)^2}{2\sigma_1^2} }) \\
+f_2(x) &= \frac{1}{\sqrt{2 \pi} \sigma_2} \exp({- \frac{ ( x - \mu_2)^2}{2\sigma_2^2} })
+\end{aligned}
+\end{equation}
 $$
 
 计算其乘积：
@@ -567,8 +569,8 @@ $$
 
 * 测量值（或称观察值）： $z_{t}$
 * 对系统的控制量： $u_{t}$
-* 传感器的测量模型(Measurements Model)： $p(z_t|x_t)$
-* 系统控制量的运动模型(Motion Model)： $p(x_t|u_t, x_{t-1})$
+* 传感器的测量模型 (Measurements Model)： $p(z_t\mid x_t)$
+* 系统控制量的运动模型 (Motion Model)： $p(x_t\mid u_t, x_{t-1})$
 * 初始时系统状态，即先验概率： $p(x_0)$
 
 **置信度$belief$**
@@ -628,7 +630,7 @@ $$
 p(x_t | x_{t-1}, z_{1:t-1}, u_{1:t}) = p(x_t | x_{t-1}, u_t) \end{equation}
 $$
 
-这里我们保留了控制量$u_t$，因为它并不用于预测状态$x_{t-1}$。实际上$p(x_t | x_{t-1}, u_t) \neq p(x_t | x_{t - 1})$。我们注意到通过随机选择控制，就可以把控制量$u_t$从 $p(x_{t-1}|z_{1:t-1}, u_{1:t})$ 的条件中移除，得到迭代更新公式：
+这里我们保留了控制量$u_t$，因为它并不用于预测状态$x_{t-1}$。实际上$p(x_t \mid x_{t-1}, u_t)\neq p(x_t \mid x_{t - 1})$。我们注意到通过随机选择控制，就可以把控制量$u_t$从 $p(x_{t-1} \mid z_{1:t-1}, u_{1:t})$ 的条件中移除，得到迭代更新公式：
 
 $$
 \begin{equation}
@@ -641,7 +643,7 @@ $$
 
 贝叶斯滤波器算法根据$t$时刻的测量值和控制量来计算状态$x_t$的后验概率。这个推导过程中的假设被称为马尔可夫(Markov)特性，也就是说状态是完备的。
 
-2.使用贝叶斯公式$p(x|y,z) = \frac{p(y|x, z)p(x|z)}{p(y|z)}$ 对$bel(x_t)$ 进行变换：
+2.使用贝叶斯公式$p(x \mid y,z) = \frac{p(y \mid x, z)p(x|z)}{p(y\mid z)}$ 对$bel(x_t)$ 进行变换：
 
 $$
 \begin{equation}
@@ -655,7 +657,7 @@ $$
 
 其中， $\eta$ 可看做是归一化常数，它当 $x_t$ 取不同可能状态时是不变的，所以保证 $x_t$ 取所有可能状态时 $bel(x_t)$ 相加为1即可。
 
-由马尔可夫假设，有： $p(z_t|x_t, u_{1:t}, z_{1:t-1}) = p(z_t|x_t)$ ，可得：
+由马尔可夫假设，有： $p(z_t\mid x_t, u_{1:t}, z_{1:t-1}) = p(z_t\mid x_t)$ ，可得：
 
 $$
 \begin{equation}
@@ -677,8 +679,8 @@ $$
 
 从上面的公式知，贝叶斯滤波需要知道三个概率分布：
 
-* 传感器模型 $p(z_t|x_t)$
-* 系统控制量模型 $p(x_t|u_t, x_{t-1})$
+* 传感器模型 $p(z_t\mid x_t)$
+* 系统控制量模型 $p(x_t\mid u_t, x_{t-1})$
 * 系统的初始状态概率分布 $bel(x_0) = p(x_0)$
 
 ---
@@ -696,10 +698,10 @@ $$
 
 由于EKF中 $bel(x)$ 为高斯分布，可计算出其中各项高斯分布的均值和方差：
 
-* $p(x_k|\check{x}_0,u_{1:k}, z_{0:k}) \approx N(\hat{x}_k, \hat{P}_k)$
-* $p(z_k|x_k) \approx N(\check{z}_k + H_k(x_k-\check{x}_k),{\mathbf{V}_k\mathbf{R}_k}\mathbf{V}_k^T)$
-* $p(x_k|x_{k-1}, u_k) \approx N(\check{x}_k+\mathbf{A}_{k-1}(x_{k-1}-\hat{x}_{k-1}),{\mathbf{H}_k \mathbf{\check{P}}_k \mathbf{H}_k^T})$
-* $p(x_{k-1}|\hat{x}_0,u_{1:k-1}, z_{0:k-1}) \approx N(\hat{x}_{k-1}, \hat{P}_{k-1})$
+* $p(x_k\mid \check{x}_0,u_{1:k}, z_{0:k}) \approx N(\hat{x}_k, \hat{P}_k)$
+* $p(z_k\mid x_k) \approx N(\check{z}_k + H_k(x_k-\check{x}_k),{\mathbf{V}_k\mathbf{R}_k}\mathbf{V}_k^T)$
+* $p(x_k\mid x_{k-1}, u_k) \approx N(\check{x}_k+\mathbf{A}_{k-1}(x_{k-1}-\hat{x}_{k-1}),{\mathbf{H}_k \mathbf{\check{P}}_k \mathbf{H}_k^T})$
+* $p(x_{k-1}\mid \hat{x}_0,u_{1:k-1}, z_{0:k-1}) \approx N(\hat{x}_{k-1}, \hat{P}_{k-1})$
 
 通过以上高斯分布的运算可以得到(运算细节请参考《State Estimation for Robotics》)：
 
