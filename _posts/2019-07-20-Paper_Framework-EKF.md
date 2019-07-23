@@ -698,10 +698,10 @@ $$
 
 由于EKF中 $bel(x)$ 为高斯分布，可计算出其中各项高斯分布的均值和方差：
 
-* $p(x_k \mid \check{x}_0,u_{1:k}, z_{0:k}) \approx N(\hat{x}_k, \hat{P}_k)$
-* $p(z_k \mid x_k) \approx N(\check{z}_k + H_k(x_k-\check{x}_k),{\mathbf{V}_k\mathbf{R}_k}\mathbf{V}_k^T)$
-* $p(x_k \mid x_{k-1}, u_k) \approx N(\check{x}_k+\mathbf{A}_{k-1}(x_{k-1}-\hat{x}_{k-1}),{\mathbf{H}_k \mathbf{\check{P}}_k \mathbf{H}_k^T})$
-* $p(x_{k-1} \mid \hat{x}_0,u_{1:k-1}, z_{0:k-1}) \approx N(\hat{x}_{k-1}, \hat{P}_{k-1})$
+* Posterior belief: $p(x_k \mid \check{x}_0, u_{1:k}, z_{0:k}) \approx N(\hat{x}_k, \hat{P}_k)$.
+* Observation correction: $p(z_k \mid x_k) \approx N(\check{z}_k + H_k(x_k-\check{x}_k),{\mathbf{V}_k\mathbf{R}_k}\mathbf{V}_k^T)$
+* Motion prediction: $p(x_k \mid x_{k-1}, u_k) \approx N(\check{x}_k+\mathbf{A}_{k-1}(x_{k-1}-\hat{x}_{k-1}),{\mathbf{H}_k \mathbf{\check{P}}_k \mathbf{H}_k^T})$
+* Prio belief: $p(x_{k-1} \mid \hat{x}_0,u_{1:k-1}, z_{0:k-1}) \approx N(\hat{x}_{k-1}, \hat{P}_{k-1})$
 
 通过以上高斯分布的运算可以得到(运算细节请参考《State Estimation for Robotics》)：
 
