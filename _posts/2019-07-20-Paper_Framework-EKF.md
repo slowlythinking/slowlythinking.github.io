@@ -71,7 +71,6 @@ Density Functions》（P. A. Bromiley, University of Manchester, [pdf](http://ww
 $$
 f_1(x) = \frac{1}{\sqrt{2 \pi} \sigma_1} \exp({- \frac{ ( x - \mu_1)^2}{2\sigma_1^2} })
 $$
-
 $$
 f_2(x) = \frac{1}{\sqrt{2 \pi} \sigma_2} \exp({- \frac{ ( x - \mu_2)^2}{2\sigma_2^2} })
 $$
@@ -392,7 +391,7 @@ $$
 
 #### History
 
-EKF相关的工作大部分由NASA Ames Research Center (NASA Ames)完成(Frome [Wiki](https://en.wikipedia.org/wiki/Extended_Kalman_filter))。在航天工程师Stanley F. Schmidt与卡尔曼见面交流之后，他开始将卡尔曼滤波运用到阿波罗计划中的宇宙飞船轨轨迹分析过程中，并在这个过程中对卡尔曼滤波进行扩展，具体包括：
+EKF相关的工作大部分由NASA Ames Research Center (NASA Ames)完成(From [Wiki](https://en.wikipedia.org/wiki/Extended_Kalman_filter))。NASA的航天工程师Stanley F. Schmidt将卡尔曼滤波运用到阿波罗计划中的宇宙飞船轨轨迹分析过程中，并在这个过程中对卡尔曼滤波进行扩展，具体包括：
 
 * 将KF扩展到非线性的运动、观测模型；
 * 提出了减小非线性影响的线性化方法；
@@ -404,7 +403,7 @@ EKF相关的工作大部分由NASA Ames Research Center (NASA Ames)完成(Frome 
 
 #### Content
 
-非线性的状态方程和量测方程表示为：
+非线性的状态方程和量测方程表示为(其中$w_k$和$v_k$均表示噪声)：
 
 $$
 \begin{equation}
@@ -415,7 +414,16 @@ z_k &= h(x_k,v_k)
 \end{equation}
 $$
 
-其中$w_k$和$v_k$均表示噪声，假设它们为相互独立、正态分布的白噪声：
+符合正态分布的噪声数据在经过非线性转换后不再是正态分布的随机变量了，此处我们使用近似处理：假设噪声符合上述正态分布，而且它们为相互独立、正态分布的白噪声（即把噪声从非线性函数中拿出来）。在后续的线性化过程中，这部分因为以上近似而产生的偏差会得到恢复（近似地恢复）：
+
+$$
+\begin{equation}
+\begin{aligned}
+x_k &= f(x_{k-1},u_{k})+w_{k} \\
+z_k &= h(x_k)+v_k
+\end{aligned}
+\end{equation}
+$$
 
 $$
 \begin{equation}
@@ -426,39 +434,291 @@ P(v) &\sim N(0,R)
 \end{equation}
 $$
 
-这里存在一个问题：符合正态分布的噪声数据在经过非线性转换后不再是正态分布的随机变量了，此处我们使用近似处理：假设噪声符合上述正态分布。此时对以上状态方程和量测方程进行线性化：
+此时对以上非线性方程(状态方程和量测方程)进行线性化，具体方法为一阶泰勒展开，忽略高阶项，注意此处可以看作非线性函数$f()$ 和$h()$ 的泰勒展开，多出来的噪声相关项会在后面解释：
 
 $$
 \begin{equation}
 \begin{aligned}
-x_k &\approx {\tilde{x}_k} + A_{k-1}(x_{k-1}-{\hat{x}}_{k-1}) + W_{k-1}{w_{k-1}} \\
-z_k &\approx {\tilde{z}_k} + H_k(x_k-\tilde{x}_k)+V_kv_k
+x_k &\approx {\check{x}_k} + A_{k-1}(x_{k-1}-{\hat{x}}_{k-1}) + W_{k}{w_{k}} \\
+z_k &\approx {\check{z}_k} + H_k(x_k-\check{x}_k)+V_kv_k
 \end{aligned}
 \end{equation}
 $$
 
 其中：
 
-* $\tilde{x}_k$和 $\tilde{z}_k$为观测值；
-* $\hat{x}_{k-1}$ 为$k-1$时刻的后验估计；
+* $\check{(·)}_k$为$k$时刻的先验估计(Prior Estimates)
+* $\hat{(·)}_k$为$k$时刻的后验估计(Posterior Estimates)
 * $x_k$和$z_k$为系统状态和观测向量的真值；
 * $A_k$为$k$时刻$f$对$x$的雅克比矩阵；
 * $H_k$为$k$时刻$h$对$x$的雅克比矩阵;
 * $W_k$为$k$时刻$f$对$w$的雅克比矩阵；
 * $V_k$为$k$时刻$h$对$v$的雅克比矩阵。
 
-由于我们假设非线性变换后的变量依然是符合正态分布的，所以可以近似得到：
+上面提到我们会对噪声近似处理的偏差做近似地恢复，即：使用雅克比矩阵来修正偏差的方差，所以我们在上述方程中包含了对噪声的近似，由于此处已知$w$和$v$的概率分布（见上述公式），有：
 
 $$
 \begin{equation}
 \begin{aligned}
-P(W_{k-1}w_{k-1}) &\sim N(0,W_{k-1}QW_{k-1}^T) \\
+P(W_{k}w_{k}) &\sim N(0,W_{k}QW_{k}^T) \\
 P(V_kv_k) &\sim N(0,V_{k}RV_{k}^T)
 \end{aligned}
 \end{equation}
 $$
 
-由此得到扩展卡尔曼滤波的相应公式：
+上面得到了近似处理后的$k$时刻的线性方程(状态方程和量测方程)，由于方程中存在$x_k$和$z_k$等系统状态和观测向量的真值，难以直观地使用KF的方法来推导，一般会存在两种处理方式：
+
+* 基于以上公式构造一个新的公式，使用KF来估计这个新的公式中的变量（如真值与先验估计之间的差值），最后通过公式变形求解，这部分可参考An Introduction to the Kalman Filter (Greg Welch, 2006)。
+* 从贝叶斯滤波的角度来推导出EKF的更新过程的标准公式。（这部分可参考《State Estimation for Robotics》）
+
+##### 构造变量法
+
+定义系统状态和观测值的先验估计误差：
+
+$$
+\begin{equation}
+\begin{aligned}
+e_{x_k} &= x_k - {\check{x}_k} \approx  A_{k-1}(x_{k-1}-{\hat{x}}_{k-1}) + W_{k}{w_{k}}\\
+e_{z_k} &= z_k - {\check{z}_k} \approx H_k(x_k-\check{x}_k)+V_kv_k
+\end{aligned}
+\end{equation}
+$$
+
+由以上两式可得两个先验估计误差的关系：
+
+$$
+e_{z_k} \approx H_ke_{x_k}+V_kv_k
+$$
+
+联立上面得到的两个公式：
+
+$$
+\begin{equation}
+\begin{aligned}
+e_{x_k} &\approx  A_{k-1}(x_{k-1}-{\hat{x}}_{k-1}) + W_{k}{w_{k}} \\
+e_{z_k} &\approx H_ke_{x_k}+V_kv_k
+\end{aligned}
+\end{equation}
+$$
+
+对比线性KF中的状态方程和量测方程：
+
+$$
+\begin{equation}
+\begin{aligned}
+x_k &= Ax_{k-1}+Bu_{k-1}+w_{k-1} \\
+z_k &= Hx_k+v_k
+\end{aligned}
+\end{equation}
+$$
+
+以上两组方程均为线性方程，且变量符合高斯分布，因此我们对包含先验估计误差的两个方程进行卡尔曼滤波处理，按照之前得到的KF方程，可以得到
+
+$$
+\hat{e}_{x_k} = \check{e}_{x_k} + {\mathbf{K}_k^e} ( e_{z_k} – H_k\check{e}_{x_k} )
+$$
+
+这里的先验估计误差$e_{x_k}$ 的均值为0，这部分易于理解，即 $\check{e}_{x_k}=0$，所以有：
+
+$$
+\hat{e}_{x_k} = {\mathbf{K}_k^e} e_{z_k}
+$$
+
+根据$e_{x_k}$ 、$e_{z_k}$ 的定义，有：
+
+$$
+\begin{equation}
+\begin{aligned}
+\hat{x}_k &= \check{x}_k + e_{x_k} \\
+&= \check{x}_k + {\mathbf{K}_k^e} e_{z_k} \\
+&= \check{x}_k + {\mathbf{K}_k^e}(z_k - {\check{z}_k})
+\end{aligned}
+\end{equation}
+$$
+
+按照线性KF的计算方法，可得：
+
+$$
+{\mathbf{K}_k^e} = {\mathbf{\check{P}}_k \mathbf{H}_k^T} ( {\mathbf{H}_k \mathbf{\check{P}}_k \mathbf{H}_k^T} + {\mathbf{V}_k\mathbf{R}_k}\mathbf{V}_k^T)^{-1}
+$$
+
+##### 贝叶斯滤波(Beyes filter / Recursive Bayesian estimation)
+
+由于卡尔曼滤波是贝叶斯滤波的一个特例（当贝叶斯滤波中系统状态的置信度分布($belief$)符合高斯分布时，贝叶斯滤波=卡尔曼滤波），为了扩展一下，我们尝试从贝叶斯滤波的角度进行处理。
+
+前置条件（贝叶斯滤波中系统状态的置信度分布符合高斯分布）：
+
+$$
+bel(x_k) = p(x_k|\check{x}_0,v_{1:k},y_{0:k}) \approx N(\hat{x}_k,\hat{P}_k)
+$$
+
+由于涉及贝叶斯滤波的一些基础知识，以下给出贝叶斯滤波的推导过程，可参考的材料包括：
+
+* 书籍《Probabilistic robotics》2.4.3
+* 书籍《State Estimation for Robotics》4.2.2
+* [Bayes Filtering-课件-PDF](http://www.cs.cmu.edu/~16831-f14/notes/F14/16831_lecture02_prayana_tdecker_humphreh.pdf)
+* [Wiki-Recursive_Bayesian_estimation](https://en.wikipedia.org/wiki/Recursive_Bayesian_estimation)
+* [博客-无处不在的小土](http://aandds.com/blog/bayes-filter.html)(非常推荐，部分内容来源于此，有空请查看原文并收藏一波)
+* [博客-一位工作于北京的朋友](http://aandds.com/blog/bayes-filter.html)(非常推荐，部分内容来源于此，有空请查看原文并收藏一波)
+
+---
+
+在贝叶斯滤波框架中，下面这些是已知的（可以认为它们是系统参数）：
+
+* 测量值（或称观察值）： $z_{t}$
+* 对系统的控制量： $u_{t}$
+* 传感器的测量模型(Measurements Model)： $p(z_t|x_t)$
+* 系统控制量的运动模型(Motion Model)： $p(x_t|u_t, x_{t-1})$
+* 初始时系统状态，即先验概率： $p(x_0)$
+
+**置信度$belief$**
+
+置信度反映了机器人对环境状态的掌握程度。我们根据机器人维护的置信度来识别真实的状态。在一些文献中置信度也称为state of knowledge和information state。概率机器人学通过条件概率分布描述置信度。一个置信度分布根据真实的状态为每一个可能的值赋予一个概率(或者是密度值, density value)。
+
+置信度分布是状态变量在已知数据上的后验概率。我们用$bel(x_t)$ 描述状态变量$x_t$的置信度：
+
+$$
+\begin{equation}
+bel(x_t) = p(x_t | z_{1:t}, u_{1:t})
+\end{equation}
+$$
+
+置信度是在进行了测量$z_t$后计算的。有时在执行了控制量$u_t$后，进行测量$z_t$之前，使用上次测量值计算的置信度也是很有用的。这样的后验概率表示为：
+
+$$
+\begin{equation}
+\overline{bel}(x_t) = p(x_t | z_{1:t-1}, u_{1:t})
+\end{equation}
+$$
+
+在基于概率的滤波器中，它通常被称为预测值prediction。$\overline{bel}(x_t)$ 是根据之前的数据和最新的控制量来预测$t$时刻的状态。从 $\overline{bel}(x_t)$ 计算得出$bel(x_t)$ 的过程被称为校正correction或者测量更新measurement update。
+
+贝叶斯滤波算法便是按照上述过程而来，共分为以下两个步骤，算法以上一时刻的置信度、该时刻的控制与观测作为输入，输出该时刻的置信度。以迭代的形式对置信度进行求解。
+
+* 通过控制量做出预测 $\overline{bel}(x_t)$
+* 结合观测量进行更新 $bel(x_t)$
+
+用公式描述：
+
+$$
+\begin{equation}
+\begin{aligned}
+\overline{bel}(x_t) &= \int{p(x_t | x_{t-1}, u_t) {bel}(x_{t-1})dx_{t-1}} \\
+bel(x_t) &= \eta \, p(z_t \mid x_t) \overline{bel}(x_t)
+\end{aligned}
+\end{equation}
+$$
+
+**公式推导**
+
+1.由全概率公式（Law of Total Probability)可得：
+
+$$
+\begin{equation}
+\begin{aligned}
+\overline{bel}(x_t) & = p(x_{t} \mid u_{1:t}, z_{1:t-1}) \\
+& \stackrel{\text{Total Prob.}}{=} \int p(x_t \mid x_{t-1}, u_{1:t}, z_{1:t-1}) p(x_{t-1} \mid u_{1:t}, z_{1:t-1}) \, \mathrm{d} x_{t-1} \end{aligned}
+\end{equation}
+$$
+
+状态完备假设意味着，如果我们知道了$x_{t-1}$，过去的测量和控制量将不携带关于状态$x_t$的信息。因此，有：
+
+$$
+\begin{equation}
+p(x_t | x_{t-1}, z_{1:t-1}, u_{1:t}) = p(x_t | x_{t-1}, u_t) \end{equation}
+$$
+
+这里我们保留了控制量$u_t$，因为它并不用于预测状态$x_{t-1}$。实际上$p(x_t | x_{t-1}, u_t) \neq p(x_t | x_{t - 1})$。我们注意到通过随机选择控制，就可以把控制量$u_t$从 $p(x_{t-1}|z_{1:t-1}, u_{1:t})$ 的条件中移除，得到迭代更新公式：
+
+$$
+\begin{equation}
+\begin{aligned}
+\overline{bel}(x_t) &= \int{p(x_t | x_{t-1}, u_t)p(x_{t-1} | z_{1:t-1}, u_{1:t-1})dx_{t-1}} \\
+&= \int{p(x_t | x_{t-1}, u_t) {bel}(x_{t-1})dx_{t-1}}
+\end{aligned}
+\end{equation}
+$$
+
+贝叶斯滤波器算法根据$t$时刻的测量值和控制量来计算状态$x_t$的后验概率。这个推导过程中的假设被称为马尔可夫(Markov)特性，也就是说状态是完备的。
+
+2.使用贝叶斯公式$p(x|y,z) = \frac{p(y|x, z)p(x|z)}{p(y|z)}$ 对$bel(x_t)$ 进行变换：
+
+$$
+\begin{equation}
+\begin{aligned}
+bel(x_t) & = p(x_{t} \mid u_{1:t}, z_{1:t}) \\
+& = \frac{p(z_t \mid x_t, u_{1:t}, z_{1:t-1})p(x_t \mid u_{1:t}, z_{1:t-1})}{p(z_t \mid u_{1:t}, z_{1:t-1})} \\
+& = \eta \, p(z_t \mid x_t, u_{1:t}, z_{1:t-1})p(x_t \mid u_{1:t}, z_{1:t-1})
+\end{aligned}
+\end{equation}
+$$
+
+其中， $\eta$ 可看做是归一化常数，它当 $x_t$ 取不同可能状态时是不变的，所以保证 $x_t$ 取所有可能状态时 $bel(x_t)$ 相加为1即可。
+
+由马尔可夫假设，有： $p(z_t|x_t, u_{1:t}, z_{1:t-1}) = p(z_t|x_t)$ ，可得：
+
+$$
+\begin{equation}
+\begin{aligned}
+bel(x_t) & = \eta \, p(z_t \mid x_t, u_{1:t}, z_{1:t-1})p(x_t \mid u_{1:t}, z_{1:t-1}) \\
+& \stackrel{\text{Markov}}{=} \eta \, p(z_t \mid x_t) p(x_t \mid u_{1:t}, z_{1:t-1}) \\
+& = \eta \, p(z_t \mid x_t) \overline{bel}(x_t)
+\end{aligned}
+\end{equation}
+$$
+
+**总结**
+
+如前所述，1为预测过程，2为更新过程，我们结合第一步和第二步，得到贝叶斯滤波的递推公式为：
+
+$$
+{bel(x_t)} = \eta p(z_t \mid x_t) \int p(x_t \mid x_{t-1}, u_t) {bel(x_{t-1})} \mathrm{d} x_{t-1}
+$$
+
+从上面的公式知，贝叶斯滤波需要知道三个概率分布：
+
+* 传感器模型 $p(z_t|x_t)$
+* 系统控制量模型 $p(x_t|u_t, x_{t-1})$
+* 系统的初始状态概率分布 $bel(x_0) = p(x_0)$
+
+---
+
+有了以上贝叶斯滤波相关的基础，我们就可以对EKF进行处理了。将以上EKF公式表示为贝叶斯滤波形式：
+
+$$
+\begin{equation}
+\begin{split}
+&p(x_k|\check{x}_0,u_{1:k}, z_{0:k}) = \eta p(z_k|x_k) \\
+&\times \int p(x_k|x_{k-1}, u_k) p(x_{k-1}|\hat{x}_0,u_{1:k-1}, z_{0:k-1}) \mathrm{d} x_{k-1}
+\end{split}
+\end{equation}
+$$
+
+由于EKF中 $bel(x)$ 为高斯分布，可计算出其中各项高斯分布的均值和方差：
+
+* $p(x_k|\check{x}_0,u_{1:k}, z_{0:k}) \approx N(\hat{x}_k, \hat{P}_k)$
+* $p(z_k|x_k) \approx N(\check{z}_k + H_k(x_k-\check{x}_k),{\mathbf{V}_k\mathbf{R}_k}\mathbf{V}_k^T)$
+* $p(x_k|x_{k-1}, u_k) \approx N(\check{x}_k+\mathbf{A}_{k-1}(x_{k-1}-\hat{x}_{k-1}),{\mathbf{H}_k \mathbf{\check{P}}_k \mathbf{H}_k^T})$
+* $p(x_{k-1}|\hat{x}_0,u_{1:k-1}, z_{0:k-1}) \approx N(\hat{x}_{k-1}, \hat{P}_{k-1})$
+
+通过以上高斯分布的运算可以得到(运算细节请参考《State Estimation for Robotics》)：
+
+$$
+\begin{equation}
+\begin{split}
+p(x_k|\check{x}_0,u_{1:k}, z_{0:k}) &\approx N(\hat{x}_k, \hat{P}_k) \\
+&\approx N({\mathbf{\check{x}}_k} + {\mathbf{K}_k} ( {\vec{\mathbf{z}_k}} – h(\check{\mathbf{x}}_k) ),{\mathbf{\check{P}}_k} – {\mathbf{K}_k} {\mathbf{H}_k \mathbf{\check{P}}_k})
+\end{split}
+\end{equation}
+$$
+
+其中：
+
+$$
+{\mathbf{K}_k} = {\mathbf{\check{P}}_k \mathbf{H}_k^T} ( {\mathbf{H}_k \mathbf{\check{P}}_k \mathbf{H}_k^T} + {\mathbf{V}_k\mathbf{R}_k}\mathbf{V}_k^T)^{-1}
+$$
+
+##### EKF标准方程
 
 ---
 
@@ -467,8 +727,8 @@ $$
 $$
 \begin{equation}
 \begin{split}
-{\mathbf{\hat{x}}_k} &= f(\hat{\mathbf{x}}_{k-1},u_{k},0) \\
-{\mathbf{P}_k} &= \mathbf{A_k} {\mathbf{P}_{k-1}} \mathbf{A}_k^T + \mathbf{W}_{k}\mathbf{Q}_{k-1}\mathbf{W}_{k}^T
+{\mathbf{\check{x}}_k} &= f(\hat{\mathbf{x}}_{k-1},u_{k}) \\
+{\mathbf{\check{P}}_k} &= \mathbf{A_k} {\mathbf{\hat{P}}_{k-1}} \mathbf{A}_k^T + \mathbf{W}_{k}\mathbf{Q}_{k-1}\mathbf{W}_{k}^T
 \end{split}
 \end{equation}
 $$
@@ -478,9 +738,9 @@ $$
 $$
 \begin{equation}
 \begin{split}
-{\mathbf{\hat{\mathbf{x}}}_k’} &= {\mathbf{\hat{x}}_k} + {\mathbf{K}_k} ( {\vec{\mathbf{z}_k}} – h(\hat{\mathbf{x}}_k,0) ) \\
-{\mathbf{P}_k’} &= {\mathbf{P}_k} – {\mathbf{K}_k} {\mathbf{H}_k \mathbf{P}_k} \\
-{\mathbf{K}_k} &= {\mathbf{P}_k \mathbf{H}_k^T} ( {\mathbf{H}_k \mathbf{P}_k \mathbf{H}_k^T} + {\mathbf{V}_k\mathbf{R}_k}\mathbf{V}_k^T)^{-1}
+{\mathbf{\hat{\mathbf{x}}}_k} &= {\mathbf{\check{x}}_k} + {\mathbf{K}_k} ( {\vec{\mathbf{z}_k}} – h(\check{\mathbf{x}}_k) ) \\
+{\mathbf{\hat{P}}_k} &= {\mathbf{\check{P}}_k} – {\mathbf{K}_k} {\mathbf{H}_k \mathbf{\check{P}}_k} \\
+{\mathbf{K}_k} &= {\mathbf{\check{P}}_k \mathbf{H}_k^T} ( {\mathbf{H}_k \mathbf{\check{P}}_k \mathbf{H}_k^T} + {\mathbf{V}_k\mathbf{R}_k}\mathbf{V}_k^T)^{-1}
 \end{split}
 \end{equation}
 $$
