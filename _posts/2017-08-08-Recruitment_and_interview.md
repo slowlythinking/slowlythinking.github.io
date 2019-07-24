@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "招聘和应聘"
-date: 2017-08-08 
+date: 2017-08-08
 description: "招聘，应聘，资源"
-tag: 应聘 
----   
+tag: 工作 
+---
 
 *如今已研三，秋招已经开始，颤抖着把简历发出去之后给爷爷打了个电话，询问了一下现在家里地还富不富裕，养猪还能不能致富的问题。*
 
@@ -38,8 +38,8 @@ tag: 应聘
 ### 资源
 
 面试经历
-1. [腾讯、百度、珍爱网、中国电信、三之乐面试经历](http://www.ganecheng.tech/blog/54142709.html) 
-2. [华南理工大学-计算机科学与工程学院-腾讯-百度-华为-网易](http://www.cnblogs.com/haore147/p/3904494.html) 
+1. [腾讯、百度、珍爱网、中国电信、三之乐面试经历](http://www.ganecheng.tech/blog/54142709.html)
+2. [华南理工大学-计算机科学与工程学院-腾讯-百度-华为-网易](http://www.cnblogs.com/haore147/p/3904494.html)
 3. [已工作人士面试c/c++岗位相关经验](http://blog.csdn.net/chen825919148/article/details/8244734)
 4. [2015年华为校招c/c++](http://blog.csdn.net/longaiqian9/article/details/38821991)
 
@@ -49,11 +49,11 @@ tag: 应聘
  3. [C++面试集锦( 面试被问到的问题 )](http://www.cnblogs.com/Y1Focus/p/6707121.html)
  4. [常见C++面试题及基本知识点总结（一）](http://www.cnblogs.com/LUO77/p/5771237.html)
  5. [简书C++ one hundred 面试题](http://www.jianshu.com/p/06d2f28d0747)
- 
+
 ### 结语
 
-感谢思考和经历之后把所得分享给其他人的两位大牛，希望成为你们~   
-[刘未鹏-思维改变生活](http://mindhacks.cn/)            
+感谢思考和经历之后把所得分享给其他人的两位大牛，希望成为你们~
+[刘未鹏-思维改变生活](http://mindhacks.cn/)
 [陈皓-酷壳](http://coolshell.cn/)
 
 

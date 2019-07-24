@@ -5,7 +5,7 @@ description: 欢迎来到我的个人站~
 # 头像里面的标题
 avatarTitle: KevinWei
 # 头像里面的描述
-avatarDesc: C++/Java/机器视觉
+avatarDesc: 计算机视觉/机器学习
 url: "http://weixinyu.info"
 
 # Comment
@@ -16,21 +16,21 @@ disqus_username: weixinyu
 
 # Social
 social:
-    weibo: 2072187723 
+    weibo: 2072187723
     github: slowlythinking
-    # twitter: 
+    # twitter:
     mail: weixinyuhey@outlook.com
 
-# 百度统计 
-# 使用博客模板请去掉或者更换 id 
+# 百度统计
+# 使用博客模板请去掉或者更换 id
 baidu:
-    id: c63c3f73d45d69e4524c352af95e094e  
+    id: c63c3f73d45d69e4524c352af95e094e
 
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
 # ga:
-#     id: UA-84134159-3   
-#     host: auto  
+#     id: UA-84134159-3
+#     host: auto
 
 
 # 《----------------- 上面的信息修改成你自己的 ---------------------------》
@@ -60,15 +60,13 @@ blog_button:
 
 # Navigation buttons in the front page.s
 nav:
-    - {title: 文章, description: archive, url: '/archive'}   
-    - {title: 标签, description: tags, url: '/tags'}      
-    - {title: 关于, description: about, url: '/about'}      
-    
+    - {title: 文章, description: archive, url: '/archive'}
+    - {title: 标签, description: tags, url: '/tags'}
+    - {title: 关于, description: about, url: '/about'}
+
 
 # Pagination
 #·gems: [jekyll-paginate,jekyll-sitemap]
 gems: [jekyll-paginate]
 paginate: 20
 paginate_path: "page/:num/"
-
-
