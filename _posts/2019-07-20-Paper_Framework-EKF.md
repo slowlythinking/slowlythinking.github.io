@@ -4,6 +4,7 @@ title: "SLAM基础-扩展卡尔曼滤波"
 date: 2019-07-20
 description: "KF-and-EKF"
 tag: [SLAM, EKF]
+excerpt: 文章总结了卡尔曼滤波和扩展卡尔曼滤波的历史、作用和公式推导过程，同时给出了几个较有价值的学习材料。卡尔曼全名Rudolf Emil Kalman，匈牙利数学家，1930年出生于匈牙利首都布达佩斯。1953，1954年于麻省理工学院分别获得电机工程学士及硕士学位。1957年于哥伦比亚大学获得博士学位。我们现在要学习的卡尔曼滤波器，正是源于他的博士论文和1960年发表的论文《A New Approach to Linear Filtering and Prediction Problems》（线性滤波与预测问题的新方法）。
 ---
 
 <script type="text/x-mathjax-config">

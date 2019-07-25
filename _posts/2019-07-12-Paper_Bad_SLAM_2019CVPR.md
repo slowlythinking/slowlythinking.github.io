@@ -4,6 +4,7 @@ title: "论文阅读-BAD-SLAM-2019-CVPR"
 date: 2019-07-12
 description: "BAD-SLAM"
 tag: [PaperReading, SLAM]
+excerpt: 这篇论文分析了影响直接法RGBD-SLAM精度的重要因素——深度数据与RGB数据的同步以及RGB数据中像素的同步曝光；提出了一个新的应用于直接法中的快速BA算法，在新的数据集上达到了同类系统最好效果；开源了一个新的数据集，使用了同步全局快门相机（synchronized global shutter cameras）；给出了基于该数据集的在线排行榜，同时开源了提出的BAD SLAM源码。
 ---
 
 <script type="text/x-mathjax-config">

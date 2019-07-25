@@ -4,6 +4,7 @@ title: "论文阅读-InitializationWithPL-2019-IEEEAccess"
 date: 2019-07-15
 description: "Initialization-with-PL"
 tag: [PaperReading, SLAM, Line Feature]
+excerpt: 这篇论文针对短基线运动情况下的场景重建，基于SfSM（Structure from Small/accidental Motion），即在较小的运动过程中恢复三维结构，提出了一个联合点线特征的初始化算法、一个在短基线运动中基于线特征的旋转分析算法，形式：闭式表达式（closed-form expression），提出了一个经过数学证明的退化线段剔除标准。
 ---
 
 <script type="text/x-mathjax-config">

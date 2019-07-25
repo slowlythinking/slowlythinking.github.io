@@ -4,6 +4,7 @@ title: "论文阅读-VisualPseudoLiDAR-2019-CVPR"
 date: 2019-07-14
 description: "Pseudo-LiDAR"
 tag: PaperReading
+excerpt: 这篇论文解释了基于双目图像和激光雷达数据的三维目标检测算法之间精度差异的主要原因：不是双目图像方法的精度问题，二是双目图像中深度数据的表示方法；同时提出了一个新的用于基于双目图像的三维目标检测算法的深度表示方法：类似于激光雷达中深度表示的方法，显著提高了算法精度；给出了开源代码。
 ---
 
 <script type="text/x-mathjax-config">

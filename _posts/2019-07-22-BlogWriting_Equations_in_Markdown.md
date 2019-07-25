@@ -3,6 +3,7 @@ layout: post
 title: "GitHub中Markdown内的公式渲染"
 date: 2019-07-22
 description: "Equations-in-Markdown"
+excerpt: 目前GFM(GitHub Flavored Markdown)官方文档中没有任何与公式(Equation)相关的条目，这表明目前GFM是不支持公式的。博文分析了包括MathJax、在线公式转图片等在GFM中写公式的几种方法。
 tag: 博客
 ---
 
