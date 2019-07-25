@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "论文阅读-《Monocular Visual Odometry Initialization with Points and Line Segments》(2019IEEEAccess, National University of Defense Technology, China)"
+title: "论文阅读-InitializationWithPL-2019-IEEEAccess"
 date: 2019-07-15
 description: "Initialization-with-PL"
 tag: [PaperReading, SLAM, Line Feature]
@@ -17,6 +17,10 @@ tag: [PaperReading, SLAM, Line Feature]
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 **Author of This Article Analysis：魏鑫燏；Time：2019-07-15**
+
+### 论文
+
+《Monocular Visual Odometry Initialization with Points and Line Segments》(2019IEEEAccess, National University of Defense Technology, China)
 
 ### Open Source
 

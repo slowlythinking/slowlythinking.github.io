@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "论文阅读-《Pseudo-LiDAR from Visual Depth Estimation: Bridging the Gap in 3D Object Detection for Autonomous Driving》(2019CVPR, Cornell University)"
+title: "论文阅读-VisualPseudoLiDAR-2019-CVPR"
 date: 2019-07-14
 description: "Pseudo-LiDAR"
 tag: PaperReading
@@ -17,6 +17,10 @@ tag: PaperReading
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 **Author of This Article Analysis：魏鑫燏；Time：2019-07-14**
+
+### 论文
+
+《Pseudo-LiDAR from Visual Depth Estimation: Bridging the Gap in 3D Object Detection for Autonomous Driving》(2019CVPR, Cornell University)
 
 ### Open Source
 

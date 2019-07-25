@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "论文阅读-《StructVIO : Visual-inertial Odometry with Structural Regularity of Man-made Environments》(2019IEEE Trans on Robotics, Shanghai Jiao Tong University)"
+title: "论文阅读-StructVIO-2019-IEEETR"
 date: 2019-07-22
 description: "StructVIO"
 tag: [PaperReading, SLAM, Line Feature]
@@ -17,6 +17,10 @@ tag: [PaperReading, SLAM, Line Feature]
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 **Author of This Article Analysis：魏鑫燏；Time：2019-07-22**
+
+### 论文
+
+《StructVIO : Visual-inertial Odometry with Structural Regularity of Man-made Environments》(2019IEEE Trans on Robotics, Shanghai Jiao Tong University)
 
 ### Open Source
 

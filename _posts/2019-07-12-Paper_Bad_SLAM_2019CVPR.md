@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "论文阅读-《BAD SLAM: Bundle  Adjusted Direct RGB-D SLAM》(2019CVPR, ETH)"
+title: "论文阅读-BAD-SLAM-2019-CVPR"
 date: 2019-07-12
 description: "BAD-SLAM"
 tag: [PaperReading, SLAM]
@@ -17,6 +17,10 @@ tag: [PaperReading, SLAM]
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 **Author of This Article Analysis：魏鑫燏；Time：2019-07-12**
+
+### 论文
+
+《BAD SLAM: Bundle  Adjusted Direct RGB-D SLAM》(2019CVPR, ETH)
 
 ### Open Source
 
