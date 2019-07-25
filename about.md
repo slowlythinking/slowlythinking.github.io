@@ -1,5 +1,6 @@
 ---
 layout: page
+group: navigation
 title: 关于我
 ---
 
