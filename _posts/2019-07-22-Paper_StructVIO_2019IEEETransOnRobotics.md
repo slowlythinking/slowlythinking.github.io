@@ -4,7 +4,7 @@ title: "论文阅读-StructVIO-2019-IEEETR"
 date: 2019-07-22
 description: "StructVIO"
 tag: [PaperReading, SLAM, Line Feature]
-excerpt: 文章提
+excerpt: 文章提提出了一个新的线特征表示方法，这个表示法中集成了Atlanta世界假设和人造建筑物的结构特征；算法较为鲁棒：SL(Structure Line)和局部曼哈顿场景都是在线识别的；没有SL的时候系统为一个纯粹的点特征SLMA；没有监测到局部曼哈顿场景+仅有垂直线段时系统也能利用垂直线段进行优化；在线特征处理方面的贡献：新的直线跟踪算法；新的直线跟踪的边缘化算法。Atlanta World：包含多个曼哈顿世界假设的场景，即全局中包含多个曼哈顿场景，这些场景均具有三个互相垂直的主方向，不过各场景之间的主方向不同向。
 ---
 
 <script type="text/x-mathjax-config">
@@ -34,8 +34,6 @@ excerpt: 文章提
 Atlanta World：包含多个曼哈顿世界假设的场景，即全局中包含多个曼哈顿场景，这些场景均具有三个互相垂直的主方向，不过各场景之间的主方向不同向。
 
 来自论文《Atlanta world: An expectation maximization framework for simultaneous low-level edge grouping and camera calibration in complex man-made environments》（ICCV&PR 2004）
-
-<!--excerpt-->
 
 StructVIO中不要求单个曼哈顿场景必须能检测出三个主方向，仅检测出一条水平方向主方向时，也认为这是一个曼哈顿场景。如下图，其中a为曼哈顿世界假设，b、c为Atlanta世界假设，可以看到Atlanta假设中不需要局部的Manhattan场景具有完备的三个方向，最低有一个不同的水平方向即可（实际上论文中的局部Manhattan场景均具有相同方向的z轴——重力方向的反方向，它们之间不同的也只有水平方向夹角这一个量）
 
