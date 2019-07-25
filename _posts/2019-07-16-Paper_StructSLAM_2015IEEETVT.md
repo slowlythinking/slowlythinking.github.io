@@ -4,7 +4,7 @@ title: "论文阅读-StructSLAM-2015-IEEETVT"
 date: 2019-07-16
 description: "StructSLAM"
 tag: [PaperReading, SLAM, Line Feature]
-excerpt: 基于曼哈顿世界假设的单目视觉SLAM系统，EKF框架。
+excerpt: 文章提出了一个基于曼哈顿世界假设的单目视觉SLAM系统，使用EKF框架。作者设计了新的特征：Structure Line Feature，包括它的参数表示方法，通过Structure Line对相机位姿中方向参数的全局约束，提高了视觉SLAM在人造建筑场景中的稳定性和准确度。
 ---
 
 <script type="text/x-mathjax-config">

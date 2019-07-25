@@ -34,6 +34,8 @@ Atlanta World：包含多个曼哈顿世界假设的场景，即全局中包含�
 
 来自论文《Atlanta world: An expectation maximization framework for simultaneous low-level edge grouping and camera calibration in complex man-made environments》（ICCV&PR 2004）
 
+<!--excerpt-->
+
 StructVIO中不要求单个曼哈顿场景必须能检测出三个主方向，仅检测出一条水平方向主方向时，也认为这是一个曼哈顿场景。如下图，其中a为曼哈顿世界假设，b、c为Atlanta世界假设，可以看到Atlanta假设中不需要局部的Manhattan场景具有完备的三个方向，最低有一个不同的水平方向即可（实际上论文中的局部Manhattan场景均具有相同方向的z轴——重力方向的反方向，它们之间不同的也只有水平方向夹角这一个量）
 
 ![](/images/posts/StructVIO/AtlantaWorld.png)

@@ -70,3 +70,5 @@ nav:
 gems: [jekyll-paginate]
 paginate: 20
 paginate_path: "page/:num/"
+
+excerpt_separator: <!--excerpt--> 
