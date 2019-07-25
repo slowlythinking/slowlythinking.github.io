@@ -4,6 +4,7 @@ title: "论文阅读-StructSLAM-2015-IEEETVT"
 date: 2019-07-16
 description: "StructSLAM"
 tag: [PaperReading, SLAM, Line Feature]
+excerpt: 基于曼哈顿世界假设的单目视觉SLAM系统，EKF框架。
 ---
 
 <script type="text/x-mathjax-config">
