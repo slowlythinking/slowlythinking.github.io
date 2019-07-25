@@ -4,6 +4,7 @@ title: "论文阅读-StructVIO-2019-IEEETR"
 date: 2019-07-22
 description: "StructVIO"
 tag: [PaperReading, SLAM, Line Feature]
+excerpt: 文章提
 ---
 
 <script type="text/x-mathjax-config">
