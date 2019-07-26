@@ -3,7 +3,7 @@ layout: page
 title: 关于我
 ---
 
-<h3> <strong>Information</strong> </h3>
+<h3> 学习/工作经历 </h3>
 <p>
 中国科学院上海高等研究院，研究实习员（2018~今）
 <p>
@@ -14,7 +14,7 @@ title: 关于我
 <p>
 <p>
 
-<h3> <strong>Publication</strong> </h3>
+<h3> 发表 </h3>
 
 <ul><li>
 <strong>Wei Xinyu</strong>, Huang Jun, Ma Xiaoyuan, Real-Time Monocular Visual SLAM by Combining Points and Lines, IEEE International Conference on Multimedia and Expo (ICME), 2019 (CCF: B)
