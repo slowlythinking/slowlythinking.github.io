@@ -394,6 +394,7 @@ img::-moz-selection {
     margin-right: 60px;
     padding: 50px 0;
     word-break:break-all;
+    overflow-x:auto;
     /*margin: 0 auto; */
     /*width: 700px;*/
   }
