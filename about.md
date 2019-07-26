@@ -29,7 +29,7 @@ title: 关于我
 </li>
 <br>
 <li>
-Peng Junjie, Fu Youyi, Zhang Xiaofeng, Kong Shuai, <strong>Wei Xinyu</strong>. Implementation of DFT application on ternary optical computer. Optics Communications, 2018,410: 424-430. https://doi.org/10.1016/j.optcom.2017.10.033. SCI, JCR 3区.
+Peng Junjie, Fu Youyi, Zhang Xiaofeng, Kong Shuai, <strong>Wei Xinyu</strong>. Implementation of DFT application on ternary optical computer. Optics Communications, 2018,410: 424-430. SCI, JCR 3区.
 </li>
 <br>
 <li>

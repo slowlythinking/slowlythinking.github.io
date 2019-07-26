@@ -17,8 +17,6 @@ excerpt: 这篇论文解释了基于双目图像和激光雷达数据的三维�
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-**Author of This Article Analysis：魏鑫燏；Time：2019-07-14**
-
 ### 论文
 
 《Pseudo-LiDAR from Visual Depth Estimation: Bridging the Gap in 3D Object Detection for Autonomous Driving》(2019CVPR, Cornell University)

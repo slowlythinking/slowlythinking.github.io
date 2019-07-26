@@ -17,8 +17,6 @@ excerpt: 文章提出了一个基于曼哈顿世界假设的单目视觉SLAM系�
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-**Author of This Article Analysis：魏鑫燏；Time：2019-07-16**
-
 ### 论文
 
 《StructSLAM : Visual SLAM with Building Structure Lines》(2015IEEE Transactions on Vehicular Technology, Shanghai Jiao Tong University)

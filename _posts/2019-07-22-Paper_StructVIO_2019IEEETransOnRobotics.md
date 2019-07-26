@@ -17,8 +17,6 @@ excerpt: 文章利用Atlanta World假设（包含多个曼哈顿世界假设的�
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-**Author of This Article Analysis：魏鑫燏；Time：2019-07-22**
-
 ### 论文
 
 《StructVIO : Visual-inertial Odometry with Structural Regularity of Man-made Environments》(2019IEEE Trans on Robotics, Shanghai Jiao Tong University)

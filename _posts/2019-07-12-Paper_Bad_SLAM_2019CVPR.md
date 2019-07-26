@@ -17,8 +17,6 @@ excerpt: 这篇论文分析了影响直接法RGBD-SLAM精度的重要因素—�
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-**Author of This Article Analysis：魏鑫燏；Time：2019-07-12**
-
 ### 论文
 
 《BAD SLAM: Bundle  Adjusted Direct RGB-D SLAM》(2019CVPR, ETH)

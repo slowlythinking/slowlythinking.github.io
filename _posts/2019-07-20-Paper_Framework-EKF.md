@@ -17,8 +17,6 @@ excerpt: 文章总结了卡尔曼滤波和扩展卡尔曼滤波的历史、作�
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-**Author：魏鑫燏；Time：2019-07-20**
-
 文中部分公式来自[How a filter works in pictures - blog](https://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
 
 ### 学习材料
