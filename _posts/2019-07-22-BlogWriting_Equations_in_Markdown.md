@@ -104,7 +104,5 @@ Google Chart服务器的响应速度还可以，但据说可能复杂一些的La
 
 <img src="http://www.forkosh.com/mathtex.cgi? \Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
 
-Google Chart服务器的响应速度还可以，但据说可能复杂一些的Latex公式可能无法解析。
-
 <br>
 转载请注明原地址，魏鑫燏的博客： [http://slowlythinking.github.io](http://slowlythinking.github.io) 谢谢！
