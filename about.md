@@ -46,8 +46,8 @@ Kong Shuai, Peng Junjie, Fu Youyi, <strong>Wei Xinyu</strong>. Carry-free full-s
 博客主题来自<a href="http://baixin.io/">leopard</a>和<a href="https://onevcat.com/">Vno Jekyll </a>。
 
 <p>
-聊聊天？
+
 <p>
-下方有DISQUS提供的评论服务，但可能需要科学上网才会显示，下方有我的微博、github和邮箱信息，Welcome~
+下方有DISQUS提供的评论服务，需要科学上网才会显示，下方有我的微博、github和邮箱信息，欢迎交流。
 <p>
 {% include comments.html %}
