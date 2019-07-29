@@ -3,8 +3,8 @@ layout: post
 title: "论文阅读-Structural-Regularity-WHU-2018"
 date: 2019-07-28
 description: "StructSLAM-WHU"
-excerpt: 武汉大学2018年的工作，利用线段的平行、垂直、共面约束对位姿和三维地图进行优化，基于单目非结构性的PL-SLAM，给出了matlab和c++的开源代码，有一定借鉴价值。
 tag: [PaperReading, SLAM, Line Feature]
+excerpt: 武汉大学2018年的工作，利用线段的平行、垂直、共面约束对位姿和三维地图进行优化，基于单目非结构性的PL-SLAM，给出了matlab和c++的开源代码，有一定借鉴价值。
 ---
 
 <script type="text/x-mathjax-config">
@@ -16,6 +16,10 @@ tag: [PaperReading, SLAM, Line Feature]
   });
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+### 论文
+
+《A Monocular SLAM System Leveraging Structural Regularity in Manhattan World》（2018ICRA，Wuhan University，China）
 
 ### 开源代码
 
