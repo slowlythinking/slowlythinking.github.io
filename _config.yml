@@ -1,7 +1,7 @@
 # Basic
 title: 魏鑫燏
-subtitle: 个人站
-description: 欢迎来到我的个人站~
+subtitle: 若非等到人故去，理想竟是不离乡
+description: 
 # 头像里面的标题
 avatarTitle: KevinWei
 # 头像里面的描述
@@ -71,4 +71,4 @@ gems: [jekyll-paginate]
 paginate: 20
 paginate_path: "page/:num/"
 
-excerpt_separator: <!--excerpt--> 
+excerpt_separator: <!--excerpt-->
