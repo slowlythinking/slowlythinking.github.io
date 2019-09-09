@@ -36,6 +36,7 @@ excerpt: 动态场景下的SLAM和语义SLAM有较多相似之处，因此整理
 - [Light-weight refinenet for real-time semantic segmentation (BMVC2018)](#light-weight-refinenet-for-real-time-semantic-segmentation-bmvc2018)
 - [Real-Time Joint Semantic Segmentation and Depth Estimation Using Asymmetric Annotations (ICRA2019)](#real-time-joint-semantic-segmentation-and-depth-estimation-using-asymmetric-annotations-icra2019)
 - [Stereo Vision-based Semantic 3D Object and Ego-motion Tracking for Autonomous Driving (ECCV2018 港科大)](#stereo-vision-based-semantic-3d-object-and-ego-motion-tracking-for-autonomous-driving-eccv2018-港科大)
+- [Stereo R-CNN based 3D Object Detection for Autonomous Driving (CVPR2019 港科大)](#stereo-r-cnn-based-3d-object-detection-for-autonomous-driving-cvpr2019-港科大)
 - [Long-term Visual Localization using Semantically Segmented Images (ICRA2018)](#long-term-visual-localization-using-semantically-segmented-images-icra2018)
 - [A variational feature encoding method of 3d object for probabilistic semantic slam(IROS2018)](#a-variational-feature-encoding-method-of-3d-object-for-probabilistic-semantic-slamiros2018)
 - [Detect-SLAM: Making Object Detection and SLAM Mutually Beneficial (2018WACV)](#detect-slam-making-object-detection-and-slam-mutually-beneficial-2018wacv)
