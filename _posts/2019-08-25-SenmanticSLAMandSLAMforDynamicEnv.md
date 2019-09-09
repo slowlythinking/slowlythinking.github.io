@@ -19,22 +19,28 @@ excerpt: 动态场景下的SLAM和语义SLAM有较多相似之处，因此整理
 
 ---
 
-<!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
+此文包含较多图片，加载时间可能较长，请耐心等待:)
 
-		- [Dynaslam: Tracking, mapping, and inpainting in dynamic scenes (2018 IEEE RAL)](#dynaslam-tracking-mapping-and-inpainting-in-dynamic-scenes-2018-ieee-ral)
-		- [Mask-SLAM: Robust feature-based monocular SLAM by masking using semantic segmentation (2018CVPR)](#mask-slam-robust-feature-based-monocular-slam-by-masking-using-semantic-segmentation-2018cvpr)
-		- [MaskFusion: Real-Time Recognition, Tracking and Reconstruction of Multiple Moving Objects (2018ISMAR)](#maskfusion-real-time-recognition-tracking-and-reconstruction-of-multiple-moving-objects-2018ismar)
-		- [Slam++: Simultaneous localisation and mapping at the level of objects (CVPR2013)](#slam-simultaneous-localisation-and-mapping-at-the-level-of-objects-cvpr2013)
-		- [DS-SLAM: A Semantic Visual SLAM towards Dynamic Environments (IROS2018)](#ds-slam-a-semantic-visual-slam-towards-dynamic-environments-iros2018)
-		- [Probabilistic Data Association for Semantic SLAM (ICRA2017)](#probabilistic-data-association-for-semantic-slam-icra2017)
-		- [Light-weight refinenet for real-time semantic segmentation (BMVC2018)](#light-weight-refinenet-for-real-time-semantic-segmentation-bmvc2018)
-		- [Real-Time Joint Semantic Segmentation and Depth Estimation Using Asymmetric Annotations (ICRA2019)](#real-time-joint-semantic-segmentation-and-depth-estimation-using-asymmetric-annotations-icra2019)
-		- [Stereo Vision-based Semantic 3D Object and Ego-motion Tracking for Autonomous Driving (ECCV2018 港科大)](#stereo-vision-based-semantic-3d-object-and-ego-motion-tracking-for-autonomous-driving-eccv2018-港科大)
-		- [Long-term Visual Localization using Semantically Segmented Images (ICRA2018)](#long-term-visual-localization-using-semantically-segmented-images-icra2018)
-		- [A variational feature encoding method of 3d object for probabilistic semantic slam(IROS2018)](#a-variational-feature-encoding-method-of-3d-object-for-probabilistic-semantic-slamiros2018)
-		- [Detect-SLAM: Making Object Detection and SLAM Mutually Beneficial (2018WACV)](#detect-slam-making-object-detection-and-slam-mutually-beneficial-2018wacv)
-		- [SIVO : Semantically Informed Visual Odometry and Mapping (硕士论文, 2018, University of Waterloo, Canada,Pranav Ganti)](#sivo-semantically-informed-visual-odometry-and-mapping-硕士论文-2018-university-of-waterloo-canadapranav-ganti)
-		- [其他相关论文](#其他相关论文)
+---
+
+- 目录
+
+<!-- TOC depthFrom:3 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Dynaslam: Tracking, mapping, and inpainting in dynamic scenes (2018 IEEE RAL)](#dynaslam-tracking-mapping-and-inpainting-in-dynamic-scenes-2018-ieee-ral)
+- [Mask-SLAM: Robust feature-based monocular SLAM by masking using semantic segmentation (2018CVPR)](#mask-slam-robust-feature-based-monocular-slam-by-masking-using-semantic-segmentation-2018cvpr)
+- [MaskFusion: Real-Time Recognition, Tracking and Reconstruction of Multiple Moving Objects (2018ISMAR)](#maskfusion-real-time-recognition-tracking-and-reconstruction-of-multiple-moving-objects-2018ismar)
+- [Slam++: Simultaneous localisation and mapping at the level of objects (CVPR2013)](#slam-simultaneous-localisation-and-mapping-at-the-level-of-objects-cvpr2013)
+- [DS-SLAM: A Semantic Visual SLAM towards Dynamic Environments (IROS2018)](#ds-slam-a-semantic-visual-slam-towards-dynamic-environments-iros2018)
+- [Probabilistic Data Association for Semantic SLAM (ICRA2017)](#probabilistic-data-association-for-semantic-slam-icra2017)
+- [Light-weight refinenet for real-time semantic segmentation (BMVC2018)](#light-weight-refinenet-for-real-time-semantic-segmentation-bmvc2018)
+- [Real-Time Joint Semantic Segmentation and Depth Estimation Using Asymmetric Annotations (ICRA2019)](#real-time-joint-semantic-segmentation-and-depth-estimation-using-asymmetric-annotations-icra2019)
+- [Stereo Vision-based Semantic 3D Object and Ego-motion Tracking for Autonomous Driving (ECCV2018 港科大)](#stereo-vision-based-semantic-3d-object-and-ego-motion-tracking-for-autonomous-driving-eccv2018-港科大)
+- [Long-term Visual Localization using Semantically Segmented Images (ICRA2018)](#long-term-visual-localization-using-semantically-segmented-images-icra2018)
+- [A variational feature encoding method of 3d object for probabilistic semantic slam(IROS2018)](#a-variational-feature-encoding-method-of-3d-object-for-probabilistic-semantic-slamiros2018)
+- [Detect-SLAM: Making Object Detection and SLAM Mutually Beneficial (2018WACV)](#detect-slam-making-object-detection-and-slam-mutually-beneficial-2018wacv)
+- [SIVO : Semantically Informed Visual Odometry and Mapping (硕士论文, 2018, University of Waterloo, Canada,Pranav Ganti)](#sivo-semantically-informed-visual-odometry-and-mapping-硕士论文-2018-university-of-waterloo-canadapranav-ganti)
+- [其他相关论文](#其他相关论文)
 
 <!-- /TOC -->
 
@@ -62,23 +68,23 @@ RGB-D：在单目SLAM的基础上增加了两个功能：使用多视几何方�
 
 第一个功能的效果图如下（其中被人拿着的书本和被人坐着的椅子被多视几何方法识别出来了）：
 
-![](../images/DynaEnvAndSemanticMapping/DynaSLAMMoving.png)
+![](/images/posts/DynaEnvAndSemanticMapping/DynaSLAMMoving.png)
 
 方法：选取与当前帧 $F_{cur}$ 具有最高重合度的关键帧 $F$ （使用两帧间的相对运动来判断），计算 $F$ 中ORB特征点点 $x$ 在当前帧中的投影深度 $z_{proj}$ ， $x'$ 是 $F_{cur}$ 中 $x$ 的对应点， 它的深度为 $z$ （由RGBD数据直接获得）， 如果 $z-z_{proj}$ 超出了特定阈值，表明这个点是个移动物体上的点。以上方案的结果就是多视几何获取的运动物体，参见上面的左图。将两种方法获取的结果做融合：两种方法检测到的相同物体，以多视几何的为准，各自检测到的直接加到最终结果中。
 
 第二个功能的效果图如下（第一列是输入的图像，第二列是去除了运动物体之后的图像）
 
-![](../images/DynaEnvAndSemanticMapping/DynaSLAMbackground.png)
+![](/images/posts/DynaEnvAndSemanticMapping/DynaSLAMbackground.png)
 
 方法：对于当前帧 $F_{cur}$ ，将一组关键帧（20帧）的图像投影到 $F_{cur}$ 中动态物体的区域，通过检测这些点的深度一致性来判断能不能把图像补上，一致的就使用之前关键帧的图像来补图。
 
 系统结构（虚线是RGBD-SLAM的数据流）：
 
-![](../images/DynaEnvAndSemanticMapping/DynaSLAMSys.png)
+![](/images/posts/DynaEnvAndSemanticMapping/DynaSLAMSys.png)
 
 实验结果：
 
-![](../images/DynaEnvAndSemanticMapping/DynaSLAMExp1.png)
+![](/images/posts/DynaEnvAndSemanticMapping/DynaSLAMExp1.png)
 
 #### 总结
 
@@ -115,15 +121,15 @@ DeepLab v2："DeepLab: Semantic Image Segmentation with Deep Convolutional Nets"
 
 系统结构(和DynaSLAM中单目系统一样)：
 
-![](../images/DynaEnvAndSemanticMapping/MaskSLAMSys.png)
+![](/images/posts/DynaEnvAndSemanticMapping/MaskSLAMSys.png)
 
 由于新造的这个数据集有地图真值，其中包含13类语义标签：“None,” “Buildings,” “Fences,” “Other,” “Pedestrians,” “Pole,” “Roadlines,” “Roads,” “Sidewalks,”“Vehicles,”“Walls,” and“Trafficlights”（其中的None被认为是天空），所以可以直接让DeepLab v2在这个数据集上训练，然后用相同场景来做测试，有一定优势，DeepLab v2分割出的结果：
 
-![](../images/DynaEnvAndSemanticMapping/MaskSLAMSegResults.png)
+![](/images/posts/DynaEnvAndSemanticMapping/MaskSLAMSegResults.png)
 
 实验结果（其中MTR：Mean Tracking Rate，越高越好，MTE：Mean Trajectory Error，越低越好）：
 
-![](../images/DynaEnvAndSemanticMapping/MaskSLAMExp1.png)
+![](/images/posts/DynaEnvAndSemanticMapping/MaskSLAMExp1.png)
 
 #### 总结
 
@@ -148,7 +154,7 @@ University College London(伦敦大学学院)
 
 相比于其他类似系统，本文系统有以下几个优势：
 
-![](../images/DynaEnvAndSemanticMapping/MaskFusionPro.png)
+![](/images/posts/DynaEnvAndSemanticMapping/MaskFusionPro.png)
 
 说明：
 
@@ -180,7 +186,7 @@ University College London(伦敦大学学院)
 
 位姿优化：每个模型对应两个数据结构：深度图（三维）和光度图（二维），基于当前帧位姿将这两个数据从世界坐标系投影到当前帧，可以得到深度误差和光度误差。由此，可以得到位姿优化过程中的代价函数：
 
-![](../images/DynaEnvAndSemanticMapping/MaskFusionEq1.png)
+![](/images/posts/DynaEnvAndSemanticMapping/MaskFusionEq1.png)
 
 以上公式中具体两项的计算较为简单，核心是投影过程：将三维点投影到当前帧坐标系，与当前帧对应三维点（输入的RGBD数据得到）的距离差值即为前者误差，后者为二维投影得到的二维点的光度误差，这部分使用GPU实现，实现代码参考论文[50]和[39]。
 
@@ -205,7 +211,7 @@ $$
 
 融合步骤：当语义分割没有执行完的时候，几何分割的结果直接与地图中的模型进行关联（使用投影面积重合率来关联），之后进行位姿优化；语义分割结束时，几何分割结果先与语义分割的结果进行关联（重合率），然后融合，融合结果接着与前几帧中的图像分割结果关联，然后与地图中使用OpenGL渲染过的模型进行关联。融合效果：
 
-![](../images/DynaEnvAndSemanticMapping/MaskFusionSegFusion.png)
+![](/images/posts/DynaEnvAndSemanticMapping/MaskFusionSegFusion.png)
 
 实验：
 
@@ -218,21 +224,21 @@ $$
 
 定位精度（EF和其他算法效果为啥好：可能其他分类为动态或者外点的部分也对跟踪过程有帮助）：
 
-![](../images/DynaEnvAndSemanticMapping/MaskFusionExp1.png)
+![](/images/posts/DynaEnvAndSemanticMapping/MaskFusionExp1.png)
 
 在TUM场景中泰迪熊和相机的移动轨迹（说明泰迪熊会对计算引入较大误差，不区分它的结果中绝对轨迹误差的RMSE增加了7.2cm）：
 
-![](../images/DynaEnvAndSemanticMapping/MaskFusionExp2.png)
+![](/images/posts/DynaEnvAndSemanticMapping/MaskFusionExp2.png)
 
 应用示例：
 
 AR应用1：虚拟物体可以与环境中的动态物体进行互动：
 
-![](../images/DynaEnvAndSemanticMapping/MaskFusionExp3.png)
+![](/images/posts/DynaEnvAndSemanticMapping/MaskFusionExp3.png)
 
 AR应用2：使用语义地图后可以完成食物卡路里的分析
 
-![](../images/DynaEnvAndSemanticMapping/MaskFusionExp4.png)
+![](/images/posts/DynaEnvAndSemanticMapping/MaskFusionExp4.png)
 
 #### 总结
 
@@ -261,11 +267,11 @@ Imperial College London（帝国理工学院）
 
 系统结构：
 
-![](../images/DynaEnvAndSemanticMapping/SLAMplusSys.png)
+![](/images/posts/DynaEnvAndSemanticMapping/SLAMplusSys.png)
 
 建图效果：
 
-![](../images/DynaEnvAndSemanticMapping/SLAMplusExp.png)
+![](/images/posts/DynaEnvAndSemanticMapping/SLAMplusExp.png)
 
 ---
 
@@ -291,7 +297,7 @@ Imperial College London（帝国理工学院）
 
 系统结构较为简单，如下图所示，系统包含五个线程，除了通用的Local Mapping、Tracking、Loop Closing之外，还包含了语义分割(Sementic Segmentation)线程和稠密地图重建(Dense Map Creation)线程。
 
-![](../images/DynaEnvAndSemanticMapping/DSSLAMSys.png)
+![](/images/posts/DynaEnvAndSemanticMapping/DSSLAMSys.png)
 
 重点讲述多出来的两个线程和这两个线程与其他线程之间的交互。
 
@@ -300,17 +306,17 @@ Imperial College London（帝国理工学院）
 稠密地图重建线程：使用论文[8]中的方法，利用地图中的关键帧来产生稠密点云，然后将点云转化为论文[8]中描述的octo-tree形式，octo-tree地图是由一个个体素(voxel)组成的，参见下图。每个体素关联到了某一个物体语义上（属于桌子、椅子等），体素是否属于某一个语义类别由概率 $p \in [0,1]$ 表示，这个概率的传播过程使用logit模型（与论文[8]中相同），概率 $p$ 对应语义关联事件的 $Odds$ 为 $\frac{p}{1-p}$ ， $Odds$ 的对数为 $L = log(\frac{p}{1-p})$ ，[8]中称其为 $log Odds$ 分数， $L$ 和 $p$ 可以很容易地相互转换，$L$ 的传播描述为 $L_{t+1} = L{t-1} + L{t}$
 ，其中 $t$ 为时间，这样就能够让体素与语义的关联概率得到更新（从 $L$ 可以求出 $p$ ），可以看出体素被观测到的次数越多，概率 $p$ 就越大，观测的次数变少，概率 $p$ 就会变小。
 
-![](../images/DynaEnvAndSemanticMapping/DSSLAMMap.png)
+![](/images/posts/DynaEnvAndSemanticMapping/DSSLAMMap.png)
 
 #### 实验结果
 
 在TUM RGBD数据集的fr3_walking_xyz场景下的APE和RPE：
 
-![](../images/DynaEnvAndSemanticMapping/DSSLAMExp1.png)
+![](/images/posts/DynaEnvAndSemanticMapping/DSSLAMExp1.png)
 
 量化对比结果（ATE）：
 
-![](../images/DynaEnvAndSemanticMapping/DSSLAMExp2.png)
+![](/images/posts/DynaEnvAndSemanticMapping/DSSLAMExp2.png)
 
 #### 总结
 
@@ -367,7 +373,17 @@ $$
 X^{i+1},L^{i+1} = \mathop{argmax}_{X,L}\log p(Z|X,L,D^{i+1})
 $$
 
-作者认为以上方法仍然需要一个先验的 $D$ （类似传统SLAM算法中数据关联的结果），如果能在优化过程中包含所有可能的关联关系，优化算法得到的结果无疑会更准确。作者使用如下
+作者认为以上方法仍然需要一个先验的 $D$ （类似传统SLAM算法中数据关联的结果），如果能在优化过程中包含所有可能的关联关系，优化算法得到的结果无疑会更准确。作者基于EM方法使用如下误差函数：
+
+$$
+X^{i+1},L^{i+1} = \mathop{argmax}_{X,L}\mathbb{E}_D[\log p(Z|X,L,D) | X^i,L^i,Z]
+$$
+
+$$
+X^{i+1},L^{i+1} = \mathop{argmax}_{X,L}\sum_{D \in \mathbb{D}}p(D|X^i,L^i,Z)\log p(Z|X,L,D)
+$$
+
+其中 $\mathbb{D}$ 为 $D$ 的全部取值空间（即所有可能的数据关联），这样上述误差函数中就不需要认为指定先验的 $D$ 了。
 
 ---
 
@@ -391,13 +407,29 @@ RefineNet：使用经典的编码器-解码器架构，CLF为3*3卷积，卷积�
 
 本文改进方案：
 
-1. 替换3 * 3卷积为1 * 1卷积。虽然理论3 * 3卷积理论上有更大的感受野有利于语义分割任务，但实际实验证明，对于RefineNet架构的网络其并不是必要的。
-2. 省略RCU模块。作者尝试去除RefineNet网络中部分及至所有RCU模块，发现并没有任何的精度下降，并进一步发现原来RCU blocks已经完全饱和。
+RefineNet原始网络：
+
+![](/images/posts/DynaEnvAndSemanticMapping/LWrefinenetOriginSys.png)
+
+网络中的residual convolutional unit (RCU)、chained residual pooling (CRP)和fusion模块（CLF：a single 3x3 convolutional layer）：
+
+![](/images/posts/DynaEnvAndSemanticMapping/LWrefinenetOriginModule.png)
+
+改进后的模块：
+
+![](/images/posts/DynaEnvAndSemanticMapping/LWrefinenetModule.png)
+
+1. 替换3x3卷积为1x1卷积。虽然理论3x3卷积理论上有更大的感受野有利于语义分割任务，但实际实验证明，对于RefineNet架构的网络其并不是必要的。
+2. 省略RCU模块。作者尝试去除RefineNet网络中部分及所有RCU模块，发现并没有任何的精度下降，并进一步发现原来RCU blocks已经完全饱和。
 3. 使用轻量级骨干网。作者发现即使使用轻量级NASNet-Mobile 、MobileNet-v2骨干网，网络依旧能够达到非常稳健的性能表现，性能不会大幅下降。
 
 #### 实验结果
 
 在NYUDv2 和 PASCAL Person-Part数据集上，虽性能略有下降，但参数量和计算时间大幅降低。同时作者也在PASCAL VOC数据库上进行了实验，并加入NASNet-Mobile 、MobileNet-v2骨干网，发现对比于使用相同骨干网路的目前几乎是最先进的语义分割架构DeepLab-v3，RefineNet-LW的性能表现更具优势。
+
+![](/images/posts/DynaEnvAndSemanticMapping/LWrefinenetExp1.png)
+
+mIoU：平均交并比（真正样本数量/（真正样本数量+假负样本数量+假正样本数量））
 
 ---
 
@@ -444,19 +476,27 @@ University of Adelaide（阿德莱德大学，澳大利亚）, Monash University
 
 网络结构：
 
-![](../images/DynaEnvAndSemanticMapping/RealTimeSSandDESys.png)
+![](/images/posts/DynaEnvAndSemanticMapping/RealTimeSSandDESys.png)
 
-使用构建于MobileNet-v2分类网络上的Light-Weight RefineNet作为骨干网，该网络在输入图像大小为640 × 480时计算量14 GFLOPs，为进一步降低计算量，作者将最后的CRP block中的1*1卷积替换为分组卷积（Grouped Convolution），使其降低为6.5 GFLOPs。
+使用构建于MobileNet-v2分类网络上的Light-Weight RefineNet作为骨干网，该网络在输入图像大小为640 × 480时计算量14 GFLOPs，为进一步降低计算量，作者将最后的CRP block中的1*1卷积替换为分组卷积（Grouped Convolution），使其降低为6.5 GFLOPs (Giga Floating-point Operations Per Second, 每秒10亿次的浮点运算数)。
 
 在上述Light-Weight RefineNet结构之后，网络分成两个预测任务，分别使用1x1的depthwise卷积和3x3的普通的卷积。
 
-对于多任务模型，需要标注的数据含有每种任务的标签才能训练。对于两种任务T1和T2,假设只有少部分数据被标注了两种标签，对于样本数量更多的只有其中一类标签的数据，引入一个更加强大的专家模型，计算其在另一任务中的预测结果作为合成ground truth数据。训练的时候，使用合成ground truth数据先预训练网络，然后再使用拥有两种真实标签的ground truth对网络进行fine-tune。
+对于多任务模型，需要标注的数据含有每种任务的标签才能训练。对于两种任务T1和T2,假设只有少部分数据被标注了两种标签，对于样本数量更多的只有其中一类标签的数据，引入一个更加强大的专家模型（expert model），计算其在另一任务中的预测结果作为合成ground truth数据。训练的时候，使用合成ground truth数据先预训练网络，然后再使用拥有两种真实标签的ground truth对网络进行fine-tune。
+
+代码：
+
+![](/images/posts/DynaEnvAndSemanticMapping/RealTimeSSandDECode.png)
 
 #### 实验
 
 NYUDv2数据集：含有1449图像同时含有语义和深度标注（795幅训练集，654幅验证集），同时又有超过300000幅图像有深度标注。作者引入的专家模型是Light-Weight RefineNet-152 语义分割模型，其在验证集上的精度是44.4% mean iou。制作完合成语义标注后，使用大的含有合成标注的数据集预训练，然后在795图像的小数据集上fine-tune。
 
+![](/images/posts/DynaEnvAndSemanticMapping/RealTimeSSandDEExp1.png)
+
 KITTI数据集：仅146幅图像有语义标注（100幅训练46幅测试），同时有20697幅图像有深度标注（20000幅训练，697幅测试），他们之间没有同时被标注了语义和深度的数据。作者使用在CityScapes数据集上训练的ResNet-38模型作为语义专家模型给20000仅有深度标注的图像预测语义标签，使用本文提出的网络架构在20000幅具有深度标注的图像上训练的深度估计模型，然后给100幅仅有语义标注的图像预测深度标签。按照上面的方法，现在大库上预训练，再在100幅图像的小库上fine-tune。
+
+![](/images/posts/DynaEnvAndSemanticMapping/RealTimeSSandDEExp2.png)
 
 这两个任务甚至比目前state-of-the-art的大型网络都达到了更好的结果。参数量仅2.99M,而且在1200*350的图像上一帧计算时间仅需要16.9毫秒。
 
@@ -470,8 +510,67 @@ KITTI数据集：仅146幅图像有语义标注（100幅训练46幅测试），�
 
 #### Lab
 
+港科大 栗培梁 (VINS-mono 二作)
+
+#### Content (部分解读来自[网络](https://zhuanlan.zhihu.com/p/40795853))
+
+提出了一种基于双目相机，追踪自动驾驶环境中相机运动和3D语义对象的方法。
+
+系统结构：
+
+![](/images/posts/DynaEnvAndSemanticMapping/StereoSemanticSys.png)
+
+第一部分通过标准的Deep Learning方法进行2D Detection和视角分类，并通过相机模型，预测出初始的3D框；第二部分通过提取ORB特征和鲁棒匹配，完成双目深度估计与时序追踪；第三部分，也是**整个文章的核心**，通过SLAM中常用的Bundle Adjustment技术，联合优化自身位姿、每个车辆的位姿和状态，得到最终结果。
+
+**第一部分**：主要参考了《3d bounding box estimation using deep learning and geometry》（CVPR2017），基本思想是通过预测2D框以及不同的观测视角，同时假设2D框能够紧密包围3D框，在给定视角，相机内参和车辆dimension的情况下，最紧的3D框和水平旋转角度可以直接通过线性方程组解出。这里做了很强的假设，也就是2D框完全准确，已经每种车辆的dimension是完全一致的，所以这个计算出的3D框只是作为后续操作的初始值，在第三部分中，还会重新优化这4个自由度的变量。
+
+**第二部分**：主要任务是建立起可靠的local feature匹配和帧间关联。帧间关联和双目深度估计都使用了比较成熟的方案或简单的baseline。由于在第一步已经有了初步的距离估计，在双目匹配的过程中可以缩小匹配范围以提升结果。local feature这里使用的是经典的ORB feature。对于每个特征点，分别在左右眼和时序上进行匹配，后用RANSAC做outlier去除。
+
+**第三部分**：整个文章中最重要的部分，把Bundle Adjustment (BA) 引入到了整个的位姿状态精调中来。这部分优化分为两个步骤，第一部分(Camera BA)是利用前面得到的背景中的匹配的点，联合优化自身相机位姿，以及在上一步匹配过的背景特征点坐标来优化重投影误差，这是在SLAM和SfM中的经典BA。通过这一步，可以得到相对准确的自身位姿为下一步使用。第二部分(Object BA)是针对每一辆车，充分挖掘2D和3D之间关系，以及各种约束。这部分BA分为4个loss term，联合优化了每个车辆自身的位姿，大小，速度和方向盘转角以及在上一步得到的ORB特征点的对应3D位置，下面分别介绍这4部分：
+
+1. 特征点一致性loss：求特征点对应的3D位置经过各种投射变换之后能够在它在2D图像上的坐标对应。文中分别对于左眼和右眼图像计算了loss，以左眼为例：
+    - 首先，作者假设车辆是一个刚体，也就意味着在帧间匹配得到的特征点，在车辆坐标系下的相对位置是不会随时间变化。
+    - 第一步变换，将特征点的3D位置f由车体坐标系转换到世界坐标系。
+    - 将世界坐标系内的f转换到相机坐标系。
+    - 将相机坐标系中的f通过相机内参矩阵投影回2D图像。
+
+这样就可以计算这两者之间的一个差值，作为loss function。对于右眼，计算方法类似，只不过需要使用双目标定的外参，将左眼相机坐标系转换到右眼相机坐标系中，其余一致。
+
+2. 3D框与2D框一致loss：此项和第一部分的原理是类似的，区别在于，在这部分中，车辆的dimension和车辆的位姿被同时作为优化变量联合优化，而不是像第一部分中，车辆的dimension固定。所以通过加入这个term解决了在第一步中由于dimension不准确导致的错误估计。
+
+3. 车辆动力学模型loss：除了车辆位姿，我们在自动驾驶中还会关注车辆的状态，包括速度和方向盘转角，这对于后续的车辆意图估计等任务有着极大的帮助。实际的车辆当然不可以抽象成一个无规律的质点的运动，所以在这个loss中，作者使用了一个车辆动力学模型来描述当前时刻与前一时刻的位姿和状态之间的关系。这个动力学模型来源于原论文引用[27]。除了位姿之外，这个loss里还引入了车辆速度、方向盘转角以及车辆轮距（可以从车辆大小的出）作为优化变量。
+
+4. 点云对齐loss：首先，这里的点云并不是指LiDAR点云，而是指从双目中恢复出来的点云。这个loss的意义在于约束每辆车的特征点的3D位置可以落在对应车辆的3D框内(minimize the distance of the feature points and their corresponding observed surface)。
+
+点云对齐结果：
+
+![](/images/posts/DynaEnvAndSemanticMapping/StereoSemanticBA.png)
+
+
+#### 实验
+
+在实验中，作者使用了KITTI数据集，分别对ego-motion和object localization&pose估计进行了比较。在ego-motion中，作者对比了经典的ORB-SLAM，由于这个方法能够很好地去除由于移动物体带来的特征点匹配失败，在一些车辆较多的复杂场景中取得了较大的提升。在object motion&pose中，由于前述引入的诸多先验和约束，对比baseline也有了较大提升。
+
+![](/images/posts/DynaEnvAndSemanticMapping/StereoSemanticExp1.png)
+
+定性对比：
+
+![](/images/posts/DynaEnvAndSemanticMapping/StereoSemanticExp2.png)
+
+---
+
+### Stereo R-CNN based 3D Object Detection for Autonomous Driving (CVPR2019 港科大)
+
+#### OpenSource
+
+[开源代码](https://github.com/HKUST-Aerial-Robotics/Stereo-RCNN)
+
+#### Lab
+
+港科大 栗培梁 (VINS-mono 二作)
 
 #### Content
+
 
 ---
 
