@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "使用Jekyll实现站点双语切换"
+lang: ch
 date: 2019-07-26
 description: "Bilingual_Site_with_jekyll"
 excerpt: 目前Jekyll并不支持多语言特性，已有的一些Jekyll的双语插件包不能在github托管的网站上实现（安全考虑），尝试更改小部分Jekyll框架来实现符合使用逻辑的双语切换规则。

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "论文阅读-StructSLAM-2015-IEEETVT"
+lang: ch
 date: 2019-07-16
 description: "StructSLAM"
 tag: [PaperReading, SLAM, Line Feature]

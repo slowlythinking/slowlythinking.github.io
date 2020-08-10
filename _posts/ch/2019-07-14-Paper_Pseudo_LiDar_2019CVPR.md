@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "论文阅读-VisualPseudoLiDAR-2019-CVPR"
+lang: ch
 date: 2019-07-14
 description: "Pseudo-LiDAR"
 tag: PaperReading

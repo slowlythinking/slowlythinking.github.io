@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "SLAM基础-扩展卡尔曼滤波"
+lang: ch
 date: 2019-07-20
 description: "KF-and-EKF"
 tag: [SLAM, EKF]

@@ -1,23 +1,28 @@
 ---
-layout: page
-title: 关于我
+layout: about
+title: About Me
+lang: en
 ---
 
-<h3> 学习/工作经历 </h3>
+<h3> Working Experience </h3>
 <p>
-中国科学院上海高等研究院，研究实习员（2018~今）
+Shanghai Advanced Research Institute, Chinese Academy of Sciences, Research assistant, 2018~
 <p>
-上海大学，计算机应用技术，硕士（2015~2018）
 <p>
-武汉大学，物联网工程，本科（2010~2014）
+
+<h3> Education </h3>
+<p>
+M.Sc. Degree, Computer Application Technology, Shanghai University, China, 2015~2018
+<p>
+B.E. Degree, Internet of Things Engineering, Wuhan University, 2010~2014
 
 <p>
 <p>
 
-<h3> 发表 </h3>
+<h3> Publication </h3>
 
 <ul><li>
-<strong>Wei Xinyu</strong>, Huang Jun, Ma Xiaoyuan, Real-Time Monocular Visual SLAM by Combining Points and Lines, IEEE International Conference on Multimedia and Expo (ICME), 2019 (CCF: B)
+<strong>Wei Xinyu</strong>, Huang Jun, Ma Xiaoyuan, Real-Time Monocular Visual SLAM by Combining Points and Lines, IEEE International Conference on Multimedia and Expo (ICME), 2019
 </li>
 <br>
 <li>

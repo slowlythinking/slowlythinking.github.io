@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "动态场景SLAM和语义SLAM相关论文"
+lang: ch
 date: 2019-08-25
 description: "SenmanticSLAMandSLAMforDynamicEnv"
 tag: [PaperReading, SLAM, SenmanticMapping, DynamicEnvironment]

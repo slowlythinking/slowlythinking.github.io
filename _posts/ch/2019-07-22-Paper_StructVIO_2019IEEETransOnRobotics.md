@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "论文阅读-StructVIO-2019-IEEETR"
+lang: ch
 date: 2019-07-22
 description: "StructVIO"
 tag: [PaperReading, SLAM, Line Feature]

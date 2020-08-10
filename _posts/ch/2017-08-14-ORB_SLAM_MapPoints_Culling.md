@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "ORB-SLAM建图线程中的外点剔除策略"
-date: 2017-08-14 
+lang: ch
+date: 2017-08-14
 description: "ORB-SLAM，外点剔除"
-tag: SLAM 
----   
+tag: SLAM
+---
 
 #### 剔除条件一：能找到该点的帧少于理论上能观测到该点帧的1/4
 
@@ -77,7 +78,7 @@ void MapPoint::AddObservation(KeyFrame* pKF, size_t idx)
         return;
     else
     {
-        nObs++;   
+        nObs++;
         mObservations[pKF]=idx;//idx为三维点在关键帧中的索引号
     }
 }

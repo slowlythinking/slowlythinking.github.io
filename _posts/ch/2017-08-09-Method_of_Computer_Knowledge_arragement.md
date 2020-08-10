@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "计算机专业知识整理方法"
+lang: ch
 date: 2017-08-09
 description: "计算机，方法论，知识归整"
 tag: 方法论

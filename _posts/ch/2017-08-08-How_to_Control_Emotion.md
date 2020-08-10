@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "如何处理负面情绪"
-date: 2017-08-08 
+lang: ch
+date: 2017-08-08
 description: "负面情绪，理性，人生"
-tag: 生活 
----   
+tag: 生活
+---
 
 翻看Instagram，看网易云音乐里的歌词。内心不宁。
 

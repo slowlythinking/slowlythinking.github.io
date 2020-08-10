@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "论文阅读-Structural-Regularity-WHU-2018"
+lang: ch
 date: 2019-07-28
 description: "StructSLAM-WHU"
 tag: [PaperReading, SLAM, Line Feature]

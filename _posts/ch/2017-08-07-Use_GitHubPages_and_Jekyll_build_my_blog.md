@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "GitHub Pages+Jekyll搭建个人博客"
-date: 2017-08-07 
+lang: ch
+date: 2017-08-07
 description: "HEXO配置，HEXO+Github，搭建自己的博客"
-tag: 博客 
----   
+tag: 博客
+---
 
 ### 大家好，我想死你们啦~
 
@@ -132,9 +133,9 @@ tag: 博客
 Configuration file: D:/GitWorkSpace/slowlythinking.github.io/_config.yml
 Deprecation: The ‘gems’ configuration option has been renamed to ‘plugins
 ‘. Please update your config file accordingly.
-Dependency Error: Yikes! It looks like you don’t have jekyll-sitemap or 
-one of its dependencies installed. In order to use Jekyll as currently 
-configured, you‘ll need to install this gem. The full error message from 
+Dependency Error: Yikes! It looks like you don’t have jekyll-sitemap or
+one of its dependencies installed. In order to use Jekyll as currently
+configured, you‘ll need to install this gem. The full error message from
 Ruby is: ‘cannot load such file – jekyll-sitemap’ If you run into trouble,
 you can find helpful resources at https://jekyllrb.com/help/!
 jekyll 3.5.1 | Error: jekyll-sitemap
@@ -172,6 +173,6 @@ background-image: linear-gradient(140deg,rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0
 
 于是发现问题出在cover_color这个变量上，到_config.yml文件中将cover_color变量的值由clear改为空（什么都不写），图像模糊的问题得到解决。
 <br>
-### 整理这么多网址好累，你们有谁要是没两天倒闭了，一定要赔我钱！ 我先倒闭就算了（逃 
+### 整理这么多网址好累，你们有谁要是没两天倒闭了，一定要赔我钱！ 我先倒闭就算了（逃
 <br>
 *转载请注明原地址，魏鑫燏的博客：[http://slowlythinking.github.io](http://slowlythinking.github.io) 谢谢！*

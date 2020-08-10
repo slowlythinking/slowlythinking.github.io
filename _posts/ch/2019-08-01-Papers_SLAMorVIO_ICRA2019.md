@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "2019年ICRA会议SLAM、VIO等相关论文"
+lang: ch
 date: 2019-08-01
 description: "2019ICRA-Papers"
 tag: [PaperReading, SLAM, ICRA]

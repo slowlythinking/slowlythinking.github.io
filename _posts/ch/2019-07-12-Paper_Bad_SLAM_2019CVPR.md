@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "论文阅读-BAD-SLAM-2019-CVPR"
+lang: ch
 date: 2019-07-12
 description: "BAD-SLAM"
 tag: [PaperReading, SLAM]

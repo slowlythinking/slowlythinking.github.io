@@ -7,7 +7,7 @@
           {% if site.social.weibo %}
           <!-- Weibo -->
           <li class="navigation__item_social">
-            <a href="http://weibo.com/{{site.social.weibo}}" title="@{{site.social.weibo}} 的微博" target="_blank">
+            <a href="http://weibo.com/{{site.social.weibo}}" title="@{{site.social.weibo}} {{site.data.translations.footer[page.lang].weibo}}" target="_blank">
               <i class='social fa fa-weibo fa-2x'></i>
               <span class="label">Weibo</span>
             </a>
@@ -17,7 +17,7 @@
           {% if site.social.github %}
           <!-- Github -->
           <li class="navigation__item_social">
-            <a href="https://github.com/{{site.social.github}}" title="@{{site.social.github}} 的 Github" target="_blank">
+            <a href="https://github.com/{{site.social.github}}" title="@{{site.social.github}} {{site.data.translations.footer[page.lang].github}}" target="_blank">
               <i class='social fa fa-github fa-2x'></i>
               <span class="label">Github</span>
             </a>
@@ -69,7 +69,7 @@
 
         <div class = "footer_div">
            <p class="copyright text-muted">
-            Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }} |
+            Copyright &copy; {{ site.data.translations.name[page.lang] }} {{ site.time | date: '%Y' }} |
             <!-- <iframe
                 style="margin-left: 2px; margin-bottom:-5px;"
                 frameborder="0" scrolling="0" width="91px" height="20px"
@@ -81,8 +81,8 @@
 
           <!-- 访问统计 -->
           <span id="busuanzi_container_site_pv">
-            本站总访问量
-            <span id="busuanzi_value_site_pv"></span>次
+          {{site.data.translations.footer[page.lang].visit}}
+            <span id="busuanzi_value_site_pv"></span>
           </span>
 
         </div>

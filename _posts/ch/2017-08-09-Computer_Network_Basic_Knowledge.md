@@ -1,15 +1,16 @@
 ---
 layout: post
 title: "计算机网络基础知识"
-date: 2017-08-09 
+lang: ch
+date: 2017-08-09
 description: "计算机网络，基础知识"
-tag: 计算机网络 
----   
+tag: 计算机网络
+---
 
 ### 资源
 
-1. [常见面试题整理--计算机网络篇（每位开发者必备）](https://zhuanlan.zhihu.com/p/24001696) 
-2. [计算机网络面试知识点总结](http://www.jianshu.com/p/7deb521aba1e) 
+1. [常见面试题整理--计算机网络篇（每位开发者必备）](https://zhuanlan.zhihu.com/p/24001696)
+2. [计算机网络面试知识点总结](http://www.jianshu.com/p/7deb521aba1e)
 
 以上两个资源对网络基础进行了体系化的整理，并附有较为详细的信息。
 

@@ -62,7 +62,9 @@ blog_button:
 nav:
     - {title: 文章, description: archive, url: '/archive'}
     - {title: 标签, description: tags, url: '/tags'}
-    - {title: 关于, description: about, url: '/about'}
+    - {title: 关于, description: about, url: "/about_ch"}
+
+defaultLanguage: ch
 
 
 # Pagination

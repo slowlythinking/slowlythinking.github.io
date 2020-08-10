@@ -5,7 +5,7 @@
 
 
   <body>
-
+{% comment %}<!--
     <span class="mobile btn-mobile-menu">
       <div class="nav_container">
          <nav class="nav-menu-item" style = "margin:0 auto">
@@ -24,6 +24,28 @@
           </nav>
       </div>
     </span>
+-->{% endcomment %}
+<span class="mobile btn-mobile-menu">
+  <div class="nav_container">
+     <nav class="nav-menu-item" style = "margin:0 auto">
+        {% for item in site.data.translations.nav[page.lang] %}
+          <i class="nav-menu-item"><a href="{{item.url}}" title="{{item.description}}" class="blog-button">{{item.title}}</a></i>
+        {% endfor %}
+        {% for item in site.data.languages %}
+          {% assign showLang = item[0] %}
+          {% if showLang == page.lang %}{% continue %}{% endif %}
+            {% if page.layout != 'post' %}
+              {% assign url = site.data.languages[showLang][page.layout] %}
+              <i class="nav-menu-item"><a href="{{url}}" class="blog-button">{{site.data.languages[showLang].label}}</a></i>
+            {% else %}
+              {% assign url = site.data.languages[showLang].index %}
+              <i class="nav-menu-item"><a href="{{url}}" class="blog-button">{{site.data.languages[showLang].label}}</a></i>
+            {% endif %}
+        {% endfor %}
+      </nav>
+  </div>
+</span>
+
 
     {% include side-panel.html %}
 
