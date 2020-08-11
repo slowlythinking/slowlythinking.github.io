@@ -68,24 +68,27 @@
         </div>
 
         <div class = "footer_div">
+          <p></p>
+          {% comment %}<!--
            <p class="copyright text-muted">
-            Copyright &copy; {{ site.data.translations.name[page.lang] }} {{ site.time | date: '%Y' }} |
+            Copyright &copy; {{ site.data.translations.name[page.lang] }} {{ site.time | date: '%Y' }} |-->
             <!-- <iframe
                 style="margin-left: 2px; margin-bottom:-5px;"
                 frameborder="0" scrolling="0" width="91px" height="20px"
                 src="https://ghbtns.com/github-btn.html?user=leopardpan&repo=leopardpan.github.io&type=star&count=true" >
             </iframe>-->
-            </p>
+            <!--</p>
         	<div align="right">
     			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+          -->{% endcomment %}
 
           <!-- 访问统计 -->
+          <div align="right">
           <span id="busuanzi_container_site_pv">
-          {{site.data.translations.footer[page.lang].visit}}
+            Copyright &copy; {{ site.data.translations.name[page.lang] }} {{ site.time | date: '%Y' }} | {{site.data.translations.footer[page.lang].visit}}
             <span id="busuanzi_value_site_pv"></span>
           </span>
-
+          </div>
         </div>
-        <div>
     </footer>
 </section>

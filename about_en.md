@@ -22,7 +22,7 @@ B.E. Degree, Internet of Things Engineering, Wuhan University, 2010~2014
 <h3> Publication </h3>
 
 <ul><li>
-<strong>Wei Xinyu</strong>, Huang Jun, Ma Xiaoyuan, Real-Time Monocular Visual SLAM by Combining Points and Lines, IEEE International Conference on Multimedia and Expo (ICME), 2019
+<strong>Wei Xinyu</strong>, Huang Jun, Ma Xiaoyuan, Real-Time Monocular Visual SLAM by Combining Points and Lines, IEEE International Conference on Multimedia and Expo (ICME), 2019.
 </li>
 <br>
 <li>
@@ -34,11 +34,11 @@ B.E. Degree, Internet of Things Engineering, Wuhan University, 2010~2014
 </li>
 <br>
 <li>
-Peng Junjie, Fu Youyi, Zhang Xiaofeng, Kong Shuai, <strong>Wei Xinyu</strong>. Implementation of DFT application on ternary optical computer. Optics Communications, 2018,410: 424-430. SCI, JCR 3区.
+Peng Junjie, Fu Youyi, Zhang Xiaofeng, Kong Shuai, <strong>Wei Xinyu</strong>. Implementation of DFT application on ternary optical computer. Optics Communications, 2018,410: 424-430.
 </li>
 <br>
 <li>
-Kong Shuai, Peng Junjie, Fu Youyi, <strong>Wei Xinyu</strong>. Carry-free full-symbol one-step modified signed-digit addition. Applied Optics, Vol. 56, Issue 35, pp. 9620-9628(2017). SCI, JCR 3区.
+Kong Shuai, Peng Junjie, Fu Youyi, <strong>Wei Xinyu</strong>. Carry-free full-symbol one-step modified signed-digit addition. Applied Optics, Vol. 56, Issue 35, pp. 9620-9628(2017).
 </li></ul>
 
 
