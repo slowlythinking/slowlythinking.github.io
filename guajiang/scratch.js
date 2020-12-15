@@ -51,7 +51,7 @@
                     var y = Number(touch.pageY); //页面触点Y坐标
                     var x = x - upCanvas.offsetLeft;
                     //var y = evt.clientY - upCanvas.offsetTop;
-					var y = y - 95;
+					var y = y - 185;
 					console.log("x",x);
 					console.log("y",y);
                     var ctx = that.upCtx;
