@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>姝姝餐厅线上刮奖</title>
+</head>
+<body>
+    <div style="text-align:center;color:black;height:55px;width:100%;position: absolute;left:0; top:0; right:0; bottom: 0; margin: 0px 0px 0px 0px;">
+        <!--<p class="subtitle text-sm text-white">Knowledge mapping of cultural relics</p>-->
+        <h3 style="font-size:1.8rem">姝姝餐厅线上刮奖</h3>
+      </div>
+	<div style="height:150;width:100%; position: absolute;left:0; top:95px; right:0; bottom: 0; margin: auto;">
+        <canvas id="underCanvas" width=300 height=150 style="position: absolute; left: 0;top: 0;right:0; bottom: 0;margin:0 auto;"></canvas>
+        <canvas id="upCanvas" width=300 height=150 style="position: absolute; left: 0; top: 0;right:0; bottom: 0;margin:0 auto;"></canvas>
+	</div>
+    <script src="./scratch.js"></script>
+    <script>
+        // 可能变化的值放在options中，方便修改
+        var options = {
+            text: {
+                fontWeight: "bold",
+                fontSize: 50,
+                fontFamily: "Arial",
+                align: "center",
+                color: '#F60'
+            },
+            maskColor: "grey",
+            radius: 20,
+            awards: ["五元", "三元", "两元", "一元", "谢谢！"]
+        };
+
+        new Scratch(options).init();
+    </script>
+</body>
+</html>
