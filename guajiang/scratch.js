@@ -43,8 +43,8 @@
             var that = this;
             var upCanvas = this.upCanvas;
             var callback1, callback2, callback3;
-            upCanvas.addEventListener("mousedown", callback1 = function (evt) {
-                upCanvas.addEventListener("mousemove", callback2 = function (evt) {
+            upCanvas.addEventListener("touchstart", callback1 = function (evt) {
+                upCanvas.addEventListener("touchmove", callback2 = function (evt) {
                     var x = evt.clientX - upCanvas.offsetLeft;
                     //var y = evt.clientY - upCanvas.offsetTop;
 					var y = evt.clientY - 95;
