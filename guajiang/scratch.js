@@ -61,12 +61,12 @@
                     ctx.closePath();
                     if (that.result() > 0.8) {
                         alert(that.award);
-                        upCanvas.removeEventListener("mousemove", callback2);
+                        upCanvas.removeEventListener("touchmove", callback2);
                     }
                 }, false);
-                doc.addEventListener("mouseup", callback3 = function () {
-                    upCanvas.removeEventListener("mousemove", callback2);
-                    doc.removeEventListener("mouseup", callback3);
+                doc.addEventListener("touchend", callback3 = function () {
+                    upCanvas.removeEventListener("touchmove", callback2);
+                    doc.removeEventListener("touchend", callback3);
                 }, false);
             }, false);
         },
