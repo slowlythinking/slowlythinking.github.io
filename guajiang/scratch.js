@@ -45,9 +45,15 @@
             var callback1, callback2, callback3;
             upCanvas.addEventListener("touchstart", callback1 = function (evt) {
                 upCanvas.addEventListener("touchmove", callback2 = function (evt) {
-                    var x = evt.clientX - upCanvas.offsetLeft;
+					evt.preventDefault();
+					var touch = evt.touches[0]; //获取第一个触点
+                    var x = Number(touch.pageX); //页面触点X坐标
+                    var y = Number(touch.pageY); //页面触点Y坐标
+                    var x = x - upCanvas.offsetLeft;
                     //var y = evt.clientY - upCanvas.offsetTop;
-					var y = evt.clientY - 95;
+					var y = y - 95;
+					console.log("x",x);
+					console.log("y",y);
                     var ctx = that.upCtx;
                     var options = that.options;
                     ctx.beginPath();
