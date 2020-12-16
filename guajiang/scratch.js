@@ -65,10 +65,10 @@
                     ctx.arc(x, y, options.radius, 0, Math.PI * 2, true);
                     ctx.fill();
                     ctx.closePath();
-                    if (that.result() > 0.8) {
-                        alert(that.award);
-                        upCanvas.removeEventListener("touchmove", callback2);
-                    }
+                    //if (that.result() > 0.8) {
+                    //    alert(that.award);
+                    //    upCanvas.removeEventListener("touchmove", callback2);
+                    //}
                 }, false);
                 doc.addEventListener("touchend", callback3 = function () {
                     upCanvas.removeEventListener("touchmove", callback2);
