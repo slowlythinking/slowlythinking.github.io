@@ -24,13 +24,33 @@
             this.drawMask();
             this.addEvent();
         },
+		myrandom: function(arr1, arr2) {
+             var sum = 0,
+             factor = 0,
+             random = Math.random();
+             for(var i = arr2.length - 1; i >= 0; i--) {
+                 sum += arr2[i]; // 统计概率总和
+             };
+             random *= sum; // 生成概率随机数
+             for(var i = arr2.length - 1; i >= 0; i--) {
+                 factor += arr2[i];
+                 if(random <= factor)
+                     return arr1[i];
+             };
+             return null;
+            },
+ // test
+//var a = ['mac', 'iphone', 'vivo', 'OPPO'];
+//var b = [0.1, 0.2, 0.3, 0.4];
+//console.log(random(a, b));
         drawText: function () {
             var ctx = this.underCtx;
             var text = this.options.text;
             ctx.font = text.fontWeight + " " + text.fontSize + 'px ' + text.fontFamily;
             ctx.textAlign = text.align;
             ctx.fillStyle = text.color;
-            this.award = this.options.awards[(Math.random() * this.options.awards.length) | 0]; //随机抽奖
+            //this.award = this.options.awards[(Math.random() * this.options.awards.length) | 0]; //随机抽奖
+			this.award = this.myrandom(this.options.awards, this.options.prob)
             ctx.fillText(this.award, this.width / 2, this.height / 2 + text.fontSize / 2);
         },
         drawMask: function () {
