@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>姝姝餐厅线上转盘</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#lottery-wrap{
+    position: relative;
+	display: block;
+	margin: 20px auto;
+	width: 300px;
+    border: 8px solid #eac34c;
+    border-radius: 50%;
+    box-shadow: 3px 0 3px #fffdc9, 0px 3px 3px #fffdc9, -3px 0 3px #fffdc9, 0px -3px 3px #fffdc9;
+}
+canvas{
+    display: block;
+}
+
+#lottery-handler{
+    position: absolute;
+    z-index: 2;
+    width: 60px;
+    height: 74px;
+    left: 50%;
+    top: 50%;
+    margin: -44px 0 0 -30px;
+    background: url(./images/handler.png) no-repeat 50%;
+    background-size: contain;
+}
+</style>
+</head>
+<body>
+<div style="text-align:center;color:black;height:55px;width:100%;position: absolute;left:0; top:80px; right:0; bottom: 0; margin: 0px 0px 0px 0px;">
+        <!--<p class="subtitle text-sm text-white">Knowledge mapping of cultural relics</p>-->
+        <h1 style="font-size:1.8em">姝姝餐厅线上转盘</h1>
+      </div>
+	  <div style="height:250;width:100%; position: absolute;left:0; top:185px; right:0; bottom: 0; margin: auto;">
+	<div id="lottery-wrap">
+        <div id="lottery-handler"></div>
+        <canvas width="300" height="300" id="lottery"></canvas>
+	</div>
+	</div>
+
+<script src="./Lottery.js"></script>
+<script>
+function myrandom(arr) {
+             var sum = 0,
+             factor = 0,
+             random = Math.random();
+             for(var i = arr.length - 1; i >= 0; i--) {
+                 sum += arr[i].proc; // 统计概率总和
+             };
+             random *= sum; // 生成概率随机数
+             for(var i = arr.length - 1; i >= 0; i--) {
+                 factor += arr[i].proc;
+                 if(random <= factor)
+                     return i;
+             };
+             return null;
+            }
+/*模拟ajax请求数据返回*/
+function _ajax(callback){
+	/*jQuery.ajax({
+		url: url,
+		data: data,
+		success: function(response){
+			callback && callback(response);
+		}
+	})*/
+	setTimeout(function(){
+		//var _index   = Math.floor(Math.random()*products.length);
+		var _index   = myrandom(products);
+		var response = {id: 1, name: products[_index].name, index: _index};
+		callback && callback(response);
+	}, 100);
+}
+
+var products = [
+    {
+        "imgUrl": "./images/redpacket.png",
+        "name": "1块",
+		"proc": 0.2
+    },
+    {
+        "imgUrl": "./images/redpacket.png",
+        "name": "5块",
+		"proc": 0.1
+    },
+	{
+        "imgUrl": "./images/redpacket.png",
+        "name": "100块",
+		"proc": 0.01
+    },
+    {
+        "imgUrl": "./images/nuomi.jpg",
+        "name": "糯米丸子",
+		"proc": 0.1
+    },
+    {
+        "imgUrl": "./images/douzi.jpg",
+        "name": "豆子汤一碗",
+		"proc": 0.1
+    },
+    {
+        "imgUrl": "./images/xiaozhu.jpg",
+        "name": "小猪猪一只",
+		"proc": 0.1
+    },
+    {
+        "imgUrl": "./images/yumi.jpg",
+        "name": "玉米一根",
+		"proc": 0.1
+    },
+    {
+        "imgUrl": "./images/tanshou.png",
+        "name": "哈哈哈",
+		"proc": 0.3
+    }
+];
+
+new Lottery(document.getElementById('lottery'), {
+	handler: document.getElementById('lottery-handler'),
+	handlerCallback: function(_interface){
+		/*ajax获取中奖结果*/
+		_ajax(function(response){
+			console.log(response);
+			/*指定停止的位置:索引*/
+			_interface.stop(response.index, function(){
+				alert('恭喜你中得:' + response.name)
+			});
+		});
+	},
+    images: {
+        width: 22,
+        height: 29,
+        y: '88%',
+    },
+	products: products
+});
+
+</script>
+</body>
+</html>
