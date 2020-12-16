@@ -27,6 +27,8 @@ Lottery.prototype = {
         /*存储图片链接*/
         this.imgUrl   = [];
         this.isOver   = true;
+		
+		
 
         this._setLayout();
         this._fixOptions();

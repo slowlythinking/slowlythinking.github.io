@@ -15,6 +15,7 @@
         this.height = this.upCanvas.height;
         this.options = options;
         this.award = null;
+		this.num = 0;
     };
 
     Scratch.prototype = {
@@ -24,6 +25,18 @@
             this.drawMask();
             this.addEvent();
         },
+		refresh: function() {
+			this.drawText();
+            this.drawMask();
+			//this.addEvent();
+			this.num++;
+			//console.log("num"+this.num);
+			if(this.num > 10)
+		{
+		alert('小朋友，你已经玩儿了' + this.num + '次啦！')
+		}
+		},
+		
 		myrandom: function(arr1, arr2) {
              var sum = 0,
              factor = 0,
@@ -51,12 +64,16 @@
             ctx.fillStyle = text.color;
             //this.award = this.options.awards[(Math.random() * this.options.awards.length) | 0]; //随机抽奖
 			this.award = this.myrandom(this.options.awards, this.options.prob)
+			ctx.clearRect(0, 0, this.width, this.height);
             ctx.fillText(this.award, this.width / 2, this.height / 2 + text.fontSize / 2);
         },
         drawMask: function () {
-            var ctx = this.upCtx;
+            this.upCanvas.width = this.upCanvas.width;
+            var ctx = this.upCanvas.getContext("2d");
+            //ctx.clearRect(0, 0, this.width, this.height);
             ctx.fillStyle = this.options.maskColor;
-            ctx.fillRect(0, 0, this.width, this.height);
+			//console.log("hwwwha"+this.options.maskColor+this.width+this.height);
+			ctx.fillRect(0, 0, this.width, this.height);
             ctx.globalCompositeOperation = 'destination-out';
         },
         addEvent: function () {
@@ -72,8 +89,8 @@
                     var x = x - upCanvas.offsetLeft;
                     //var y = evt.clientY - upCanvas.offsetTop;
 					var y = y - 785;
-					console.log("x",x);
-					console.log("y",y);
+					//console.log("x",x);
+					//console.log("y",y);
                     var ctx = that.upCtx;
                     var options = that.options;
                     ctx.beginPath();

@@ -9,9 +9,12 @@
         <!--<p class="subtitle text-sm text-white">Knowledge mapping of cultural relics</p>-->
         <h1 style="font-size:4.5em">姝姝餐厅线上刮奖</h1>
       </div>
-	<div style="height:250;width:100%; position: absolute;left:0; top:785px; right:0; bottom: 0; margin: auto;">
+	<div style="height:250px;width:100%; position: absolute;left:0; top:55px; right:0; bottom: 0; margin: auto;">
         <canvas id="underCanvas" width=500 height=250 style="position: absolute; left: 0;top: 0;right:0; bottom: 0;margin:0 auto;"></canvas>
         <canvas id="upCanvas" width=500 height=250 style="position: absolute; left: 0; top: 0;right:0; bottom: 0;margin:0 auto;"></canvas>
+	</div>
+	<div style="text-align:center;color:black;height:25px;width:100%;position: absolute;bottom: 450px; margin: 0px 0px 0px 0px;">
+	<button type="button" onclick="displayDate()" style="font-size:3.5em">再刮一次</button>
 	</div>
     <script src="./scratch.js"></script>
     <script>
@@ -30,7 +33,15 @@
 			prob: [0.05,0.11,0.12,0.13,0.14,0.15,0.16,0.17,0.18,0.19,0.2,0.21,0.22,0.23,0.24,0.25,0.26,0.27,0.28,0.29,0.3,0.4],
         };
 
-        new Scratch(options).init();
+        var scr = new Scratch(options);
+		scr.init();
+		
+		function displayDate()
+        {
+        //console.log("haha"+scr.award);
+		//new Scratch(options).init();
+		scr.refresh();
+        }
     </script>
 </body>
 </html>

@@ -82,6 +82,9 @@ function _ajax(callback){
 	}, 100);
 }
 
+//计数
+var num = 0;
+
 var products = [
     {
         "imgUrl": "./images/redpacket.png",
@@ -129,8 +132,13 @@ new Lottery(document.getElementById('lottery'), {
 	handler: document.getElementById('lottery-handler'),
 	handlerCallback: function(_interface){
 		/*ajax获取中奖结果*/
+		num++;
+		if(num > 10)
+		{
+		alert('小朋友，你已经玩儿了' + num + '次啦！')
+		}
 		_ajax(function(response){
-			console.log(response);
+			//console.log(response);
 			/*指定停止的位置:索引*/
 			_interface.stop(response.index, function(){
 				alert('恭喜你中得:' + response.name)
