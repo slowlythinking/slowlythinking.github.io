@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-	<title>姝姝餐厅线上转盘</title>
+	<title>狒狒餐厅线上转盘</title>
 <style>
 *{
 	margin: 0;
@@ -204,50 +204,45 @@ span.onclick = function() {
 
 var products = [
     {
-        "imgUrl": "./images/redpacket.png",
-        "name": "1块",
-		"proc": 0.2
+        "imgUrl": "./images/red.jpg",
+        "name": "红色哆啦A梦",
+		"proc": 0.1
     },
     {
-        "imgUrl": "./images/redpacket.png",
-        "name": "5块",
+        "imgUrl": "./images/orange.jpg",
+        "name": "橙色哆啦A梦",
 		"proc": 0.1
     },
 	{
-        "imgUrl": "./images/redpacket.png",
-        "name": "100块",
-		"proc": 0.01
-    },
-    {
-        "imgUrl": "./images/nuomi.jpg",
-        "name": "糯米丸子",
+        "imgUrl": "./images/yellow.jpg",
+        "name": "黄色哆啦A梦",
 		"proc": 0.1
     },
     {
-        "imgUrl": "./images/douzi.jpg",
-        "name": "豆子汤一碗",
+        "imgUrl": "./images/green.jpg",
+        "name": "绿色哆啦A梦",
 		"proc": 0.1
     },
     {
-        "imgUrl": "./images/xiaozhu.jpg",
-        "name": "小猪猪一只",
+        "imgUrl": "./images/deepgreen.jpg",
+        "name": "青色哆啦A梦",
 		"proc": 0.1
     },
     {
-        "imgUrl": "./images/yumi.jpg",
-        "name": "玉米一根",
+        "imgUrl": "./images/blue.jpg",
+        "name": "蓝色哆啦A梦",
 		"proc": 0.1
     },
     {
-        "imgUrl": "./images/feifei.jpg",
-        "name": "狒狒一只",
-		"proc": 100
+        "imgUrl": "./images/purple.jpg",
+        "name": "紫色哆啦A梦",
+		"proc": 0.1
     },
     {
-        "imgUrl": "./images/tanshou.png",
-        "name": "哈哈哈",
-		"proc": 0.3
-    }
+        "imgUrl": "./images/key.jpg",
+        "name": "获得钥匙一把",
+		"proc": 0.1
+    },
 ];
 
 new Lottery(document.getElementById('lottery'), {
@@ -257,7 +252,7 @@ new Lottery(document.getElementById('lottery'), {
 		num++;
 		if(num > 10)
 		{
-		alert('小朋友，你已经玩儿了' + num + '次啦！')
+		alert('狒狒，你已经玩儿了' + num + '次啦！')
 		}
 		_ajax(function(response){
 			console.log(response);
