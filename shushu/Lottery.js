@@ -78,7 +78,12 @@ Lottery.prototype = {
         for(var i = 0; i < this.size; i++){
             var sAngle = this.sAngle + this.angle*i;
             this.ctx.beginPath();
-            this.ctx.fillStyle = fillStyle[i%fillStyle.length];
+			if(this.options.products[i].color == undefined || this.options.products[i].color == '')
+			//按照配置文件中的fillStyle配置颜色
+                this.ctx.fillStyle = fillStyle[i%fillStyle.length];
+			//按照手动设置的项配置颜色
+			else
+			    this.ctx.fillStyle = this.options.products[i].color;
             this.ctx.arc(this.radius, this.radius, this.innerRadius, sAngle, sAngle + this.angle, false);
             this.ctx.arc(this.radius, this.radius, this.outerRadius, sAngle + this.angle, sAngle, true);
             this.ctx.closePath();
@@ -98,7 +103,12 @@ Lottery.prototype = {
             this.ctx.save();
             this.ctx.translate(this.radius, this.radius);
             this.ctx.rotate(this.angle * i);
-            this.ctx.fillStyle = this.isArray(fonts.color) ? fonts.color[i%fonts.color.length] : fonts.color;
+			if(this.options.products[i].textColor == undefined || this.options.products[i].textColor == '')
+			//按照配置文件中的fillStyle配置颜色
+                this.ctx.fillStyle = this.isArray(fonts.color) ? fonts.color[i%fonts.color.length] : fonts.color;
+			//按照手动设置的项配置颜色
+			else
+                this.ctx.fillStyle = this.options.products[i].textColor;
             this.ctx.font = this._getFontStyle();
             this.ctx.fillText(textArr[0], -this.ctx.measureText(textArr[0]).width/2, - fonts.y);
 
