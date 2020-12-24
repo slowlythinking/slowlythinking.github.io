@@ -3,21 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-	<title>姝姝餐厅线上转盘</title>
+	<title>魏星星的幸运转盘</title>
 <style>
 *{
 	margin: 0;
 	padding: 0;
 }
-
+body{
+      background: url(./images/yukia.jpg) no-repeat top;
+      background-size: cover;
+}
 #lottery-wrap{
     position: relative;
 	display: block;
 	margin: 20px auto;
 	width: 300px;
-    border: 8px solid #eac34c;
+    border: 8px solid #FFFFFF;
     border-radius: 50%;
-    box-shadow: 3px 0 3px #fffdc9, 0px 3px 3px #fffdc9, -3px 0 3px #fffdc9, 0px -3px 3px #fffdc9;
+    box-shadow: 3px 0 3px #F7FE2E, 0px 3px 3px #F7FE2E, -3px 0 3px #F7FE2E, 0px -3px 3px #F7FE2E;
 }
 canvas{
     display: block;
@@ -37,9 +40,9 @@ canvas{
 </style>
 </head>
 <body>
-<div style="text-align:center;color:black;height:55px;width:100%;position: absolute;left:0; top:80px; right:0; bottom: 0; margin: 0px 0px 0px 0px;">
+<div style="text-align:center;color:white;height:55px;width:100%;position: absolute;left:0; top:80px; right:0; bottom: 0; margin: 0px 0px 0px 0px;">
         <!--<p class="subtitle text-sm text-white">Knowledge mapping of cultural relics</p>-->
-        <h1 style="font-size:1.8em">姝姝餐厅线上转盘</h1>
+        <h1 style="font-size:1.8em">XingXing's Lucky Wheel</h1>
       </div>
 	  <div style="height:250;width:100%; position: absolute;left:0; top:185px; right:0; bottom: 0; margin: auto;">
 	<div id="lottery-wrap">
@@ -270,209 +273,209 @@ function _ajax(callback){
 var products = [
     {
         //转盘上显示的图片
-		"imgUrl": "./images/redpacket.png",
+		"imgUrl": "./images/deer.jpg",
 		//转盘上显示的文字
-        "name": "1块",
+        "name": "Red Santa",
 		//被抽中的概率
-		"proc": 0.2,
+		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "#F6E3CE",
+		"color": "#088A85",
 		//转盘上文字的颜色，可以为空，设置方法同上
-		"textColor": "black",
+		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": true,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "我变成豆子汤啦",
+		"congratulations": "Red Santa",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
-		"showImage": "./images/douzi.jpg",
+		"showImage": "./images/red.jpg",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "我又变成小猪猪啦",
+		"clickText": "恭喜抽中红色手套",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/xiaozhu.jpg",
+		"clickImage": "./images/shoutao.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "./audio/hellofeifei.mp3",
+		"clickSound": "./audio/songm.mp3",
     },
     {
 		//转盘上显示的图片
-		"imgUrl": "./images/redpacket.png",
+		"imgUrl": "./images/deer.jpg",
 		//转盘上显示的文字
-        "name": "5块",
+        "name": "Orange Santa",
 		//被抽中的概率
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "",
+		"color": "#FF0000",
 		//转盘上文字的颜色，可以为空，设置方法同上
-		"textColor": "",
+		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": true,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "我变成豆子汤啦",
+		"congratulations": "Orange Santa",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
-		"showImage": "./images/douzi.jpg",
+		"showImage": "./images/orange.jpg",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "我又变成小猪猪啦",
+		"clickText": "恭喜抽中橙色盒子",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/xiaozhu.jpg",
+		"clickImage": "./images/randomone.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "./audio/hellofeifei.mp3",
+		"clickSound": "./audio/songm.mp3",
     },
 	{
-        "imgUrl": "./images/redpacket.png",
-        "name": "100块",
-		"proc": 0.01,
-		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "",
-		//转盘上文字的颜色，可以为空，设置方法同上
-		"textColor": "",
-		
-		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
-		"needClick": true,
-		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "我变成豆子汤啦",
-		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
-		"showImage": "./images/douzi.jpg",
-		
-		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
-		"clickVideo": "",
-		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "我又变成小猪猪啦",
-		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/xiaozhu.jpg",
-		//点击showImage后显示的声音（可以为空）
-		"clickSound": "./audio/hellofeifei.mp3",
-    },
-    {
-        "imgUrl": "./images/nuomi.jpg",
-        "name": "糯米丸子",
+        "imgUrl": "./images/deer.jpg",
+        "name": "Yellow Santa",
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "",
+		"color": "#088A85",
 		//转盘上文字的颜色，可以为空，设置方法同上
-		"textColor": "",
+		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": true,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "我变成豆子汤啦",
+		"congratulations": "Yellow Santa",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
-		"showImage": "./images/douzi.jpg",
+		"showImage": "./images/yellow.jpg",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "我又变成小猪猪啦",
+		"clickText": "恭喜抽中黄色信封",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/xiaozhu.jpg",
+		"clickImage": "./images/wishlistone.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "./audio/hellofeifei.mp3",
+		"clickSound": "./audio/songs.mp3",
     },
     {
-        "imgUrl": "./images/douzi.jpg",
-        "name": "豆子汤一碗",
+        "imgUrl": "./images/deer.jpg",
+        "name": "Green Santa",
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "",
+		"color": "#FF0000",
 		//转盘上文字的颜色，可以为空，设置方法同上
-		"textColor": "",
+		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": true,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "我变成豆子汤啦",
+		"congratulations": "Green Santa",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
-		"showImage": "./images/douzi.jpg",
+		"showImage": "./images/green.jpg",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "我又变成小猪猪啦",
+		"clickText": "恭喜抽中绿色礼盒",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/xiaozhu.jpg",
+		"clickImage": "./images/one.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "./audio/hellofeifei.mp3",
+		"clickSound": "./audio/songm.mp3",
     },
     {
-        "imgUrl": "./images/xiaozhu.jpg",
-        "name": "小猪猪一只",
+        "imgUrl": "./images/deer.jpg",
+        "name": "Qing Santa",
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "",
+		"color": "#088A85",
 		//转盘上文字的颜色，可以为空，设置方法同上
-		"textColor": "",
+		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": true,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "我变成豆子汤啦",
+		"congratulations": "Qing Santa",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
-		"showImage": "./images/douzi.jpg",
+		"showImage": "./images/deepgreen.jpg",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "我又变成小猪猪啦",
+		"clickText": "恭喜抽中两个盒子",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/xiaozhu.jpg",
+		"clickImage": "./images/twoone.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "./audio/hellofeifei.mp3",
+		"clickSound": "./audio/songm.mp3",
     },
     {
-        "imgUrl": "./images/yumi.jpg",
-        "name": "玉米一根",
+        "imgUrl": "./images/deer.jpg",
+        "name": "Blue Santa",
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "",
+		"color": "#FF0000",
 		//转盘上文字的颜色，可以为空，设置方法同上
-		"textColor": "",
+		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": true,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "我变成豆子汤啦",
+		"congratulations": "Blue Santa",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
-		"showImage": "./images/douzi.jpg",
+		"showImage": "./images/blue.jpg",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "我又变成小猪猪啦",
+		"clickText": "恭喜抽中小小盒子",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/xiaozhu.jpg",
+		"clickImage": "./images/xiao.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "./audio/hellofeifei.mp3",
+		"clickSound": "./audio/songm.mp3",
     },
     {
-        "imgUrl": "./images/tanshou.png",
-        "name": "哈哈哈",
-		"proc": 0.3,
+        "imgUrl": "./images/deer.jpg",
+        "name": "Purple Santa",
+		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "",
+		"color": "#088A85",
 		//转盘上文字的颜色，可以为空，设置方法同上
-		"textColor": "",
+		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": true,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "我变成豆子汤啦",
+		"congratulations": "Purple Santa",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
-		"showImage": "./images/douzi.jpg",
+		"showImage": "./images/purple.jpg",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "我又变成小猪猪啦",
+		"clickText": "恭喜抽中两只朋友",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/xiaozhu.jpg",
+		"clickImage": "./images/zise.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "./audio/hellofeifei.mp3",
+		"clickSound": "./audio/songm.mp3",
+    },
+    {
+        "imgUrl": "./images/deer.jpg",
+        "name": "Merry Christmas",
+		"proc": 0.1,
+		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
+		"color": "#FF0000",
+		//转盘上文字的颜色，可以为空，设置方法同上
+		"textColor": "white",
+		
+		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
+		"needClick": true,
+		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
+		"congratulations": "Merry Chistmas",
+		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
+		"showImage": "./images/key.jpg",
+		
+		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
+		"clickVideo": "",
+		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
+		"clickText": "恭喜抽中圣诞祝福",
+		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
+		"clickImage": "./images/sdkl.jpg",
+		//点击showImage后显示的声音（可以为空）
+		"clickSound": "./audio/songm.mp3",
     }
 ];
 
@@ -483,7 +486,7 @@ new Lottery(document.getElementById('lottery'), {
 		num++;
 		if(num > 10)
 		{
-		alert('小朋友，你已经玩儿了' + num + '次啦！')
+		alert('魏星星同学，你已经玩儿了' + num + '次啦！')
 		}
 		_ajax(function(response){
 			console.log(response);
