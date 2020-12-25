@@ -147,22 +147,28 @@ Lottery.prototype = {
                     //w   = (width || ret.width) *  scale,
                     //h   = (height || ret.height) * scale;
 				if(ret.width > ret.height){
-				    if(ret.height > height)
-					    {
+				    //if(ret.height > height)
+					    //{
 						    h = height * scale;
 						    w = ret.width * height * scale / ret.height;
-					    }
+					    //}
 				    }
 				else{
-					if(ret.width > width)
-					{
+					//if(ret.width > width)
+					//{
 						w = width * scale;
 						h = ret.height * width * scale / ret.width;
-					}
+					//}
 				}
 					//w   = (width || ret.width) *  scale,
                     //h   = (height || ret.height) * scale;
-
+console.log("w:"+w);
+console.log("h:"+h);
+console.log("width:"+width);
+console.log("height:"+height);
+console.log("ret.width:"+ret.width);
+console.log("ret.height:"+ret.height);
+console.log("scale:"+scale);
                 self.ctx.save();
                 self.ctx.translate(self.radius, self.radius);
                 self.ctx.rotate(self.angle * i);
