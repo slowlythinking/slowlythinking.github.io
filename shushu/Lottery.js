@@ -109,6 +109,13 @@ Lottery.prototype = {
 			//按照手动设置的项配置颜色
 			else
                 this.ctx.fillStyle = this.options.products[i].textColor;
+			
+			//按照配置文件中的fillStyle配置大小
+			if(this.options.products[i].textSize == undefined || this.options.products[i].textSize == '');
+			//按照手动设置的项配置大小
+			else
+                fonts.size = this.options.products[i].textSize;
+			
             this.ctx.font = this._getFontStyle();
             this.ctx.fillText(textArr[0], -this.ctx.measureText(textArr[0]).width/2, - fonts.y);
 
@@ -160,15 +167,6 @@ Lottery.prototype = {
 						h = ret.height * width * scale / ret.width;
 					//}
 				}
-					//w   = (width || ret.width) *  scale,
-                    //h   = (height || ret.height) * scale;
-console.log("w:"+w);
-console.log("h:"+h);
-console.log("width:"+width);
-console.log("height:"+height);
-console.log("ret.width:"+ret.width);
-console.log("ret.height:"+ret.height);
-console.log("scale:"+scale);
                 self.ctx.save();
                 self.ctx.translate(self.radius, self.radius);
                 self.ctx.rotate(self.angle * i);
