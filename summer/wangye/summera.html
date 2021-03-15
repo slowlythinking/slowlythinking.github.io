@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>春天想和小姝姝一起做的事情</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+      height:100vh;
+      box-sizing:border-box;
+      overflow-y:hidden;
+      background: url(./images/giphy.gif) no-repeat top;
+	  opacity: 0.82;
+	  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+	  background-attachment: fixed;
+}
+#lottery-wrap{
+    position: relative;
+	display: block;
+	margin: 20px auto;
+	width: 300px;
+    border: 8px solid #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 3px 0 3px #F7FE2E, 0px 3px 3px #F7FE2E, -3px 0 3px #F7FE2E, 0px -3px 3px #F7FE2E;
+}
+canvas{
+    display: block;
+}
+
+#lottery-handler{
+    position: absolute;
+    z-index: 1;
+    width: 60px;
+    height: 74px;
+    left: 50%;
+    top: 50%;
+    margin: -44px 0 0 -30px;
+    background: url(./images/handler.png) no-repeat 50%;
+    background-size: contain;
+}
+</style>
+</head>
+<body>
+<div style="text-align:center;color:black;height:55px;width:100%;position: absolute;left:0; top:80px; right:0; bottom: 0; margin: 0px 0px 0px 0px;">
+        <!--<p class="subtitle text-sm text-white">Knowledge mapping of cultural relics</p>-->
+        <h1 style="font-size:1.8em">春天想和姝姝一起做的事情</h1>
+      </div>
+	  <div style="height:250;width:100%; position: absolute;left:0; top:185px; right:0; bottom: 0; margin: auto;">
+	<div id="lottery-wrap">
+        <div id="lottery-handler"></div>
+        <canvas width="300" height="300" id="lottery"></canvas>
+	</div>
+	</div>
+	<!-- 弹窗 -->
+<div id="myModal" class="modal">
+  <!-- 关闭按钮 -->
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+ 
+  <!-- 弹窗内容 -->
+  <img class="modal-content" id="img01">
+  <audio id="bgaudio"></audio>
+ 
+  <!-- 文本描述 -->
+  <div id="caption"></div>
+</div>
+
+<style type="text/css">
+/* 触发弹窗图片的样式 */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+ 
+#myImg:hover {opacity: 0.7;}
+ 
+/* 弹窗背景 */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+ 
+/* 图片 */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+ 
+/* 文本内容 */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 250px;
+	font-size: 25px;
+}
+ 
+/* 添加动画 */
+.modal-content, #caption { 
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+ 
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+ 
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+ 
+/* 关闭按钮 */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+ 
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+ 
+/* 小屏幕中图片宽度为 100% */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+</style>
+
+
+
+<script src="./Lottery.js"></script>
+<script>
+//计数
+var num = 0;
+//抽中的物件index
+var chooseindex = 0;
+
+// 获取弹窗
+var modal = document.getElementById('myModal');
+
+// 获取图片插入到弹窗 - 使用 "alt" 属性作为文本部分的内容
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var modalAudio = document.getElementById("bgaudio");
+var captionText = document.getElementById("caption");
+ 
+// 获取 <span> 元素，设置关闭按钮
+var span = document.getElementsByClassName("close")[0];
+ 
+// 当点击 (x), 关闭弹窗
+span.onclick = function() { 
+  modal.style.display = "none";
+  //关闭声音
+  //显示声音
+	if(products[chooseindex].clickSound != undefined && products[chooseindex].clickSound != '')
+	{
+		modalAudio.pause();
+	}
+}
+
+modalImg.onclick = function() {
+    console.log("点击了图片");
+	console.log("抽中了"+chooseindex);
+	if(products[chooseindex].needClick)
+	{
+	    //检查是否设置了弹出视频
+		if(products[chooseindex].clickVideo != undefined && products[chooseindex].clickVideo != '')
+		{
+		
+		}
+		else{
+			//显示图片
+			modal.style.display = "block";
+			//点击文字
+			if(products[chooseindex].clickText == undefined || products[chooseindex].clickText == ''){
+			    //判断弹出文字有没有设置，没有的话使用转盘文字
+			    if(products[chooseindex].congratulations == undefined || products[chooseindex].congratulations == '')
+				    captionText.innerHTML = products[chooseindex].name;
+				else
+				    captionText.innerHTML = products[chooseindex].congratulations;
+			}
+			else
+				//按设置显示
+				captionText.innerHTML = products[chooseindex].clickText;
+			
+			//点击图片
+			if(products[chooseindex].showImage == undefined || products[chooseindex].showImage == ''){
+			    //判断弹出图片有没有设置，没有的话使用转盘图片
+			    if(products[chooseindex].showImage == undefined || products[chooseindex].showImage == '')
+				    modalImg.src = products[chooseindex].imgUrl;
+				else
+				    modalImg.src = products[chooseindex].showImage;
+			}
+			else
+				//按设置显示
+				modalImg.src = products[chooseindex].clickImage;
+			
+			//显示声音
+			if(products[chooseindex].clickSound != undefined && products[chooseindex].clickSound != '')
+			{
+				modalAudio.src = products[chooseindex].clickSound;
+				modalAudio.play();
+			}
+		}
+					
+	}
+	else
+	{
+	//do nothing
+	}
+}
+
+function myrandom(arr) {
+             var sum = 0,
+             factor = 0,
+             random = Math.random();
+             for(var i = arr.length - 1; i >= 0; i--) {
+                 sum += arr[i].proc; // 统计概率总和
+             };
+             random *= sum; // 生成概率随机数
+             for(var i = arr.length - 1; i >= 0; i--) {
+                 factor += arr[i].proc;
+                 if(random <= factor)
+                     return i;
+             };
+             return null;
+            }
+/*模拟ajax请求数据返回*/
+function _ajax(callback){
+	/*jQuery.ajax({
+		url: url,
+		data: data,
+		success: function(response){
+			callback && callback(response);
+		}
+	})*/
+	setTimeout(function(){
+		//var _index   = Math.floor(Math.random()*products.length);
+		var _index   = myrandom(products);
+		chooseindex = _index;
+		var response = {id: 1, name: products[_index].name, index: _index};
+		callback && callback(response);
+	}, 100);
+}
+
+
+var products = [
+    {
+        //转盘上显示的图片
+		"imgUrl": "./images/sakura/1.png",
+		//转盘上显示的文字
+        "name": "Red Flower",
+		//被抽中的概率
+		"proc": 0.1,
+		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
+		"color": "#088A85",
+		//转盘上文字的颜色，可以为空，设置方法同上
+		"textColor": "white",
+		
+		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
+		"needClick": false,
+		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
+		"congratulations": "",
+		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
+		"showImage": "",
+		
+		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
+		"clickVideo": "",
+		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
+		"clickText": "想和你一起去旅行",
+		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
+		"clickImage": "./images/travel/1.gif",
+		//点击showImage后显示的声音（可以为空）
+		"clickSound": "",
+    },
+    {
+		//转盘上显示的图片
+		"imgUrl": "./images/sakura/1.png",
+		//转盘上显示的文字
+        "name": "Orange Flower",
+		//被抽中的概率
+		"proc": 0.1,
+		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
+		"color": "#86B404",
+		//转盘上文字的颜色，可以为空，设置方法同上
+		"textColor": "white",
+		
+		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
+		"needClick": false,
+		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
+		"congratulations": "",
+		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
+		"showImage": "",
+		
+		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
+		"clickVideo": "",
+		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
+		"clickText": "想和你一起看完一本书",
+		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
+		"clickImage": "./images/reading/1.gif",
+		//点击showImage后显示的声音（可以为空）
+		"clickSound": "",
+    },
+	{
+        "imgUrl": "./images/sakura/1.png",
+        "name": "Yellow Flower",
+		"proc": 0.1,
+		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
+		"color": "#088A85",
+		//转盘上文字的颜色，可以为空，设置方法同上
+		"textColor": "white",
+		
+		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
+		"needClick": false,
+		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
+		"congratulations": "",
+		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
+		"showImage": "",
+		
+		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
+		"clickVideo": "",
+		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
+		"clickText": "想和你哈哈大笑地看完一部搞笑电影:)",
+		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
+		"clickImage": "./images/film/1.gif",
+		//点击showImage后显示的声音（可以为空）
+		"clickSound": "",
+    },
+    {
+        "imgUrl": "./images/sakura/1.png",
+        "name": "Green Flower",
+		"proc": 0.1,
+		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
+		"color": "#86B404",
+		//转盘上文字的颜色，可以为空，设置方法同上
+		"textColor": "white",
+		
+		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
+		"needClick": false,
+		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
+		"congratulations": "",
+		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
+		"showImage": "",
+		
+		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
+		"clickVideo": "",
+		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
+		"clickText": "想和你一起去爬山",
+		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
+		"clickImage": "./images/climb/1.gif",
+		//点击showImage后显示的声音（可以为空）
+		"clickSound": "",
+    },
+    {
+        "imgUrl": "./images/sakura/1.png",
+        "name": "Qing Flower",
+		"proc": 0.1,
+		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
+		"color": "#088A85",
+		//转盘上文字的颜色，可以为空，设置方法同上
+		"textColor": "white",
+		
+		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
+		"needClick": false,
+		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
+		"congratulations": "",
+		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
+		"showImage": "",
+		
+		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
+		"clickVideo": "",
+		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
+		"clickText": "想和你一起去打场羽毛球",
+		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
+		"clickImage": "./images/badminton/1.gif",
+		//点击showImage后显示的声音（可以为空）
+		"clickSound": "",
+    },
+    {
+        "imgUrl": "./images/sakura/1.png",
+        "name": "Blue Flower",
+		"proc": 0.1,
+		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
+		"color": "#86B404",
+		//转盘上文字的颜色，可以为空，设置方法同上
+		"textColor": "white",
+		
+		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
+		"needClick": false,
+		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
+		"congratulations": "",
+		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
+		"showImage": "",
+		
+		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
+		"clickVideo": "",
+		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
+		"clickText": "想拥抱你",
+		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
+		"clickImage": "./images/hug/2.gif",
+		//点击showImage后显示的声音（可以为空）
+		"clickSound": "",
+    },
+    {
+        "imgUrl": "./images/sakura/1.png",
+        "name": "Purple Flower",
+		"proc": 0.1,
+		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
+		"color": "#088A85",
+		//转盘上文字的颜色，可以为空，设置方法同上
+		"textColor": "white",
+		
+		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
+		"needClick": false,
+		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
+		"congratulations": "",
+		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
+		"showImage": "",
+		
+		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
+		"clickVideo": "",
+		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
+		"clickText": "想和你一起玩儿一天游戏",
+		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
+		"clickImage": "./images/game/1.gif",
+		//点击showImage后显示的声音（可以为空）
+		"clickSound": "",
+    },
+    {
+        "imgUrl": "./images/sakura/1.png",
+        "name": "White Flower",
+		//"textSize": 8,
+		"proc": 0.1,
+		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
+		"color": "#86B404",
+		//转盘上文字的颜色，可以为空，设置方法同上
+		"textColor": "white",
+		
+		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
+		"needClick": false,
+		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
+		"congratulations": "",
+		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
+		"showImage": "",
+		
+		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
+		"clickVideo": "",
+		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
+		"clickText": "想吻你",
+		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
+		"clickImage": "./images/kiss/1.gif",
+		//点击showImage后显示的声音（可以为空）
+		"clickSound": "",
+    }
+];
+
+new Lottery(document.getElementById('lottery'), {
+	handler: document.getElementById('lottery-handler'),
+	handlerCallback: function(_interface){
+		/*ajax获取中奖结果*/
+		num++;
+		if(num > 10)
+		{
+		alert('小姝姝同学，你已经玩儿了' + num + '次啦！')
+		}
+		_ajax(function(response){
+			console.log(response);
+			/*指定停止的位置:索引*/
+			_interface.stop(response.index, function(){
+				//alert('恭喜你中得:' + response.name)
+				//当需要点击时显示congratulations和showImage
+				if(products[response.index].needClick){
+					var text = '恭喜你抽中了:' + response.name;
+					//弹出的文字
+					if(products[response.index].congratulations == undefined || products[response.index].congratulations == '')
+						//未设置时按照转盘上的设置显示
+                		captionText.innerHTML = text;
+					else
+					    //按设置显示
+			    		captionText.innerHTML = products[response.index].congratulations;
+					
+					//弹出的图片
+					if(products[response.index].showImage == undefined || products[response.index].showImage == '')
+						//未设置时按照转盘上的设置显示
+                		modalImg.src = products[response.index].imgUrl;
+					else
+					    //按设置显示
+			    		modalImg.src = products[response.index].showImage;
+					
+					//显示大图
+					modal.style.display = "block";
+				}
+				else
+				{
+					//点击文字
+					if(products[chooseindex].clickText == undefined || products[chooseindex].clickText == ''){
+				    //判断弹出文字有没有设置，没有的话使用转盘文字
+				    if(products[chooseindex].congratulations == undefined || products[chooseindex].congratulations == '')
+					    captionText.innerHTML = products[chooseindex].name;
+					else
+					    captionText.innerHTML = products[chooseindex].congratulations;
+					}
+					else
+						//按设置显示
+						captionText.innerHTML = products[chooseindex].clickText;
+			
+					//点击图片
+					if(products[chooseindex].showImage == undefined || products[chooseindex].showImage == ''){
+					    //判断弹出图片有没有设置，没有的话使用转盘图片
+					    if(products[chooseindex].clickImage == undefined || products[chooseindex].clickImage == '')
+						    modalImg.src = products[chooseindex].imgUrl;
+						else
+						    modalImg.src = products[chooseindex].clickImage;
+					}
+					else
+						//按设置显示
+						modalImg.src = products[chooseindex].clickImage;
+			
+					//显示声音
+					if(products[chooseindex].clickSound != undefined && products[chooseindex].clickSound != '')
+					{
+						modalAudio.src = products[chooseindex].clickSound;
+						modalAudio.play();
+					}
+					//显示大图
+					modal.style.display = "block";
+				}
+			});
+		});
+	},
+    images: {
+        width: 36,
+        height: 36,
+        y: '88%',
+    },
+	products: products
+});
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
+	<script type="text/javascript">
+	//L2Dwidget.init(
+	//{ 
+　　//"model": {jsonPath:"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","scale": 1 },
+    //"model": {jsonPath:"https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json","scale": 1 }, 
+　　//"display": { "position": "right", "width": 50, "height": 100,"hOffset": 0, "vOffset": -20 }, 
+　　//"mobile": { "show": true, "scale": 0.5 }, 
+　　//"react": { "opacityDefault": 0.9, "opacityOnHover": 0.1 } }
+	//);
+</script>
+
+
+
+
+</body>
+</html>
