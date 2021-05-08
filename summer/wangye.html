@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-	<title>夏天想和狒狒一起做的事情</title>
+	<title>私たちの夏</title>
 <style>
 *{
 	margin: 0;
@@ -13,14 +13,15 @@ body{
       height:100vh;
       box-sizing:border-box;
       overflow-y:hidden;
-      background: url(./images/giphy.gif) no-repeat top;
-	  opacity: 0.82;
+      background: url(./images/yanhua.gif) no-repeat top;
+	  opacity: 0.84;
 	  -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
 	  background-attachment: fixed;
 }
+
 #lottery-wrap{
     position: relative;
 	display: block;
@@ -50,7 +51,7 @@ canvas{
 <body>
 <div style="text-align:center;color:black;height:55px;width:100%;position: absolute;left:0; top:80px; right:0; bottom: 0; margin: 0px 0px 0px 0px;">
         <!--<p class="subtitle text-sm text-white">Knowledge mapping of cultural relics</p>-->
-        <h1 style="font-size:1.8em">夏天想和狒狒一起做的事情</h1>
+        <h1 style="font-size:1.6em; color:#CECEF6">私たちの夏</h1>
       </div>
 	  <div style="height:250;width:100%; position: absolute;left:0; top:185px; right:0; bottom: 0; margin: auto;">
 	<div id="lottery-wrap">
@@ -81,7 +82,7 @@ canvas{
  
 #myImg:hover {opacity: 0.7;}
  
-/* 弹窗背景 */
+/* 弹窗背景，我走啦，这句放这里没关系的，是注释 好~~~~loveu loveu3000times */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -282,66 +283,91 @@ function _ajax(callback){
 var products = [
     {
         //转盘上显示的图片
-		"imgUrl": "./images/sakura/1.png",
+		"imgUrl": "./images/sakura/5.png",
 		//转盘上显示的文字
-        "name": "Red Flower",
+        "name": "いち",
 		//被抽中的概率
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "#088A85",
+		"color": "#F5A9D0",
 		//转盘上文字的颜色，可以为空，设置方法同上
 		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": false,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "",
+		"congratulations": "想和你一起看星星",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
 		"showImage": "",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "想和你一起去旅行",
+		"clickText": "想和你一起看星星",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/travel/1.gif",
+		"clickImage": "./images/xingxing.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "",
+		"clickSound": "./audio/lhxz.mp3",
     },
     {
 		//转盘上显示的图片
-		"imgUrl": "./images/sakura/1.png",
+		"imgUrl": "./images/sakura/5.png",
 		//转盘上显示的文字
-        "name": "Orange Flower",
+        "name": "に",
 		//被抽中的概率
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "#86B404",
+		"color": "#210B61",
 		//转盘上文字的颜色，可以为空，设置方法同上
 		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": false,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "",
+		"congratulations": "想和你一起去花火大会",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
 		"showImage": "",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "想和你一起看完一本书",
+		"clickText": "想和你一起去花火大会",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/reading/1.gif",
+		"clickImage": "./images/hhdh.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "",
+		"clickSound": "./audio/Liekkas.mp3",
     },
 	{
-        "imgUrl": "./images/sakura/1.png",
-        "name": "Yellow Flower",
+        "imgUrl": "./images/sakura/5.png",
+        "name": "さん",
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "#088A85",
+		"color": "#F5A9D0",
+		//转盘上文字的颜色，可以为空，设置方法同上
+		"textColor": "white",
+		
+		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
+		"needClick": false,
+		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
+		"congratulations": "想和你一起去学校操场散步",
+		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
+		"showImage": "",
+		
+		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
+		"clickVideo": "",
+		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
+		"clickText": "想和你一起去学校操场散步",
+		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
+		"clickImage": "./images/caochang.jpg",
+		//点击showImage后显示的声音（可以为空）
+		"clickSound": "./audio/wmdshhz.mp3",
+    },
+    {
+        "imgUrl": "./images/sakura/5.png",
+        "name": "よん",
+		"proc": 0.1,
+		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
+		"color": "#210B61",
 		//转盘上文字的颜色，可以为空，设置方法同上
 		"textColor": "white",
 		
@@ -355,137 +381,112 @@ var products = [
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "想和你哈哈大笑地看完一部搞笑电影:)",
+		"clickText": "想和你一起去买菜",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/film/1.gif",
+		"clickImage": "./images/chifan.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "",
+		"clickSound": "./audio/oceanside.mp3",
     },
     {
-        "imgUrl": "./images/sakura/1.png",
-        "name": "Green Flower",
+        "imgUrl": "./images/sakura/5.png",
+        "name": "ご",
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "#86B404",
+		"color": "#F5A9D0",
 		//转盘上文字的颜色，可以为空，设置方法同上
 		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": false,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "",
+		"congratulations": "想和你一起去崇明岛",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
 		"showImage": "",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "想和你一起去爬山",
+		"clickText": "想和你一起去崇明岛",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/climb/1.gif",
+		"clickImage": "./images/xishashidi.jpeg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "",
+		"clickSound": "./audio/ybslda.mp3",
     },
     {
-        "imgUrl": "./images/sakura/1.png",
-        "name": "Qing Flower",
+        "imgUrl": "./images/sakura/5.png",
+        "name": "ろく",
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "#088A85",
+		"color": "#210B61",
 		//转盘上文字的颜色，可以为空，设置方法同上
 		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": false,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "",
+		"congratulations": "想在你怀里听一次睡前故事",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
 		"showImage": "",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "想和你一起去打场羽毛球",
+		"clickText": "想在你怀里听一次睡前故事",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/badminton/1.gif",
+		"clickImage": "./images/shuiqian.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "",
+		"clickSound": "./audio/wksnsznydxh.mp3",
     },
     {
-        "imgUrl": "./images/sakura/1.png",
-        "name": "Blue Flower",
+        "imgUrl": "./images/sakura/5.png",
+        "name": "なな",
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "#86B404",
+		"color": "#F5A9D0",
 		//转盘上文字的颜色，可以为空，设置方法同上
 		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": false,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "",
+		"congratulations": "想听一次狒狒的代码课",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
 		"showImage": "",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "想拥抱你",
+		"clickText": "想听一次狒狒的代码课",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/hug/2.gif",
+		"clickImage": "./images/daima.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "",
+		"clickSound": "./audio/jzqs.mp3",
     },
     {
-        "imgUrl": "./images/sakura/1.png",
-        "name": "Purple Flower",
-		"proc": 0.1,
-		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "#088A85",
-		//转盘上文字的颜色，可以为空，设置方法同上
-		"textColor": "white",
-		
-		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
-		"needClick": false,
-		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "",
-		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
-		"showImage": "",
-		
-		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
-		"clickVideo": "",
-		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "想和你一起玩儿一天游戏",
-		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/game/1.gif",
-		//点击showImage后显示的声音（可以为空）
-		"clickSound": "",
-    },
-    {
-        "imgUrl": "./images/sakura/1.png",
-        "name": "White Flower",
+        "imgUrl": "./images/sakura/5.png",
+        "name": "はち",
 		//"textSize": 8,
 		"proc": 0.1,
 		//转盘上扇形的底色，可以为空，可以写blue、red这种，也可以参考https://html-color-codes.info/chinese/写颜色代码
-		"color": "#86B404",
+		"color": "#210B61",
 		//转盘上文字的颜色，可以为空，设置方法同上
 		"textColor": "white",
 		
 		//是否增加点击事件,设为true时先显示抽中后的图文，点击后再显示其他信息；设为false时直接显示点击后的信息，跳过congratulations和showImage的显示
 		"needClick": false,
 		//抽中后显示的文字(可以为空，默认和转盘上显示的文字一样)
-		"congratulations": "",
+		"congratulations": "想要三张睡觉听话卡",
 		//抽中后显示的图片(可以为空，默认和转盘上显示的图片一样)
 		"showImage": "",
 		
 		//点击showImage后显示的视频（可以为空，当不为空时会忽略下面的图片和声音）
 		"clickVideo": "",
 		//点击showImage后显示的文字（可以为空，默认和抽中后显示的文字一样）
-		"clickText": "想吻你",
+		"clickText": "想要三张睡觉听话卡",
 		//点击showImage后显示的图片（可以为空，默认和抽中后显示的图片一样）
-		"clickImage": "./images/kiss/1.gif",
+		"clickImage": "./images/shuijiao.jpg",
 		//点击showImage后显示的声音（可以为空）
-		"clickSound": "",
+		"clickSound": "./audio/pwzd.mp3",
     }
 ];
 
